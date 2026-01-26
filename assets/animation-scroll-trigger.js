@@ -197,10 +197,11 @@ class AnimationHorizontalScroll extends HTMLElement {
       scrollTrigger: {
         trigger: this.container,
         start: "top top",
-        scrub: 1.5,
+        scrub: 0.5,
         pin: true,
         invalidateOnRefresh: true,
-      }
+        snap: 1 / (this.blocks.length - 1),
+      },
     });
   }
 }

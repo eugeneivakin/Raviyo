@@ -47,7 +47,7 @@
 .main-banner animation-text {
     align-items: flex-start;
     margin-top:0;
-    max-width: 72.666%;
+    max-width: 68%;
 }
 .main-banner .content {
     max-width: clamp(400px, 33.33vw, 640px);
