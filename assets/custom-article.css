@@ -1,0 +1,106 @@
+.custom-article {
+    height: 100%;
+    position: relative;
+}
+.custom-article:hover .image .image__wrap img {
+    transform: scale(1.05);
+}
+.custom-article a {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.custom-article__wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.custom-article .image {
+
+}
+.custom-article .image .image__wrap {
+    position: relative;
+    padding-top: 66.67%;
+    /* min-height: 358px; */
+    overflow: hidden;
+    border-radius: 12px;
+}
+.custom-article .image .image__wrap img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+.custom-article .image .image__wrap svg {
+    position: absolute;
+    top:27px;
+    right:30px;
+}
+.custom-article .content {
+    padding-top:clamp(20px, 1.67vw, 32px);
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.custom-article:has(.expert) .title {
+    margin:0;
+}
+.custom-article .title {
+    margin:0 0 16px 0;
+}
+.custom-article .title h3 {
+    color: #494D50;
+    font-family: var(--font-family);
+    font-size: var(--font-size-24);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.custom-article .expert {
+    margin:16px 0;
+}
+.custom-article .expert p {
+    margin:0;
+    overflow: hidden;
+    color: #494D50;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: var(--font-family);
+    font-size: var(--font-size-18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    opacity: .8;
+}
+.custom-article .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap:16px;
+    opacity: .6;
+    margin-top:auto;
+}
+.custom-article .post-meta span.line {
+    opacity: .2;
+}
+.custom-article .post-meta span {
+    display: inline-block;
+    overflow: hidden;
+    color: #494D50;
+    text-overflow: ellipsis;
+    font-family: var(--font-family);
+    font-size: var(--font-size-16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    
+    text-transform: uppercase;
+}

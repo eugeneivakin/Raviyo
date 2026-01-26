@@ -1,0 +1,87 @@
+{{- 'section-video-scroll.css' | asset_url | stylesheet_tag -}}
+{%- if section.settings.video_m.sources[0].url != blank -%}
+  <link rel="preload" as="video" href="{{ section.settings.video_m.sources[0].url }}">
+{%- endif -%}
+
+{%- if section.settings.video.sources[0].url != blank -%}
+  <link rel="preload" as="video" href="{{ section.settings.video.sources[0].url }}">
+{%- endif -%}
+
+<div class="section-video-scroll">
+    <video-scroll class="video-scroll">
+        <div class="video-scroll__wrap">
+            <div class="content">
+                <div class="container">
+                    <div class="content__wrap">
+                        <div class="label">
+                            <div class="label__wrap">
+                                <span>
+                                    {{ section.settings.label }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>
+                                {{ section.settings.title }}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="video">
+            <div class="video__wrap">
+                <video id="scrollVideo"
+                    playsinline="true"
+                    webkit-playsinline="true"
+                    preload="auto"
+                    muted="muted"
+                    data-src-mobile="{{ section.settings.video_m.sources[0].url }}"
+                    data-src-desktop="{{ section.settings.video.sources[0].url }}"
+                >
+                    <source src="{{ section.settings.video_m.sources[0].url}}" media="(max-width: 767px)">
+                    <source src="{{ section.settings.video.sources[0].url}}" media="(min-width: 768px)"> 
+                </video>
+            </div>
+           </div>
+        </div>
+    </video-scroll>
+    
+</div>
+
+{%- schema -%}
+{
+	"name": "Section video scroll",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+    "settings":[
+        {
+            "type":"text",
+            "id":"label",
+            "label":"label",
+            "default":"Watch how Raviyo works"
+        },
+        {
+            "type":"text",
+            "id":"title",
+            "label":"title",
+            "default":"Multi Features For Maximum Safety"
+        },
+        {
+            "type":"video",
+            "label":"video",
+            "id":"video"
+        },
+        {
+            "type":"video",
+            "label":"video mobile",
+            "id":"video_m"
+        }
+    ],
+	"presets": [
+		{
+			"name": "Section video scroll"
+		}
+	]
+}
+{%- endschema -%}

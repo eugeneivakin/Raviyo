@@ -1,0 +1,476 @@
+<style>
+	.basic-styles {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 0 16px;
+		max-width: 872px;
+		margin: 50px auto
+	}
+
+	.basic-styles > div {
+		justify-content: center;
+		margin: 0 auto;
+	}
+</style>
+
+<div class="basic-styles">
+	<h2>Icons</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; flex-wrap: wrap; gap: 20px;">
+		{% render "icons-new", icon: "ruler" %}
+		{% render "icons-new", icon: "location" %}
+		{% render "icons-new", icon: "worldwide" %}
+		{% render "icons-new", icon: "letter" %}
+		{% render "icons-new", icon: "clock" %}
+		{% render "icons-new", icon: "heart" %}
+		{% render "icons-new", icon: "cart" %}
+		{% render "icons-new", icon: "cart-2" %}
+		{% render "icons-new", icon: "cart-3" %}
+		{% render "icons-new", icon: "account" %}
+		{% render "icons-new", icon: "discount" %}
+		{% render "icons-new", icon: "search" %}
+		{% render "icons-new", icon: "gift" %}
+		{% render "icons-new", icon: "gift-2" %}
+		{% render "icons-new", icon: "wallet" %}
+		{% render "icons-new", icon: "delivery" %}
+		{% render "icons-new", icon: "question" %}
+		{% render "icons-new", icon: "countdown" %}
+		{% render "icons-new", icon: "share" %}
+		{% render "icons-new", icon: "close" %}
+		{% render "icons-new", icon: "arrow-down" %}
+		{% render "icons-new", icon: "arrow-right" %}
+		{% render "icons-new", icon: "arrow-left" %}
+		{% render "icons-new", icon: "instagram" %}
+		{% render "icons-new", icon: "youtube" %}
+		{% render "icons-new", icon: "facebook" %}
+		{% render "icons-new", icon: "twitter" %}
+		{% render "icons-new", icon: "linkedin" %}
+		{% render "icons-new", icon: "twitter-x-1" %}
+		{% render "icons-new", icon: "twitter-x-2" %}
+		{% render "icons-new", icon: "compare" %}
+		{% render 'icons-new', icon: 'quick-view' %}
+		{% render 'icons-new', icon: 'star' %}
+		{% render 'icons-new', icon: 'checkmark' %}
+		{% render 'icons-new', icon: 'shop' %}
+		{% render 'icons-new', icon: 'badge' %}
+		{% render 'icons-new', icon: 'credit-cards' %}
+		{% render 'icons-new', icon: 'delete' %}
+		{% render 'icons-new', icon: 'zoom-up' %}
+		{% render 'icons-new', icon: 'zoom-down' %}
+		{% render 'icons-new', icon: 'calendar' %}
+		{% render 'icons-new', icon: 'play' %}
+		{% render 'icons-new', icon: 'trash' %}
+	</div>
+
+	<div style="max-width: 840px; width: 100%; display: flex; flex-wrap: wrap; gap: 20px;">
+		{%- render "social-links-new" -%}
+	</div>
+
+	<h2>Slideshow buttons </h2>
+
+	<div class="swiper" style="display: flex; gap: 20px;">
+		<button class="swiper-button-prev-new swiper-button-disabled">
+			{%- render 'icons-new', icon: 'arrow-left' -%}
+		</button>
+
+		<button class="swiper-button-next-new">
+			{%- render 'icons-new', icon: 'arrow-right' -%}
+		</button>
+	</div>
+
+	<div class="swiper" style="display: flex; gap: 20px;">
+		<button class="swiper-button-prev-new">
+			{%- render 'icons-new', icon: 'arrow-left' -%}
+		</button>
+
+		<button class="swiper-button-next-new swiper-button-disabled">
+			{%- render 'icons-new', icon: 'arrow-right' -%}
+		</button>
+	</div>
+
+	<h2>Button circle</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; flex-wrap: wrap; gap: 40px;">
+		<a href="{{ link }}" class="button-circle">
+			<span class="button__text">
+				Learn More
+			</span>
+
+			<span class="button-new__icon-container">
+				<span class="button-new__icon-wrapper">
+					{% render "icons-new", icon: "wave", section_id: 'asdasdsa' %}
+				</span>
+			</span>
+		</a>
+
+		<button type="button" class="button-circle">
+				<span class="button__text">
+					Learn More
+				</span>
+
+				<span class="button-new__icon-container">
+					<span class="button-new__icon-wrapper">
+						{% render "icons-new", icon: "wave", section_id: 'sdsasfasf' %}
+					</span>
+				</span>
+		</button>
+	</div>
+
+	<h2>Button primary</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; flex-wrap: wrap; gap: 40px;">
+		<a href="{{ link }}" class="button-new button--primary">Learn More</a>
+		<button type="button" class="button-new button--primary">Learn More</button>
+	</div>
+
+	<h2>Button secondary</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; flex-wrap: wrap; gap: 40px;">
+		<a href="{{ link }}" class="button-new button--secondary">Learn More</a>
+		<button type="button" class="button-new button--secondary">Learn More</button>
+	</div>
+
+	<h2>Button play</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<button
+			class="button-new button--play"
+			aria-label="test-play-button"
+		>
+			{% render 'icons-medium', icon: "play" %}
+		</button>
+	</div>
+
+	<h2>Button link</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<a href="{{ event_button_url }}" class="button-link-new focus-visible-outline">
+		View Collections
+
+		<span class="button-link-new__icon-wrapper">
+			<span class="button-link-new__icon">
+				{% render 'icons-new', icon: 'arrow-right' %}
+			</span>
+		</span>
+	</a>
+	</div>
+
+	<h2>Inputs</h2>
+
+	<div style="max-width: 840px; width: 100%;">
+		<div class="input-wrapper">
+			<input
+				class="input"
+				type="email"
+				value=""
+				name="test-input-1"
+				aria-label="{{- 'customer.activate_account.password_aria_label' | t | escape -}}"
+				placeholder="Enter your Email"
+			/>
+
+			<label class="input-label" for="test-input-1">
+				Enter your Email
+			</label>
+		</div>
+
+		<div class="input-wrapper">
+			<input
+				class="input error"
+				type="email"
+				name="test-input-2"
+				value="UTDteam@gmail.com"
+				aria-label="test"
+				placeholder="Enter your Email"
+			/>
+
+			<label class="input-label" for="test-input-2">
+				Enter your Email
+			</label>
+		</div>
+	</div>
+
+	<h2>Checkbox</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<input
+			class="visually-hidden checkbox__input"
+			type="checkbox"
+			id="test-checkbox"
+			name="test-checkbox"
+			value="1"
+			checked
+		/>
+
+		<label
+			class="checkbox__label"
+			for="test-checkbox"
+			aria-label="test-checkbox"
+		>
+			Checked
+		</label>
+	</div>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<input
+			class="visually-hidden checkbox__input"
+			type="checkbox"
+			id="test-checkbox-2"
+			name="test-checkbox-2"
+			value="1"
+		/>
+
+		<label
+			class="checkbox__label"
+			for="test-checkbox-2"
+			aria-label="test-checkbox-2"
+		>
+			Unchecked
+		</label>
+	</div>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<input
+			class="visually-hidden checkbox__input"
+			type="checkbox"
+			id="test-checkbox-3"
+			name="test-checkbox-3"
+			value="1"
+			disabled
+		/>
+
+		<label
+			class="checkbox__label"
+			for="test-checkbox-3"
+			aria-label="test-checkbox-3"
+		>
+			Disabled
+		</label>
+	</div>
+
+	<h2>Select</h2>
+
+	<div style="max-width: 840px; width: 100%; display: flex; gap: 40px;">
+		<div class="select-wrapper"	style="width: 100%;">
+			<label class="visually-hidden" for="test-select">
+				Test select
+			</label>
+
+			<select
+				class="focus-visible-outline"
+				id="test-select"
+				name="test-select"
+				aria-label="test-select"
+			>
+				<option
+					value="test-1"
+				>
+					Test 1
+				</option>
+
+				<option
+					value="test-2"
+				>
+					Test 2
+				</option>
+
+				<option
+					value="test-3"
+				>
+					Test 3
+				</option>
+			</select>
+
+			{%- render 'icons-new', icon: 'arrow-down' -%}
+		</div>
+	</div>
+
+	<h2>Pagination</h2>
+
+	<div class="swiper-pagination slideshow__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal" style="position: static; max-width: 840px; width: 100%;">
+		<button class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></button><button class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></button>
+		<button class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></button>
+	</div>
+
+	<nav class="pagination-new" aria-label="Pagination" style="max-width: 840px; width: 100%; margin: 0 auto;">
+		<ul class="pagination__list" role="list" style="justify-content: center">
+			<li class="pagination__item pagination__item--no-active">
+				<span class="pagination__link" aria-hidden="true">
+					{%- render 'icons-new', icon: 'arrow-left' -%}
+
+						<span class="pagination__link-label">
+							{{- 'general.pagination.previous_label' | t | escape -}}
+						</span>
+				</span>
+			</li>
+
+			<li class="pagination__item">
+				<a class="pagination__link  is-active " role="link" aria-disabled="true" aria-current="page" aria-label="Page 1">1</a>
+			</li>
+
+			<li class="pagination__item">
+				<a class="focus-visible-outline pagination__link" href="/collections/all?page=2" aria-label="Page 2">2</a>
+			</li>
+
+			<li class="pagination__item">
+				<a class="focus-visible-outline pagination__link" href="/collections/all?page=3" aria-label="Page 3">3</a>
+			</li>
+
+			<li class="pagination__item">
+				<span class="pagination__link" aria-hidden="true">…</span>
+			</li>
+
+			<li class="pagination__item">
+				<a class="focus-visible-outline pagination__link" href="/collections/all?page=10" aria-label="Last page, page 10">10</a>
+			</li>
+
+			<li class="pagination__item">
+				<a class="focus-visible-outline pagination__link" href="/collections/all?page=2" aria-label="Next page">
+					<span class="pagination__link" aria-hidden="true">
+						<span class="pagination__link-label">
+							{{- 'general.pagination.next_label' | t | escape -}}
+						</span>
+
+						{%- render 'icons-new', icon: 'arrow-right' -%}
+					</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<h2>Product card</h2>
+
+	{%- assign product1 = all_products['basic-cotton-t-shirt'] -%}
+	{%- assign product2 = all_products['baby-midi-dress'] -%}
+	{%- assign product3 = all_products['mista-print-jersey-t-shirt-with'] -%}
+	{%- assign product4 = all_products['3-standing-paper-peonies'] -%}
+
+	<div style="display: flex; max-width: 930px; width: 100%; gap: 30px;">
+		{%- render "product-card-new", product: product3, big_card: true -%}
+		{%- render "product-card-new", product: product2 -%}
+	</div>
+
+	<div style="display: flex; max-width: 930px; width: 100%; gap: 12px;">
+		{%- render "product-card-new", product: product1 -%}
+		{%- render "product-card-new", product: product4, big_card: true -%}
+	</div>
+
+	<div style="display: flex; max-width: 930px; width: 100%; gap: 12px;">
+		{%- render "product-card-new" -%}
+		{%- render "product-card-new", big_card: true -%}
+	</div>
+
+	<h2>Typography</h2>
+
+	<div style="max-width: 840px; width: 100%;">
+		<h1>H1 - Hello world!</h1>
+
+		<h2>H2 - Hello world!</h2>
+
+		<h3>H3 - Hello world!</h3>
+
+		<h3 class="subheading">H3 - Subheading</h3>
+
+		<h4>H4 - Hello world!</h4>
+
+		<h5>H5 - Hello world!</h5>
+
+		<h6>H6 - Hello world!</h6>
+	</div>
+
+	<h2>RTE</h2>
+
+	<div class="rte-new">
+
+
+		<h3 class="subheading">Shop with us</h3>
+
+		<h1>Shipping & Delivery</h1>
+
+		<p>We are committed to providing you with a seamless shopping experience, which includes efficient shipping and delivery. Here’s everything you need to know about our shipping policies:</p>
+
+		<img src="https://placehold.co/840x434?text=Hello\nWorld" alt="Test image">
+
+		<h2>Check main policies</h2>
+
+		<h3>Thank you for shopping with us!</h3>
+
+		<p>We are committed to providing you with a seamless shopping experience, which includes efficient shipping and delivery. Here’s everything you need to know about our shipping policies:</p>
+
+		<h4>Shipping Options</h4>
+
+		<h6>Standard Shipping:</h6>
+
+		<p>Typically arrives within 5-7 business days.</p>
+
+		<h6>Expedited Shipping:</h6>
+
+		<p>Typically arrives within 2-3 business days.</p>
+
+		<h4>Shipping Costs</h4>
+
+		<h6>Standard Shipping:</h6>
+
+		<p>$5.00 or free for orders over $50.</p>
+
+		<h6>Expedited Shipping:</h6>
+
+		<p>$10.00.</p>
+
+		<h4>Order Processing</h4>
+
+		<p>Orders are processed within 1-2 business days. You will receive a confirmation email once your order is shipped, including a tracking number to follow your package's journey.</p>
+
+		<h4>Delivery Times</h4>
+
+		<p>Delivery times may vary depending on your location and the shipping method selected. Please note that business days are Monday through Friday, excluding holidays.</p>
+
+		<h4>International Shipping</h4>
+
+		<p>We currently offer international shipping to select countries. Shipping costs and delivery times vary by destination. For more details, please visit our International Shipping page or contact our customer service team.</p>
+
+		<h5>We currently ship to the following countries:</h5>
+
+		<h6>United States:</h6>
+
+		<ul>
+			<li>Nebraska</li>
+			<li>Massachusetts</li>
+			<li>Michigan</li>
+			<li>Delaware</li>
+			<li>Alabama</li>
+			<li>Nebraska</li>
+			<li>Massachusetts</li>
+			<li>Michigan</li>
+			<li>Delaware</li>
+			<li>Alabama</li>
+		</ul>
+
+		<h6>Europe:</h6>
+
+		<ol>
+			<li>Nebraska</li>
+			<li>Massachusetts</li>
+			<li>Michigan</li>
+			<li>Delaware</li>
+			<li>Alabama</li>
+		</ol>
+
+		<h4>Order Processing</h4>
+
+		<p>International orders are processed within 1-2 business days. You will receive a confirmation email with tracking information once your order has shipped. Please note that delivery times may be affected by customs processing.</p>
+
+		<h4>Customs Duties and Taxes</h4>
+
+		<p>Customs duties, taxes, and any additional fees are the responsibility of the customer. These fees are determined by your country’s customs office and are not included in the shipping costs at checkout. We recommend contacting your local customs office for information on potential fees.</p>
+
+		<h2>Returns and Exchanges</h2>
+
+		<p>For information on how to return or exchange international orders, please refer to our Returns Policy page. Note that return shipping costs are the responsibility of the customer.</p>
+
+		<p>For any further questions or assistance with international shipping, please contact our customer service team at [customer service email] or call [customer service phone number].</p>
+
+		<p>Thank you for shopping with us and we look forward to serving you!</p>
+	</div>
+</div>

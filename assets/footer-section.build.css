@@ -1,0 +1,205 @@
+/*------------------------------------------------------------------------------
+	Footer Section Styles
+	Based on Figma design node-id=278-2626
+------------------------------------------------------------------------------*/
+
+.footer-section {
+	--section-background: #121B22;
+	--text-color: #FFFFFF;
+	--text-opacity: 0.4;
+	
+	background-color: var(--section-background);
+	color: var(--text-color);
+	position: relative;
+	overflow: hidden;
+}
+
+.footer-section__container {
+	padding: 140px 40px 80px;
+	position: relative;
+}
+
+.footer-section__inner {
+	position: relative;
+	width: 100%;
+	max-width: 1840.43px;
+	margin: 0 auto;
+	min-height: 579px;
+}
+
+.footer-section__background {
+	position: absolute;
+	top: -48px;
+	left: 0;
+	width: 100%;
+	height: 579px;
+	z-index: 1;
+}
+
+.footer-section__background-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.footer-section__gradient-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 196px;
+	background: linear-gradient(180deg, rgba(18, 27, 34, 0) 0%, rgba(18, 27, 34, 1) 100%);
+	z-index: 2;
+	pointer-events: none;
+}
+
+.footer-section__content {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-top: 512px;
+}
+
+.footer-section__copyright {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+	font-size: 12.796875px;
+	line-height: 1.4222222818414225em;
+	color: var(--text-color);
+	opacity: var(--text-opacity);
+	margin: 0;
+	white-space: nowrap;
+}
+
+.footer-section__links {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-section__link {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+	font-size: 12.796875px;
+	line-height: 1.4222222818414225em;
+	color: var(--text-color);
+	opacity: var(--text-opacity);
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.footer-section__link:hover {
+	opacity: 0.8;
+}
+
+.footer-section__link:focus {
+	outline: 2px solid var(--text-color);
+	outline-offset: 2px;
+}
+
+.footer-section__link:not([href]) {
+	cursor: default;
+}
+
+/* Responsive styles */
+@media (max-width: 1920px) {
+	.footer-section__inner {
+		max-width: calc(100% - 80px);
+	}
+	
+	.footer-section__content {
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.footer-section__container {
+		padding: 100px 32px 60px;
+	}
+	
+	.footer-section__content {
+		flex-direction: row;
+		justify-content: space-between;
+		padding-top: 400px;
+	}
+}
+
+@media (max-width: 991px) {
+	.footer-section__container {
+		padding: 80px 24px 40px;
+	}
+	
+	.footer-section__inner {
+		min-height: auto;
+		max-width: 100%;
+	}
+	
+	.footer-section__background {
+		height: 400px;
+	}
+	
+	.footer-section__content {
+		padding-top: 300px;
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		align-items: center;
+		gap: 24px;
+	}
+	
+	.footer-section__links {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer-section__container {
+		padding: 64px 16px 32px;
+	}
+	
+	.footer-section__background {
+		height: 300px;
+		top: -32px;
+	}
+	
+	.footer-section__content {
+		padding-top: 200px;
+		gap: 16px;
+	}
+	
+	.footer-section__copyright,
+	.footer-section__link {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 575px) {
+	.footer-section__container {
+		padding: 40px 16px 24px;
+	}
+	.footer-section__background {
+		height: 250px;
+	}
+	
+	.footer-section__content {
+		padding-top: 182px;
+	}
+	
+	.footer-section__links {
+		gap: 12px;
+	}
+	
+	.footer-section__copyright {
+		white-space: normal;
+	}
+}
+

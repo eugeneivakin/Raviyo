@@ -1,0 +1,296 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "default-page": {
+      "type": "default-page-template",
+      "disabled": true,
+      "settings": {
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    },
+    "banner_with_text_AKmKg6": {
+      "type": "banner-with-text",
+      "settings": {
+        "label": "",
+        "heading": "Built for safer spaces. Trusted by professionals.",
+        "text_content": "<p>From childcare to community care, our patented door handle enhances safety, control, and peace of mind—wherever it’s needed.</p>",
+        "content_alignment": "right",
+        "image_border_width": 0,
+        "image_border_indent_desktop": 30,
+        "image_border_indent_mobile": 16,
+        "is_lazy": true,
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "background_color": "#EBB000",
+        "text_color": "#ffffff",
+        "image_border_color": "#ffffff",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "image_with_text_r3yjge": {
+      "type": "image-with-text",
+      "custom_css": [],
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "first_desktop_image": "shopify://shop_images/stock-photo-woman-and-boys-having-vocabulary-lesson-with-word-cards-at-kindergarten-2292b.png",
+        "heading": "Nurseries & Childcare Centers",
+        "subheading": "Keep Little Ones Safely Inside",
+        "text_content": "<p>Young children are naturally curious, but when that curiosity leads them toward an open door, the risks are real. Our innovative door handle prevents accidental escapes by requiring a coordinated movement to operate—something small children simply can’t do. Unlike door chains or high-mounted locks, it blends seamlessly into daily use without inconvenience to staff.</p><ul><li>Prevents toddlers from wandering</li><li>No unsightly chains or add-ons</li><li>Easy for adults, impossible for little hands</li></ul><p></p><p>Enhance safety in your nursery while keeping doors accessible for caregivers. Bulk order options available for childcare centers and educational facilities.</p>",
+        "button_label": "Contact us",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": true,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 94,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "image_with_text_bmeLgV": {
+      "type": "image-with-text",
+      "custom_css": [],
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "first_desktop_image": "shopify://shop_images/stock-photo-nurse-or-doctor-give-man-support-during-recovery-or-loss-caregiver-holding-hand-of-her-sad-senior-2203716633.jpg",
+        "heading": "Medical Institutions",
+        "subheading": "Protect Vulnerable Patients Without Restricting Care",
+        "text_content": "<p>Hospitals, dementia care homes, and mental health institutions need a delicate balance between security and accessibility. Patients with cognitive conditions may unknowingly put themselves at risk by exiting unattended. Our handle offers an intuitive yet controlled locking mechanism that prevents unauthorized exits while ensuring easy operation for caregivers.</p><ul><li>Reduces risk for vulnerable patients</li><li>No need for constant staff supervision at exits</li><li>Supports compliance with safety regulations</li></ul><p></p><p>Upgrade patient safety without compromising dignity or ease of use. Contact us to discuss bulk orders for care settings.</p>",
+        "button_label": "Contact us",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": true,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 100,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "image_with_text_Pc9GHW": {
+      "type": "image-with-text",
+      "custom_css": [
+        "/* Change heading text color */h1,h2 {color: #2f4858 !important;}",
+        " /* Change subheading text color */h3 {color: #677987 !important;}",
+        " /* Change body text color */body,p,span,li {color: #2f4858 !important;}"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "first_desktop_image": "shopify://shop_images/stock-photo-communal-corridor-of-george-loveless-house-a-huge-council-housing-block-around-haggerston-in-london-1279840015.jpg",
+        "heading": "Local Authorities",
+        "subheading": "Safety & Security for Every Home",
+        "text_content": "<p>Local Authorities & Housing: Community-Wide Protection<br/>Councils and housing associations are responsible for ensuring resident safety, particularly in social housing, assisted living, and family accommodations. Traditional security measures often sacrifice convenience, but our handle provides an elegant, tamper-resistant solution that secures homes without the need for constant locking and unlocking with a key.</p><ul><li>Strengthens security without restricting access</li><li>Prevents forced entry through letterbox attacks</li><li>Ideal for social housing, assisted living & public spaces</li></ul><p>A smart, scalable safety solution for housing providers. Available in bulk for large-scale deployment.</p>",
+        "button_label": "Contact us",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": false,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 100,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "image_with_text_bMRQ4T": {
+      "type": "image-with-text",
+      "custom_css": [
+        "/* Change heading text color */h1,h2 {color: #2f4858 !important;}",
+        " /* Change subheading text color */h3 {color: #677987 !important;}",
+        " /* Change body text color */body,p,span,li {color: #2f4858 !important;}"
+      ],
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "first_desktop_image": "shopify://shop_images/1000_F_307573786_sAj0us0QVdoKZi7c5pri9XE7PFFCVDuE.jpg",
+        "heading": "Hotels",
+        "subheading": "Elevate Guest Safety & Security",
+        "text_content": "<p>Hotel guests trust you to provide not only comfort but also security. Our unique handle prevents unauthorized room access by blocking common forced-entry tactics, such as coat hangers or improvised tools used to manipulate traditional handles. Unlike deadbolts, which guests often forget to lock, this system ensures a higher level of security without additional effort. </p><ul><li>Reduces liability risks against room break-ins</li><li>Enhances guest confidence with the built-in security</li><li>Boosts property reputation compared to competitors</li></ul><p>A seamless way to protect guests while maintaining a luxurious, welcoming atmosphere. Discover opportunities of bulk orders.<br/></p>",
+        "button_label": "Contact us",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": false,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 100,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "image_with_text_zgkkaL": {
+      "type": "image-with-text",
+      "custom_css": [
+        "/* Change heading text color */h1,h2 {color: #2f4858 !important;}",
+        " /* Change subheading text color */h3 {color: #677987 !important;}",
+        " /* Change body text color */body,p,span,li {color: #2f4858 !important;}"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "first_desktop_image": "shopify://shop_images/1000_F_608373535_j9SLvTu8ExqWfMFrB3ZG9GWVwjt1oo7d.jpg",
+        "heading": "Short-Term Rentals",
+        "subheading": "Subheading",
+        "text_content": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+        "button_label": "Button label",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": false,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "benefits_GbaE4G": {
+      "type": "benefits",
+      "blocks": {
+        "benefits_item_iF8PXk": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Scalable safety solution",
+            "text": "that compliments your existing security",
+            "image": "shopify://shop_images/noun-resize-5484922-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        },
+        "benefits_item_gaAtGt": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Easy installation",
+            "text": "with minimal maintenance",
+            "image": "shopify://shop_images/noun-screwdriver-943617-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefits_item_iF8PXk",
+        "benefits_item_gaAtGt"
+      ],
+      "settings": {
+        "section_background": "#2f4858",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "border_color": "#2f4858",
+        "outline_color": "#2f4858",
+        "full_width": true,
+        "show_borders": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "benefits_wgEctY": {
+      "type": "benefits",
+      "blocks": {
+        "benefits_item_M46rJD": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Smart, unobtrusive aesthetic",
+            "text": "for all types of modern buildings",
+            "image": "shopify://shop_images/noun-sparkle-154469-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        },
+        "benefits_item_Mbchax": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Durable materials",
+            "text": "for repeated daily use",
+            "image": "shopify://shop_images/noun-anvil-7665035-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefits_item_M46rJD",
+        "benefits_item_Mbchax"
+      ],
+      "settings": {
+        "section_background": "#2f4858",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "border_color": "#2f4858",
+        "outline_color": "#d2d2d2",
+        "full_width": true,
+        "show_borders": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "banner_with_text_fxJHYk": {
+      "type": "banner-with-text",
+      "name": "Banner with text",
+      "settings": {
+        "label": "Label",
+        "heading": "Banner with text",
+        "text_content": "<p>Give customers details about the banner image or content on the banner.</p>",
+        "content_alignment": "center",
+        "image_border_width": 0,
+        "image_border_indent_desktop": 30,
+        "image_border_indent_mobile": 16,
+        "is_lazy": true,
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "background_color": "2F4858",
+        "text_color": "#fff",
+        "image_border_color": "#FFFFFF",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "default-page",
+    "banner_with_text_AKmKg6",
+    "image_with_text_r3yjge",
+    "image_with_text_bmeLgV",
+    "image_with_text_Pc9GHW",
+    "image_with_text_bMRQ4T",
+    "image_with_text_zgkkaL",
+    "benefits_GbaE4G",
+    "benefits_wgEctY",
+    "banner_with_text_fxJHYk"
+  ]
+}

@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="{{ 'main-features-container.css' | asset_url }}">
+
+<div class="main-features">
+  {%- if section.settings.image != blank -%}
+    <div class="main-features__source main-features__source--desktop">
+      <img src="{{ section.settings.image | image_url }}" alt="">
+    </div>
+  {%- endif -%}
+  {%- if section.settings.image_mobile != blank -%}
+    <div class="main-features__source main-features__source--mobile">
+      <img src="{{ section.settings.image_mobile | image_url }}" alt="">
+    </div>
+  {%- elsif section.settings.image != blank -%}
+    <div class="main-features__source main-features__source--mobile">
+      <img src="{{ section.settings.image | image_url }}" alt="">
+    </div>
+  {%- endif -%}
+
+  <div class="main-features__wrapper">
+    {%- if section.settings.subtitle != blank -%}
+      <div class="main-features__subtitle">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="main-features__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="main-features__render">
+      {% for block in section.blocks %}
+        {%- if block.settings.title != blank or block.settings.description != blank -%}
+          <div class="main-features__item">
+            {%- if block.settings.title != blank -%}
+              <div class="main-features__item-title">{{ block.settings.title }}</div>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <div class="main-features__item-description">{{ block.settings.description }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Main Features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Watch how Raviyo works"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Multi Features For Maximum Safety"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Thumb Slide"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "To open the door, simply push the ergonomically placed Thumb Slide before turning the handle. If it’s not engaged, the door stays firmly shut—keeping little hands safe inside and stopping intruders who try through the letterbox."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Features"
+    }
+  ]
+}
+{% endschema %}

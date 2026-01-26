@@ -1,0 +1,92 @@
+.section-articles {
+    padding:clamp(64px, 7.29vw,140px) 0 clamp(50px, 5.21vw, 100px) 0;
+    background: #121B22;
+}
+.section-articles .btn__wrap {
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+.section-articles .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.section-articles .title h2 {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-48);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-articles__wrap {
+    display: flex;
+    flex-direction: column;
+    gap:clamp(40px, 3.33vw, 64px);
+}
+.section-articles .list-article {
+    display: flex;
+    gap:24px 20px;
+    flex-wrap:wrap;
+}
+.section-articles .custom-article {
+    width: calc(100% / 3 - 40px / 3);
+    height: auto;
+}
+.section-articles .custom-article .title {
+    margin-bottom:clamp(12px, 0.83vw, 16px);
+}
+.section-articles .custom-article .title h3 {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-24);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-articles  .custom-article .expert {
+    margin:auto 0 0 0;
+}
+.section-articles  .custom-article .expert p {
+
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    -webkit-line-clamp: 2;
+}
+
+@media (max-width:1023px) {
+    .section-articles .custom-article {
+        width: calc(100% / 2 - 20px / 2);
+    }
+}
+
+@media (max-width:767px) {
+    .section-articles .custom-article {
+        width: 100%;
+    }
+    .section-articles .title h2 {
+        text-align: center;
+    }
+    .section-articles .heading {
+        display: contents;
+    }
+    .section-articles  .heading .title {
+        order:1;
+    }
+    .section-articles .list-article {
+        order:2;
+    }
+    .section-articles .btn__wrap {
+        order:3;
+    }
+    .section-articles {
+        padding:clamp(64px, 7.29vw,140px) 0 0 0;
+    }
+}

@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="{{ 'main-more-container.css' | asset_url }}">
+
+<div class="main-more">
+  <div class="container">
+    <div class="main-more__wrapper">
+      {%- if section.settings.title != blank -%}
+        <h2 class="main-more__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <custom-slider class="swiper" data-index="2">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks  %}
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__wrap">
+                               <div class="item">
+                                {% if  block.settings.img != blank  %}
+                                  <div class="image">
+                                    <div class="image__wrap">
+                                      <img src="{{ block.settings.img | image_url: width: block.settings.img.width }}" alt="{{ block.settings.img.alt }}">
+                                    </div>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.title != blank or block.settings.description != blank %}
+                                  <div class="content">
+                                    {% if block.settings.title != blank %}
+                                      <div class="title">
+                                          <h3>
+                                            {{ block.settings.title }}
+                                          </h3>
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.description != blank %}
+                                      <div class="text">
+                                        <p>
+                                           {{ block.settings.description }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                               </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+        </custom-slider>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Main More",
+   "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "And there's more..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Raviyo is an entirely unhackable  line of defence"
+        },
+        {
+          "type":"inline_richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main More"
+    }
+  ]
+}
+{% endschema %}
+
+<script src="{{ 'section-main-more.build.js' | asset_url }}" defer></script>

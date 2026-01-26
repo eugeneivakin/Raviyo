@@ -1,0 +1,99 @@
+{{ 'banner-blog.css' | asset_url | stylesheet_tag  }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.315 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.315 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-banner-blog section-{{ section.id }}-padding">
+    {% if section.settings.img != blank %}
+        <picture>
+            {% if  section.settings.img_m != blank %}
+             <source srcset="{{ section.settings.img_m |  image_url: width: section.settings.img.width  }}" media="(max-width: 767px)" />
+            {% endif %}
+            <img src="{{ section.settings.img |  image_url: width: section.settings.img.width  }}" alt="">
+        </picture>
+    {% endif %}
+    <div class="container">
+        <div class="section-banner-blog__wrap">
+            <div class="content">
+                <div class="title">
+                    <h1>
+                        {{ section.settings.title }}
+                    </h1>
+                </div>
+                {% if section.settings.text != blank %}
+                    <div class="text">
+                        <p>
+                            {{ section.settings.text }}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Section banner page",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id":"img",
+            "label": "Backgroung img "
+        },
+        {
+            "type": "image_picker",
+            "id":"img_m",
+            "label": "Backgroung img mobile"
+        },
+        {
+            "type": "text",
+            "id":"title",
+            "label":"title"
+        },
+        {
+            "type": "inline_richtext",
+            "id":"text",
+            "label": "text",
+            "default": "Bulky chains and plastic clips might make you feel safe, but they ruin the aesthetics of your home. Here’s how modern design blends beauty and protection, proving that safety can look as elegant as it feels."
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "padding top",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "padding-bottom",
+            "default": 128
+        }
+    ],
+
+    "presets": [
+        {
+        "name": "Section banner blog",
+        "category":"Blog page"
+        }
+    ]
+}
+{% endschema %}

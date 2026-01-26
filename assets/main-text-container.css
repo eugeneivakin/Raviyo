@@ -1,0 +1,86 @@
+.main-text {
+    position: relative;
+}
+.main-text img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.main-text__wrap {
+    padding:148px 0 clamp(171px, 13.906vw,267px) 0;
+}
+.main-text__info__subtitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.main-text__wrap .label{
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.10);
+    padding:16px 24px;
+    color: #FFF;
+    text-align: center;
+    font-family: "Inter Tight";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.main-text__info {
+    position: relative;
+    z-index: 2;
+    max-width: 603px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.main-text .title h2 {
+    margin:0;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size-80);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 88px */
+}
+
+animation-text {
+    margin-top:clamp(24px, 2.604vw,50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:24px;
+}
+animation-text .line {
+    position: relative;
+    text-align: center;
+}
+animation-text span {
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: clamp(20px, 1.042vw, 24px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin:0;
+    opacity: .2;
+}
+.animation-word {
+    display: inline-flex;
+}
+
+@media (max-width:500px) {
+    animation-text .line {
+        text-align: center;
+        max-width: 80%;
+    }
+}

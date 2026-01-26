@@ -1,0 +1,396 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main_hero_7Fqhjm": {
+      "type": "main-hero",
+      "name": "Main Hero",
+      "settings": {
+        "text": "A patented door handle that protects your loved ones, blocks intruders, and keeps your home safe.",
+        "img": "shopify://shop_images/compressed.webp",
+        "img_m": "shopify://shop_images/main_hero_2.webp",
+        "btn_name": "Join the waitlist",
+        "url": "#"
+      }
+    },
+    "main_text_r77nBM": {
+      "type": "main-text",
+      "blocks": {
+        "text_KQpzed": {
+          "type": "text",
+          "settings": {
+            "text": "It features reliable and proven patented technology."
+          }
+        },
+        "text_AkXhdt": {
+          "type": "text",
+          "settings": {
+            "text": "It is designed to prevent accidental exits or forced entry."
+          }
+        },
+        "text_8XQLRC": {
+          "type": "text",
+          "settings": {
+            "text": "It protects your loved ones, both young and vulnerable."
+          }
+        },
+        "text_LNncpP": {
+          "type": "text",
+          "settings": {
+            "text": "It provides you the peace of mind you need."
+          }
+        }
+      },
+      "block_order": [
+        "text_KQpzed",
+        "text_AkXhdt",
+        "text_8XQLRC",
+        "text_LNncpP"
+      ],
+      "name": "Main Text",
+      "settings": {
+        "subtitle": "Raviyo is not just a door handle",
+        "title": "It’s a new layer of protection",
+        "img": "shopify://shop_images/Group_3.png",
+        "img_m": "shopify://shop_images/Group_2.png"
+      }
+    },
+    "main_list_kaqpHV": {
+      "type": "main-list",
+      "blocks": {
+        "point_CpmtiX": {
+          "type": "point",
+          "settings": {
+            "number": "01",
+            "title": "Protects the Most Vulnerable",
+            "description": "Raviyo prevents young children or vulnerable adults from unintentionally opening the door, keeping them safely inside."
+          }
+        },
+        "point_U8yC8G": {
+          "type": "point",
+          "settings": {
+            "number": "02",
+            "title": "Fast Exit When Seconds Matter",
+            "description": "Raviyo allows quick and secure door release in emergencies—no need to fumble for keys or unlock deadbolts."
+          }
+        },
+        "point_RWUhar": {
+          "type": "point",
+          "settings": {
+            "number": "03",
+            "title": "Stops Intruders at the Letterbox",
+            "description": "Raviyo blocks common break-in methods using tools through the letterbox by requiring deliberate human interaction."
+          }
+        }
+      },
+      "block_order": [
+        "point_CpmtiX",
+        "point_U8yC8G",
+        "point_RWUhar"
+      ],
+      "name": "Main List",
+      "settings": {
+        "subtitle": "Your three emergencies",
+        "title": "Our One Elegant Solution",
+        "image": "shopify://shop_images/Rectangle_23.png"
+      }
+    },
+    "section_video_scroll_cBFnBT": {
+      "type": "section-video-scroll",
+      "name": "Section video scroll",
+      "settings": {
+        "label": "Watch how Raviyo works",
+        "title": "Multi Features For Maximum Safety",
+        "video": "shopify://files/videos/raviyo full animation.mp4"
+      }
+    },
+    "main_more_rBUeBw": {
+      "type": "main-more",
+      "blocks": {
+        "feature_NjCxaw": {
+          "type": "feature",
+          "settings": {
+            "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
+            "title": "Raviyo is an entirely unhackable line of defence",
+            "description": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely."
+          }
+        },
+        "feature_rnPHH3": {
+          "type": "feature",
+          "settings": {
+            "img": "shopify://shop_images/1000_F_307573786_sAj0us0QVdoKZi7c5pri9XE7PFFCVDuE.jpg",
+            "title": "It works with all doors using a Eurocylinder lock",
+            "description": "Raviyo is compatible with all doors with a Eurocylinder lock configuration. The handle comes with comprehensive instructions for quick installation."
+          }
+        },
+        "feature_LD6hmN": {
+          "type": "feature",
+          "settings": {
+            "img": "shopify://shop_images/1000_F_608373535_j9SLvTu8ExqWfMFrB3ZG9GWVwjt1oo7d.jpg",
+            "title": "Still easily engage the door's Multipoint lock",
+            "description": "Raviyo works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way."
+          }
+        },
+        "feature_QWdinj": {
+          "type": "feature",
+          "settings": {
+            "img": "shopify://shop_images/stock-photo-a-luxurious-backyard-with-a-swimming-pool-hot-tub-and-patio-furniture-at-a-modern-house-during-2489280435.jpg",
+            "title": "Configure Raviyo for left and right-hand doors",
+            "description": "The handle can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set."
+          }
+        }
+      },
+      "block_order": [
+        "feature_NjCxaw",
+        "feature_rnPHH3",
+        "feature_LD6hmN",
+        "feature_QWdinj"
+      ],
+      "name": "Main More",
+      "settings": {
+        "title": "And there's more..."
+      }
+    },
+    "main_banner_CdhGMy": {
+      "type": "main-banner",
+      "name": "Main Banner",
+      "settings": {
+        "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security",
+        "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.",
+        "image": "shopify://shop_images/image_1.png",
+        "btn_name": "Join the Waitlist",
+        "url": "#"
+      }
+    },
+    "section_horizontal_scroll_yBy3Hb": {
+      "type": "section-horizontal-scroll",
+      "blocks": {
+        "title_w8CpjA": {
+          "type": "title",
+          "settings": {
+            "title": "And Raviyo is not just for the home"
+          }
+        },
+        "image_text_A96LH9": {
+          "type": "image-text",
+          "settings": {
+            "img": "shopify://shop_images/Image_4.jpg",
+            "label": "Keep Little Ones Safely Inside",
+            "title": "Nurseries & Childcare Centers",
+            "text": "Young children are naturally curious, but when that curiosity leads them toward an open door, the risks are real. Our innovative door handle prevents accidental escapes by requiring a coordinated movement to operate something small children simply can’t do. Unlike door chains or high-mounted locks, it blends seamlessly into daily use without inconvenience  to staff.",
+            "btn_name": "Contact Us",
+            "url": ""
+          }
+        },
+        "image_text_44BrQ9": {
+          "type": "image-text",
+          "settings": {
+            "img": "shopify://shop_images/stock-photo-nurse-or-doctor-give-man-support-during-recovery-or-loss-caregiver-holding-hand-of-her-sad-senior-2203716633.jpg",
+            "label": "Medical Institutions",
+            "title": "Protect Vulnerable Patients Without Restricting Care",
+            "text": "Hospitals, dementia care homes, and mental health institutions need a delicate balance between security and accessibility. Patients with cognitive conditions may unknowingly put themselves at risk by exiting unattended. Raviyo offers an intuitive yet controlled locking mechanism that prevents unauthorized exits while ensuring easy operation for caregivers.",
+            "btn_name": "Contact Us",
+            "url": ""
+          }
+        },
+        "image_text_hU7iKa": {
+          "type": "image-text",
+          "settings": {
+            "img": "shopify://shop_images/stock-photo-communal-corridor-of-george-loveless-house-a-huge-council-housing-block-around-haggerston-in-london-1279840015.jpg",
+            "label": "Local Authorities",
+            "title": "Safety & Security for Every Home",
+            "text": "Community-Wide Protection Councils and housing associations are responsible for ensuring resident safety, particularly in social housing, assisted living, and family accommodations. Traditional security measures often sacrifice convenience, but Raviyo provides an elegant, tamper-resistant solution that secures homes without the need for constant locking and unlocking with a key.",
+            "btn_name": "Contact Us",
+            "url": ""
+          }
+        },
+        "image_text_hWLAnq": {
+          "type": "image-text",
+          "settings": {
+            "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
+            "label": "Hotels",
+            "title": "Elevate Guest Safety & Security",
+            "text": "Hotel guests trust you to provide not only comfort but also security. Our unique handle prevents unauthorized room access by blocking common forced-entry tactics, such as coat hangers or improvised tools used to manipulate traditional handles. Unlike deadbolts, which guests often forget to lock, this system ensures a higher level of security without additional effort.",
+            "btn_name": "Contact Us",
+            "url": ""
+          }
+        },
+        "title_JJHhcQ": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title": "And Raviyo is not just for the home"
+          }
+        }
+      },
+      "block_order": [
+        "title_w8CpjA",
+        "image_text_A96LH9",
+        "image_text_44BrQ9",
+        "image_text_hU7iKa",
+        "image_text_hWLAnq",
+        "title_JJHhcQ"
+      ],
+      "name": "Section horizontal scroll",
+      "settings": {
+        "bg": "shopify://shop_images/Group_3.png"
+      }
+    },
+    "questions_section_yJtbwK": {
+      "type": "questions-section",
+      "blocks": {
+        "question_K6V3iw": {
+          "type": "question",
+          "settings": {
+            "question": "How is this handle safer than a regular door handle?",
+            "answer": "<p>The handle is much safer than a regular door handle. It incorporates patented mechanisms within it that provides safety and security features not found in regular handles.</p>"
+          }
+        },
+        "question_cNwnnm": {
+          "type": "question",
+          "settings": {
+            "question": "Does the handle help to prevent people from breaking in?",
+            "answer": "<p>Yes. Common methods for break-ins are breaking of the external door plate revealing the Eurocylinder for snapping, or accessing the door handle through the letterbox. Features of the handle, such as the patented Thumb Turn mechanism and curved door plate profile can help prevent a break in.</p>"
+          }
+        },
+        "question_Q6YFpX": {
+          "type": "question",
+          "settings": {
+            "question": "Can I still open the door quickly in an emergency?",
+            "answer": "<p>Yes. Given the Eurocylinder is operated by the patented Thumb Turn mechanism, there is no requirement to lock the handle with the key. In an emergency, there is no risk of needing to unlock using the key; instead, the Thumb Turn can be easily rotated and handle operated to open the door.</p>"
+          }
+        },
+        "question_WHxJ6K": {
+          "type": "question",
+          "settings": {
+            "question": "What makes it better than door chains or surface latches?",
+            "answer": "<p>Door chains are fairly rudimentary and can still break with enough force – either with a link bending open, or the frame fixing ripping away. Surface latches can also be broken past with enough force. Plus they are fairly unsightly. Our handle encloses all features away within the handle, and crucially holds the door firmly in place. This greatly decreases the possibility of someone breaking past.</p>"
+          }
+        },
+        "question_aqinjw": {
+          "type": "question",
+          "settings": {
+            "question": "Can I install the handle myself?",
+            "answer": "<p>Yes. Installation is a simple process and requires a cross or Phillips screwdriver. No additional tools are required.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_K6V3iw",
+        "question_cNwnnm",
+        "question_Q6YFpX",
+        "question_WHxJ6K",
+        "question_aqinjw"
+      ],
+      "name": "Questions Section",
+      "settings": {
+        "heading": "Questions We Know You're Asking",
+        "description": "Have more questions? Get in touch with us — we'll be happy to provide the answers you need.",
+        "button_label": "Contact us",
+        "button_link": "shopify://pages/contact"
+      }
+    },
+    "section_images_UB4JGA": {
+      "type": "section-images",
+      "name": "Main image",
+      "settings": {
+        "img1": "shopify://shop_images/Rectangle_29.jpg",
+        "img2": "shopify://shop_images/Rectangle_28.jpg"
+      }
+    },
+    "testimonials_section_dMLBA8": {
+      "type": "testimonials-section",
+      "blocks": {
+        "testimonial_iJHf4B": {
+          "type": "testimonial",
+          "settings": {
+            "text": "“Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
+            "author_name": "— Sarah, mother of two",
+            "img": "shopify://shop_images/Ellipse_1.jpg"
+          }
+        },
+        "testimonial_EYyHgB": {
+          "type": "testimonial",
+          "settings": {
+            "text": "“As a care home manager, Raviyo gives us peace of mind knowing residents are safe without making life harder for staff.”",
+            "author_name": "— Mark, UK care facility",
+            "img": "shopify://shop_images/Ellipse_1_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_iJHf4B",
+        "testimonial_EYyHgB"
+      ],
+      "name": "Testimonials Section",
+      "settings": {
+        "heading": "What Families and Professionals Say"
+      }
+    },
+    "protection_cta_xVtHg3": {
+      "type": "protection-cta",
+      "name": "Protection CTA",
+      "settings": {
+        "badge_text": "Born from real life events",
+        "heading": "Protecting your loved ones isn't optional - it's essential",
+        "button_label": "Contact us",
+        "button_link": "shopify://pages/contact"
+      }
+    },
+    "section_articles_JMWhqR": {
+      "type": "section-articles",
+      "blocks": {
+        "article_zhwrkU": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-impact-of-diy-security-solutions"
+          }
+        },
+        "article_BpGkdK": {
+          "type": "article",
+          "settings": {
+            "article": "news/common-vulnerabilities-of-standard-locks"
+          }
+        },
+        "article_RYBi67": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-impact-of-diy-security-solutions"
+          }
+        }
+      },
+      "block_order": [
+        "article_zhwrkU",
+        "article_BpGkdK",
+        "article_RYBi67"
+      ],
+      "name": "Section articles",
+      "settings": {
+        "title": "From the Blog",
+        "btn_name": "View all posts",
+        "url": "shopify://blogs/news"
+      }
+    }
+  },
+  "order": [
+    "main_hero_7Fqhjm",
+    "main_text_r77nBM",
+    "main_list_kaqpHV",
+    "section_video_scroll_cBFnBT",
+    "main_more_rBUeBw",
+    "main_banner_CdhGMy",
+    "section_horizontal_scroll_yBy3Hb",
+    "questions_section_yJtbwK",
+    "section_images_UB4JGA",
+    "testimonials_section_dMLBA8",
+    "protection_cta_xVtHg3",
+    "section_articles_JMWhqR"
+  ]
+}

@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer_section_6jkrbL": {
+      "type": "footer-section",
+      "name": "Footer Section",
+      "settings": {
+        "copyright_text": "© %date% Raviyo. All rights reserved.",
+        "terms_link": "",
+        "privacy_link": "",
+        "cookie_link": "",
+        "section_background": "#121B22",
+        "text_color": "#FFFFFF",
+        "text_opacity": 0.4
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "heading": "About",
+            "text_content": "<p>Add store details and contact information for your customers.</p>",
+            "show_media_links": true
+          }
+        },
+        "menu": {
+          "type": "menu",
+          "settings": {
+            "menu_heading": "",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "menu"
+      ],
+      "disabled": true,
+      "settings": {
+        "logo_image_width": 100,
+        "show_top_border": true,
+        "copyright_text": "Copyright © %date%.",
+        "show_back_to_top_button": false,
+        "is_show_country_selector": false,
+        "is_show_language_selector": false,
+        "is_show_payment_methods": true,
+        "enable_follow_on_shop": true,
+        "section_background": "#2f4858",
+        "border_top_color": "#2f4858",
+        "menu_headings_color": "#ffffff",
+        "text_color": "#ffffff",
+        "copyright_text_color": "#8d8d8d",
+        "link_color": "#ffffff",
+        "link_hover_color": "#dddddd",
+        "button_icon_color_social": "#ffffff",
+        "button_background_color_social": "rgba(0,0,0,0)",
+        "button_border_color_social": "#ffffff",
+        "button_icon_color_social_hover": "#000000",
+        "button_background_color_social_hover": "#ffffff",
+        "button_border_color_social_hover": "#000000"
+      }
+    }
+  },
+  "order": [
+    "footer_section_6jkrbL",
+    "footer"
+  ]
+}

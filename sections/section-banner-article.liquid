@@ -1,0 +1,70 @@
+{{ 'banner-article.css' | asset_url | stylesheet_tag  }}
+
+<div class="section-banner-article">
+        <div class="section-banner-article__wrap">
+           <div class="top">
+                <div class="container">
+                    <div class="top__wrap">
+                        <div class="title">
+                            <h1>
+                                {{ section.settings.title }}
+                            </h1>
+                        </div>
+                        {% if section.settings.text != blank %}
+                            <div class="text">
+                                <p>
+                                    {{ section.settings.text }}
+                                </p> 
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+           </div>
+           {% if section.settings.img != blank %}
+                <div class="bottom">
+                    <div class="bottom__wrap">
+                        <div class="image">
+                            <div class="image__wrap">
+                                <img src="{{ section.settings.img |  image_url: width: section.settings.img.width }}" alt="{{ section.settings.img.alt }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           {% endif %}
+        </div>
+</div>
+
+
+
+
+{% schema %}
+{
+    "name": "Section banner article",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id":"img",
+            "label": "Backgroung img "
+        },
+        {
+            "type": "text",
+            "id":"title",
+            "label":"title",
+            "default": "Elevate Your Home Security Without Compromising on Style"
+        },
+        {
+            "type": "inline_richtext",
+            "id":"text",
+            "label": "text",
+            "default": "Unattractive security measures can detract from your home's beauty. Discover how modern design seamlessly integrates aesthetics and safety, proving that protection can be both elegant and effective."
+        }
+    ],
+
+    "presets": [
+        {
+        "name": "Section banner article",
+        "category":"Article page"
+        }
+    ]
+}
+{% endschema %}

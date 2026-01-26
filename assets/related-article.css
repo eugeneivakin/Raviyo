@@ -1,0 +1,166 @@
+.section-related-article {
+    background: #121B22;
+    padding:clamp(60px, 7.29vw, 140px) 0 clamp(64px, 6.25vw, 120px);
+}
+.section-related-article__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:20px;
+    padding:0 clamp(0px, 2.08vw, 40px);
+}
+.section-related-article__wrap .left {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    max-width: 404px;
+}
+.section-related-article__wrap .left__wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.section-related-article__wrap .right {
+    flex:1;
+    overflow: hidden;
+    max-width: 1220px;
+    min-width: 600px;
+}
+
+.section-related-article .label {
+    width: max-content;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.10);
+    padding:16px 24px;
+    margin-bottom: 12px;
+}
+.section-related-article .label p {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.section-related-article .left .title h3 {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-48);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-related-article .text {
+    margin-top:20px;
+}
+.section-related-article .text p {
+    color: #FFF;
+    margin:0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    opacity: 0.8;
+}
+
+.section-related-article .custom-article {
+    height: auto;
+}
+.section-related-article  .swiper-slide {
+    height: auto;
+}
+
+.section-related-article  .swiper-wrapper {
+
+    align-items: stretch !important;
+}
+.section-related-article .swiper-slide__wrap, .section-related-article .custom-article {
+    height: 100%;
+}
+.section-related-article .title h3 {
+    overflow: hidden;
+    color: #FFF;
+    text-overflow: ellipsis;
+    font-family: var(--font-family);
+    font-size: var(--font-size-24);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-related-article .custom-article .expert {
+    margin:16px 0 0 0;
+}
+.section-related-article .custom-article .expert p {
+    color:#FFF;
+    -webkit-line-clamp: 2;
+}
+.section-related-article .custom-article .post-meta {
+    display: none;
+}
+@media (max-width:1023px) {
+    .section-related-article__wrap .left, .section-related-article__wrap .right {
+        flex:1 1 100%;
+        max-width: 100%;
+        min-width: 0px;
+    }
+    .section-related-article__wrap .left, .section-related-article__wrap .left__wrap {
+        display: contents;
+    }
+    .section-related-article__wrap .left .content {
+        order:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        flex: 1;
+    }
+    .section-related-article__wrap .right {
+        order:2;
+    }
+    .section-related-article__wrap .btn__wrap {
+        order:3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top:40px;
+    }
+    .section-related-article__wrap {
+        padding:0;
+    }
+    .section-related-article .text p {
+        text-align: center;
+    }
+}
+
+@media (max-width:640px) {
+    .section-related-article {
+        padding-top:0;
+    }
+    .section-related-article .container{
+        padding:0;
+    }
+    .section-related-article__wrap .left .content,  .section-related-article__wrap .btn__wrap {
+        padding:0 16px;
+    }
+    .section-related-article .custom-article .expert {
+         margin:16px 0px;
+    }
+    .section-related-article .custom-article .expert p {
+        color: #FFF;
+        -webkit-line-clamp: 4;
+    }
+    .section-related-article .custom-article .post-meta {
+        display: flex;
+        margin-top:auto;
+    }
+    .section-related-article .custom-article .post-meta span {
+        color:#FFF;
+    }
+    .section-related-article .text {
+        margin:20px auto  auto;
+        max-width: 300px;
+    }
+}

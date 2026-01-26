@@ -1,0 +1,146 @@
+{%- comment -%}
+------------------------------------------------------------------------------
+	Section: Testimonials Section
+------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- assign section_background = section.settings.section_background | default: '#2F4858' -%}
+{%- assign heading = section.settings.heading -%}
+{%- assign icon_image = section.settings.icon_image -%}
+
+
+
+{{- 'testimonials-section.build.css' | asset_url | stylesheet_tag -}}
+
+<section class="testimonials-section">
+	<div class="testimonials-section__container">
+		<div class="testimonials-section__content">
+			<div class="testimonials-section__header">
+				<div class="testimonials-section__header-content">
+					{%- if heading != blank -%}
+						<h2 class="testimonials-section__heading">
+							{{- heading -}}
+						</h2>
+					{%- endif -%}
+				</div>
+				<div class="testimonials-section__navigation">
+					<div class="swiper-button-prev swiper-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+							<path d="M17.5626 16.0009L10.9629 9.40124L12.8485 7.51562L21.3338 16.0009L12.8485 24.4861L10.9629 22.6005L17.5626 16.0009Z" fill="white"/>
+						</svg>
+					</div>
+  					<div class="swiper-button-next swiper-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+							<path d="M17.5626 16.0009L10.9629 9.40124L12.8485 7.51562L21.3338 16.0009L12.8485 24.4861L10.9629 22.6005L17.5626 16.0009Z" fill="white"/>
+						</svg>
+					</div>
+				</div>
+			</div>
+
+			{%- if section.blocks.size > 0 -%}
+				<custom-slider class="swiper" data-index="3" data-pagination="true">
+					<div class="swiper-wrapper">
+						{% for block in section.blocks  %}
+								<div class="swiper-slide">
+									<div class="swiper-slide__wrap">
+										<div class="item">
+											<div class="text">
+												<p>
+													{{ block.settings.text }}
+												</p>
+											</div>
+											<div class="author">
+												{% if  block.settings.img  != blank %}
+													<div class="image">
+														<div class="image__wrap">
+															<img src="{{ block.settings.img |  image_url: width:block.settings.img.width  }}" alt="{{ block.settings.img.alt }}">
+														</div>
+													</div>
+												{% endif %}
+												<p>
+													{{ block.settings.author_name }}
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+						{% endfor %}
+					</div>
+				</custom-slider>
+			{%- endif -%}
+		</div>
+	</div>
+</section>
+
+
+
+{%- schema -%}
+{
+	"name": "Testimonials Section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "What Families and Professionals Say"
+		},
+		{
+			"type": "header",
+			"content": "Spacing"
+		},
+
+	],
+	"blocks": [
+		{
+			"type": "testimonial",
+			"name": "Testimonial",
+			"settings": [
+				{
+					"type":"inline_richtext",
+					"id": "text",
+					"label": "Text",
+					"default": "“Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”"
+				},
+				{
+					"type": "text",
+					"id": "author_name",
+					"label": "Author name",
+					"default": "— Author name"
+				},
+				{
+					"type": "image_picker",
+					"id": "img",
+					"label": "Author image",
+					"info": "80 x 80px recommended"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Testimonials Section",
+			"settings": {},
+			"blocks": [
+				{
+					"type": "testimonial",
+					"settings": {
+						"text": "Finally, a safety solution that doesn't look like a child lock. It blends perfectly into our home.",
+						"author_name": "— Sarah, mother of two"
+					}
+				},
+				{
+					"type": "testimonial",
+					"settings": {
+						"text": "As a care home manager, Raviyo gives us peace of mind knowing residents are safe without making life harder for staff.",
+						"author_name": "— Mark, UK care facility"
+					}
+				}
+			]
+		}
+	]
+}
+{%- endschema -%}
+

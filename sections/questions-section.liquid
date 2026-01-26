@@ -1,0 +1,294 @@
+{%- comment -%}
+	------------------------------------------------------------------------------
+	Section: Questions We Know You're Asking
+	------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{{- 'questions-section.build.css' | asset_url | stylesheet_tag -}}
+
+
+{%- assign heading = section.settings.heading -%}
+{%- assign description = section.settings.description -%}
+{%- assign button_label = section.settings.button_label -%}
+{%- assign button_link = section.settings.button_link -%}
+{%- assign blocks = section.blocks -%}
+
+<section class="questions-section" data-section-id="{{- section.id -}}">
+	<div class="container">
+		<div class="questions-section__container">
+			<div class="questions-section__left">
+				<h2 class="questions-section__heading">
+					{{- heading -}}
+				</h2>
+				
+				<div class="questions-section__info">
+					<p class="questions-section__description">
+						{{- description -}}
+					</p>
+					
+					{%- if button_label != blank and button_link != blank -%}
+						<div class="btn__wrap">
+							<a  href="{{- button_link -}}" class="btn btn-secondary">
+								<span>
+									{{- button_label -}}
+								</span>
+								
+								<div class="svg-wrap">
+									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_7556_121)">
+											<path d="M19.4884 9.63037C19.4884 9.4094 19.4006 9.19749 19.2444 9.04124C19.0881 8.88499 18.8762 8.7972 18.6552 8.79717L11.9884 8.79717C11.8778 8.79524 11.7679 8.81537 11.6651 8.85638C11.5623 8.89739 11.4687 8.95846 11.3898 9.03602C11.3109 9.11358 11.2482 9.20608 11.2054 9.30813C11.1626 9.41017 11.1406 9.51972 11.1406 9.63037C11.1406 9.74103 11.1626 9.85057 11.2054 9.95262C11.2482 10.0547 11.3109 10.1472 11.3898 10.2247C11.4687 10.3023 11.5623 10.3634 11.6651 10.4044C11.7679 10.4454 11.8778 10.4655 11.9884 10.4636L16.6435 10.4636L8.84001 18.2671C8.68373 18.4234 8.59593 18.6353 8.59593 18.8563C8.59593 19.0774 8.68373 19.2893 8.84001 19.4456C8.99629 19.6019 9.20825 19.6897 9.42926 19.6897C9.65028 19.6897 9.86224 19.6019 10.0185 19.4456L17.822 11.6421L17.822 16.2972C17.8258 16.5157 17.9153 16.7239 18.0711 16.8771C18.227 17.0302 18.4367 17.1161 18.6552 17.1161C18.8737 17.1161 19.0835 17.0302 19.2394 16.8771C19.3952 16.7239 19.4846 16.5157 19.4884 16.2972L19.4884 9.63037Z" fill="#2F4858"/>
+										</g>
+										<defs>
+										<clipPath id="clip0_7556_121">
+											<rect width="20" height="20" fill="white" transform="translate(14.1426) rotate(45)"/>
+										</clipPath>
+										</defs>
+									</svg>
+
+								</div>
+							</a>
+						</div>
+					{%- endif -%}
+				</div>
+			</div>
+			
+			<div class="questions-section__right">
+				<div class="questions-section__list">
+					{%- for block in blocks -%}
+						{%- if block.type == 'question' -%}
+							{%- assign question_text = block.settings.question -%}
+							{%- assign answer_text = block.settings.answer -%}
+							
+							{%- if question_text != blank -%}
+								<div class="questions-section__item" {{ block.shopify_attributes }}>
+									<h3 class="questions-section__item-title">
+										<button
+											type="button"
+											class="questions-section__item-control js-question-toggle"
+											data-target="content-{{- block.id -}}"
+											aria-controls="content-{{- block.id -}}"
+											aria-expanded="false"
+										>
+											<span class="questions-section__item-question">
+												{{- question_text -}}
+											</span>
+											<span class="questions-section__item-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+													<path d="M18 9V27" stroke="#2F4858" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M9 18H27" stroke="#2F4858" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+											</span>
+										</button>
+									</h3>
+									
+									{%- if answer_text != blank -%}
+										<div
+											id="content-{{- block.id -}}"
+											class="questions-section__item-content js-question-content"
+											style="display: none;"
+											role="region"
+											aria-labelledby="control-{{- block.id -}}"
+										>
+											<div class="questions-section__item-inner section-rte">
+												{{- answer_text -}}
+											</div>
+										</div>
+									{%- endif -%}
+								</div>
+							{%- endif -%}
+						{%- endif -%}
+					{%- endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	(function() {
+		// Load jQuery if not available
+		if (typeof jQuery === 'undefined') {
+			var script = document.createElement('script');
+			script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+			script.integrity = 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=';
+			script.crossOrigin = 'anonymous';
+			document.head.appendChild(script);
+		}
+
+		function initQuestionsAccordion() {
+			// Wait for jQuery if loading
+			if (typeof jQuery === 'undefined') {
+				var checkJQuery = setInterval(function() {
+					if (typeof jQuery !== 'undefined') {
+						clearInterval(checkJQuery);
+						initQuestionsAccordion();
+					}
+				}, 50);
+				return;
+			}
+
+			var $questionsSection = $('#shopify-section-{{- section.id -}}');
+			if ($questionsSection.length === 0) return;
+
+			$questionsSection.find('.js-question-toggle').off('click').on('click', function(e) {
+				e.preventDefault();
+				var $button = jQuery(this);
+				var targetId = $button.data('target');
+				var $content = $questionsSection.find('#' + targetId);
+				var $item = $button.closest('.questions-section__item');
+				
+				if ($content.length === 0) return;
+
+				// Toggle content with slideToggle
+				$content.stop(true, true).slideToggle(300, function() {
+					var isExpanded = $content.is(':visible');
+					$button.attr('aria-expanded', isExpanded);
+					$item.toggleClass('is-active', isExpanded);
+				});
+			});
+		}
+
+		// Initialize when DOM and jQuery are ready
+		function initWhenReady() {
+			if (typeof jQuery !== 'undefined') {
+				jQuery(document).ready(function() {
+					initQuestionsAccordion();
+				});
+			} else {
+				setTimeout(initWhenReady, 50);
+			}
+		}
+
+		initWhenReady();
+
+		// Reinitialize when section is loaded in theme editor
+		if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+			document.addEventListener('shopify:section:load', function(event) {
+				if (event.detail.sectionId === '{{- section.id -}}') {
+					setTimeout(function() {
+						if (typeof jQuery !== 'undefined') {
+							initQuestionsAccordion();
+						}
+					}, 100);
+				}
+			});
+
+			document.addEventListener('shopify:section:reorder', function(event) {
+				if (event.detail.sectionId === '{{- section.id -}}') {
+					setTimeout(function() {
+						if (typeof jQuery !== 'undefined') {
+							initQuestionsAccordion();
+						}
+					}, 100);
+				}
+			});
+
+			document.addEventListener('shopify:block:select', function(event) {
+				if (event.detail.sectionId === '{{- section.id -}}') {
+					setTimeout(function() {
+						if (typeof jQuery !== 'undefined') {
+							initQuestionsAccordion();
+						}
+					}, 100);
+				}
+			});
+		}
+	})();
+</script>
+
+{%- schema -%}
+{
+	"name": "Questions Section",
+	"settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "Questions We Know You're Asking"
+		},
+		{
+			"type": "textarea",
+			"id": "description",
+			"label": "Description",
+			"default": "Have more questions? Get in touch with us — we'll be happy to provide the answers you need."
+		},
+		{
+			"type": "text",
+			"id": "button_label",
+			"label": "Button label",
+			"default": "Contact us"
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "Button link"
+		},
+		{
+			"type": "header",
+			"content": "Layout"
+		},
+		
+	],
+	"blocks": [
+		{
+			"type": "question",
+			"name": "Question",
+			"settings": [
+				{
+					"type": "text",
+					"id": "question",
+					"label": "Question text"
+				},
+				{
+					"type": "richtext",
+					"id": "answer",
+					"label": "Answer text"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Questions Section",
+			"blocks": [
+				{
+					"type": "question",
+					"settings": {
+						"question": "How is Raviyo different from a regular lock?",
+						"answer": "<p>Raviyo is an innovative smart lock system that offers advanced security features and remote control capabilities, setting it apart from traditional locks.</p>"
+					}
+				},
+				{
+					"type": "question",
+					"settings": {
+						"question": "Can I install it myself?",
+						"answer": "<p>Yes, Raviyo is designed for easy DIY installation with step-by-step instructions included in every package.</p>"
+					}
+				},
+				{
+					"type": "question",
+					"settings": {
+						"question": "Does it work with my door?",
+						"answer": "<p>Raviyo is compatible with most standard doors. Please check our compatibility guide or contact our support team for specific door types.</p>"
+					}
+				},
+				{
+					"type": "question",
+					"settings": {
+						"question": "How is this handle safer than a regular door handle?",
+						"answer": "<p>Raviyo includes multiple layers of security including encryption, tamper detection, and real-time alerts to your smartphone, making it significantly more secure than traditional door handles.</p>"
+					}
+				},
+				{
+					"type": "question",
+					"settings": {
+						"question": "What if I don't need the protection?",
+						"answer": "<p>Even without the advanced security features enabled, Raviyo still functions as a premium door handle with enhanced durability and modern design.</p>"
+					}
+				}
+			]
+		}
+	]
+}
+{%- endschema -%}
+

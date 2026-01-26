@@ -1,0 +1,49 @@
+{{- 'section-images.css' | asset_url | stylesheet_tag -}}
+
+<div class="section-images">
+    <div class="container">
+        <div class="section-images__wrap">
+            {% if  section.settings.img1 != blank %}
+                <div class="image">
+                    <div class="image__wrap">
+                        <img src="{{ section.settings.img1 | image_url: width: section.settings.img1.width }}" alt="{{ section.settings.img1.alt}}">
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.img2 != blank %}
+                <div class="image">
+                    <div class="image__wrap">
+                        <img src="{{ section.settings.img2 | image_url: width: section.settings.img2.width }}" alt="{{ section.settings.img2.alt }}">
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main image",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    
+    {
+      "type": "image_picker",
+      "id": "img1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "img2",
+      "label": "Image 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main image"
+    }
+  ]
+}
+{% endschema %}

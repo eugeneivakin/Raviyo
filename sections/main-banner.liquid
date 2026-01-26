@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="{{ 'main-banner-container.css' | asset_url }}">
+
+<div class="main-banner">
+  <div class="container">
+    <div class="main-banner__wrapper">
+      {% if section.settings.image != blank %}
+        <div class="image">
+          <div class="image__wrap">
+             <picture>
+              {% if  section.settings.image_mobile != blank %}
+                <source srcset="{{ section.settings.image_mobile |  image_url: width: section.settings.image_mobile.width  }}" media="(max-width: 700px)" />
+              {% endif %}
+                <img src="{{ section.settings.image |  image_url: width: section.settings.image.width  }}" alt="{{ section.settings.image.alt }}">
+            </picture>
+          </div>
+        </div>
+      {% endif %}
+      {% if  section.settings.title != blank %}
+        <animation-text>
+          {% assign words =  section.settings.title |  split: " " %} 
+          <h2>
+            {% for word in words %}
+              {% assign letters =  word |  split: ""%}
+              <div class="animation-word">
+                {% for letter in letters %}
+                  <span class="animation-letter">{{ letter }}</span>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </h2>
+        </animation-text>
+      {% endif %}
+      <div class="content">
+        <div class="content__wrap">
+          {% if  section.settings.description != blank %}
+            <div class="text">
+              <p>
+                {{ section.settings.description }}
+              </p>
+            </div>
+          {% endif %}
+          {% if  section.settings.url != blank and section.settings.btn_name != blank%}
+              <div class="btn__wrap">
+                    <a  href="{{ section.settings.url }}" class="btn">
+                        <span>
+                            {{ section.settings.btn_name}}
+                        </span>
+                        
+                        <div class="svg-wrap">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_7556_121)">
+                                    <path d="M19.4884 9.63037C19.4884 9.4094 19.4006 9.19749 19.2444 9.04124C19.0881 8.88499 18.8762 8.7972 18.6552 8.79717L11.9884 8.79717C11.8778 8.79524 11.7679 8.81537 11.6651 8.85638C11.5623 8.89739 11.4687 8.95846 11.3898 9.03602C11.3109 9.11358 11.2482 9.20608 11.2054 9.30813C11.1626 9.41017 11.1406 9.51972 11.1406 9.63037C11.1406 9.74103 11.1626 9.85057 11.2054 9.95262C11.2482 10.0547 11.3109 10.1472 11.3898 10.2247C11.4687 10.3023 11.5623 10.3634 11.6651 10.4044C11.7679 10.4454 11.8778 10.4655 11.9884 10.4636L16.6435 10.4636L8.84001 18.2671C8.68373 18.4234 8.59593 18.6353 8.59593 18.8563C8.59593 19.0774 8.68373 19.2893 8.84001 19.4456C8.99629 19.6019 9.20825 19.6897 9.42926 19.6897C9.65028 19.6897 9.86224 19.6019 10.0185 19.4456L17.822 11.6421L17.822 16.2972C17.8258 16.5157 17.9153 16.7239 18.0711 16.8771C18.227 17.0302 18.4367 17.1161 18.6552 17.1161C18.8737 17.1161 19.0835 17.0302 19.2394 16.8771C19.3952 16.7239 19.4846 16.5157 19.4884 16.2972L19.4884 9.63037Z" fill="#2F4858"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_7556_121">
+                                    <rect width="20" height="20" fill="white" transform="translate(14.1426) rotate(45)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                    </a>
+              </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "And there's more..."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "And there's more..."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "text",
+      "id":"btn_name",
+      "label":"button name",
+      "default": "Join the Waitlist"
+    },
+    {
+        "type": "url",
+        "label": "url",
+        "id":"url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Banner"
+    }
+  ]
+}
+{% endschema %}

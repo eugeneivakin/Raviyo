@@ -1,0 +1,372 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faq-page-template": {
+      "type": "faq-page-template",
+      "blocks": {
+        "category-0": {
+          "type": "category",
+          "settings": {
+            "heading": "Handle features"
+          }
+        },
+        "faq-0": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How is this handle safer than a regular door handle?",
+            "text": "<p>The handle is much safer than a regular door handle. It incorporates patented mechanisms within it that provides safety and security features not found in regular handles.</p>"
+          }
+        },
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can children still figure out how to use the handle over time?",
+            "text": "<p>Children can be quick learners and if they observe adults, yes, they can eventually figure out how to use it. However, features like the tension adjustment should mean that they don’t have the physical strength to operate the key Thumb Slide safety mechanism.</p>"
+          }
+        },
+        "faq_item_QRCKYM": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does the handle help to prevent people from breaking in?",
+            "text": "<p>Yes. Common methods for break-ins are breaking of the external door plate revealing the Eurocylinder for snapping, or accessing the door handle through the letterbox. Features of the handle, such as the patented Thumb Turn mechanism and curved door plate profile can help prevent a successful break in.</p>"
+          }
+        },
+        "faq_item_X4CgKz": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can I still open the door quickly in an emergency?",
+            "text": "<p>Yes. Given the Eurocylinder is operated by the patented Thumb Turn mechanism, there is no requirement to lock the handle with the key. In an emergency, there is no risk of needing to unlock using the key; instead, the Thumb Turn can be easily rotated and handle operated to open the door.</p>"
+          }
+        },
+        "faq_item_DNqpNL": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is the handle complicated to use?",
+            "text": "<p>No. Whilst it has new patented mechanisms, the form of the handle remains exactly as a regular handle. The features are all located at intuitive positions, and the handle can be operated with a single hand, just as a regular handle.</p>"
+          }
+        },
+        "faq_item_PdGVxd": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Will the handle work for elderly people or those with arthritis?",
+            "text": "<p>Yes. We appreciate that the elderly, especially those with arthritis, can find it painful to perform certain actions. Depressing the handle to open the door involves the exact same movement as a regular handle. The Tension setting of the Thumb Slide (which is conveniently located on the from face) can be set to minimum meaning their is minimal effort required for the pre-step of activating the Thumb Slide.</p>"
+          }
+        },
+        "faq_item_wAUYhh": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What if I have lots of people around and the safety mechanisms become to cumbersome for lots of entering and exiting?",
+            "text": "<p>The handle includes an Active Lock feature that is easily activated using the index finger. This feature enables the patented internal mechanisms to be held in place, effectively transforming the handle into a regular handle. This means, for people to open the door, the Thumb Slide does not need to be slid across before depressing the handle. Deactivating the Active Lock is simple, and re-enable all safety and security mechanisms.</p>"
+          }
+        },
+        "faq_item_dW6MqH": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does the handle come in different finishes or colours?",
+            "text": "<p>Yes, the handle will be available in different colours and finishes including white gloss, chrome, and brass effect.</p>"
+          }
+        },
+        "faq_item_TgC94K": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I choose between the Basic and Premium versions of the handle?",
+            "text": "<p>This is down to personal preference. The Basic handle incorporates the patented key Thumb Slide mechanism so this will provide the safety and security to prevent children and vulnerable adults from operating the handle to open the door. The Premium handle incorporates all the other mechanisms proving total peace of mind for your loved ones.</p>"
+          }
+        },
+        "faq_item_xYpQ6N": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What makes it better than door chains or surface latches?",
+            "text": "<p>Door chains are fairly rudimentary and can still break with enough force – either with a link bending open, or the frame fixing ripping away. Surface latches can also be broken past with enough force. Plus they are fairly unsightly. Our handle encloses all features away within the handle, and crucially holds the door firmly in place. This greatly decreases the possibility of someone breaking past.</p>"
+          }
+        },
+        "faq_item_aQqCaj": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does the handle still work for engaging the multipoint locking mechanism in most composite and uPVC doors?",
+            "text": "<p>Yes. During installation of the handle, a small cam is inserted within the handle. The orientation of the cam will allow the handle to operate the multipoint locking mechanism for either left-hand or right-hand doors. All installation details are provided in the contained instructions</p>"
+          }
+        },
+        "category-1": {
+          "type": "category",
+          "settings": {
+            "heading": "Installation & Maintenance"
+          }
+        },
+        "faq_item_HjEtNa": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "",
+            "text": ""
+          }
+        },
+        "faq_item_Uh6aN3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How can I check if the handle is compatible with my door?",
+            "text": "<p>The door handle mechanisms have been designed to be compatible with all current multipoint locking formats. You will however need to ensure you order the correct Door Plate version that matches your handle, screw holes, and Eurocylinder configurations as these vary between door manufacturers. Please see here on how to identify the version you need, and the models we currently have on offer.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does the handle require any routine maintenance?",
+            "text": "<p>No, there are no requirements for any special ongoing maintenance. Simply keep the surfaces clean with any household cleaner suitable for the surface finish you have selected.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is any drilling or modification to the door required?",
+            "text": "<p>No alteration is required to the door in order to install the handle. However, doors are manufactured with different configurations for the handle screw holes, Eurocylinder placement, and location of the latch spindle and hence you need to ensure you buy the correct handle configuration that matches your door lock configuration. Please see here on how to identify the version you need, and the models we currently have on offer.</p>"
+          }
+        },
+        "faq_item_9KqDTX": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Does it fit composite, uPVC, timber, or metal doors?",
+            "text": "<p>The handle has been designed to be used wherever similar regular door handles are traditionally used. This can cover composite, uPVC, timber and metal doors. Please see here for further details on selecting the correct version for your door.</p>"
+          }
+        },
+        "faq_item_Pk8zPH": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What door thickness does it support?",
+            "text": "<p>The handle is suitable for doors up to 100mm thick</p>"
+          }
+        },
+        "faq_item_G87pzK": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I know which door plate configuration version I need?",
+            "text": "<p>Doors are manufactured with different configurations for the handle screw holes, Eurocylinder placement, and location of the latch spindle. You thus need to ensure you buy the correct handle configuration that matches your door lock configuration. Please see here on how to identify the version you need, and the models we currently have on offer.</p>"
+          }
+        },
+        "faq_item_9kbdfY": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What tools do I need for installation?",
+            "text": "<p>Installation requires a cross or Phillips screwdriver. No additional tools are required.</p>"
+          }
+        },
+        "faq_item_KDaX9Q": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can the tension control be adjusted after fitting?",
+            "text": "<p>Yes, the Tension adjustment can be adjusted at any time, both before or after installation. A small flat screwdriver is required to adjust the adjustment screw at the tip of the handle.</p>"
+          }
+        },
+        "faq_item_cUfzGX": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can I install it on double doors or French doors?",
+            "text": "<p>The handle has been designed for doors that can be closed into a fixed frame. Given for French doors, both doors can be opened simultaneously, we would not recommend installing our handle in this scenario.</p>"
+          }
+        },
+        "faq_item_QBpVnx": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What happens if I want to remove it later — will it leave marks or damage?",
+            "text": "<p>The handle can be removed at any point and replaced with any other door handle. Given installation does not require any alterations to the door, there should be no marks or damage to the door upon removal of our door handle.</p>"
+          }
+        },
+        "faq_item_bKi6et": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can I install this if I’m renting my home?",
+            "text": "<p>Yes, the handle can be installed where the home is being rented. It may be worth contacting the landlord beforehand to ensure they are happy for you to install the new handle.</p>"
+          }
+        },
+        "category_RBcbLX": {
+          "type": "category",
+          "settings": {
+            "heading": "Sales and Aftercare"
+          }
+        },
+        "faq_item_3GbMhi": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Do you offer bulk pricing or trade discounts?",
+            "text": "<p>Yes, trade discounts are certainly available. Please contact us via our Contact Us form to discuss further.</p>"
+          }
+        },
+        "faq_item_kNkGq8": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is the handle covered by a warranty?",
+            "text": "<p>aaa</p>"
+          }
+        },
+        "faq_item_wmnzjR": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Do you ship internationally?",
+            "text": "<p>Yes, we can ship internationally. Please specify your address in the order form and shipment will be calculated there. Note that our prices do not cover any local taxes or fees that may be applicable to you receiving the product at your final destination; these must be paid by yourself.</p>"
+          }
+        },
+        "faq_item_CreDXr": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What is your returns policy?",
+            "text": "<p>aaa</p>"
+          }
+        },
+        "faq_item_nAkkjf": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is there a user guide or installation manual?",
+            "text": "<p>Yes. The handle comes with full instructions that include pre-checks, removal of your current handle, configuration of our handle if required, installation of the handle, and details of how to use all of the features.</p>"
+          }
+        },
+        "faq_item_zmzCFh": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can I get help choosing the right version for my door?",
+            "text": "<p>Yes, we can certainly help here. We would recommend first reviewing the details on the Installation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category-0",
+        "faq-0",
+        "faq-1",
+        "faq_item_QRCKYM",
+        "faq_item_X4CgKz",
+        "faq_item_DNqpNL",
+        "faq_item_PdGVxd",
+        "faq_item_wAUYhh",
+        "faq_item_dW6MqH",
+        "faq_item_TgC94K",
+        "faq_item_xYpQ6N",
+        "faq_item_aQqCaj",
+        "category-1",
+        "faq_item_HjEtNa",
+        "faq_item_Uh6aN3",
+        "faq-2",
+        "faq-3",
+        "faq_item_9KqDTX",
+        "faq_item_Pk8zPH",
+        "faq_item_G87pzK",
+        "faq_item_9kbdfY",
+        "faq_item_KDaX9Q",
+        "faq_item_cUfzGX",
+        "faq_item_QBpVnx",
+        "faq_item_bKi6et",
+        "category_RBcbLX",
+        "faq_item_3GbMhi",
+        "faq_item_kNkGq8",
+        "faq_item_wmnzjR",
+        "faq_item_CreDXr",
+        "faq_item_nAkkjf",
+        "faq_item_zmzCFh"
+      ],
+      "settings": {
+        "label": "",
+        "heading": "FAQs",
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "blocks": {
+        "benefits_item-0": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Protect the vulnerable",
+            "text": "Prevents unintended exit of children, the elderly, and at-risk adults",
+            "image": "shopify://shop_images/noun-shield-7617028-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        },
+        "benefits_item-1": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "Security without barriers",
+            "text": "Stops break-in attempts whilst still allowing safe, easy exit",
+            "image": "shopify://shop_images/noun-padlock-7416645-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        },
+        "benefits_item-2": {
+          "type": "benefits_item",
+          "settings": {
+            "heading": "For homes and buildings",
+            "text": "Designed for families, nurseries, care facilities, and hotels",
+            "image": "shopify://shop_images/noun-residential-area-7614356-ebb000.png",
+            "block_link": "",
+            "button_aria": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefits_item-0",
+        "benefits_item-1",
+        "benefits_item-2"
+      ],
+      "settings": {
+        "section_background": "#ffffff",
+        "heading_color": "#2f4858",
+        "text_color": "#677987",
+        "border_color": "#e6e6e6",
+        "outline_color": "#d2d2d2",
+        "full_width": true,
+        "show_borders": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "full_width": true,
+        "layout": "one_column",
+        "heading": "",
+        "subheading": "Keep in touch",
+        "success_message": "Thanks for subscribing",
+        "text": "<p>Be the first to know about production progress and exclusive offers</p>",
+        "image_position": "left",
+        "email_placeholder": "Your email",
+        "button_aria_label": "Submit",
+        "section_background": "#EBB000",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "content_color": "#ffffff",
+        "input_label_color": "#ffffff",
+        "input_color": "#ffffff",
+        "input_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "faq-page-template",
+    "benefits",
+    "newsletter"
+  ]
+}

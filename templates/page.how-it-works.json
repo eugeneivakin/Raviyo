@@ -1,0 +1,395 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "default-page": {
+      "type": "default-page-template",
+      "disabled": true,
+      "settings": {
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    },
+    "banner_JpqW8y": {
+      "type": "banner",
+      "blocks": {
+        "full_width_3XYW7N": {
+          "type": "full_width",
+          "settings": {
+            "desktop_image_height": "600px",
+            "mobile_image_height": "350px",
+            "media_type": "image",
+            "label": "Thumb Slide",
+            "heading": "Just one additional step that makes a big difference",
+            "text": "<p>To open the door, simply push the ergonically placed Thumb Slide across before turning the handle. </p><p>If you don't, the door remains shut, no matter who tries, whether from inside, or sneakily through the letterbox.</p>",
+            "button_text": "",
+            "button_url": "/",
+            "button_aria": "Button label",
+            "make_link_full_media": false,
+            "overlay_opacity": 30,
+            "overlay_color": "#000000",
+            "image_desktop": "shopify://shop_images/ghost_1_v2.png",
+            "image_border_width": 0,
+            "image_border_indent_desktop": 10,
+            "image_border_indent_mobile": 10,
+            "enable_lazy_load": true,
+            "external_video_url_desktop": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "external_video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "content_alignment": "right",
+            "content_alignment_mobile": "center",
+            "block_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "full_width_3XYW7N"
+      ],
+      "name": "Banner",
+      "settings": {
+        "section_background": "#2f4858",
+        "label_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "link_color": "#d33636",
+        "button_background": "#ffffff",
+        "button_color": "#000000",
+        "button_border": "#ffffff",
+        "button_background_hover": "#000000",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#ffffff",
+        "image_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "banner_KjmTi9": {
+      "type": "banner",
+      "blocks": {
+        "full_width_4EWNtM": {
+          "type": "full_width",
+          "settings": {
+            "desktop_image_height": "600px",
+            "mobile_image_height": "350px",
+            "media_type": "image",
+            "label": "Tension Adjustment",
+            "heading": "Easy adjustment that allows you to tailor as life progresses",
+            "text": "<p>If your little people get inquisitive and aware, keep the protection in place by increasing the Tension Adjustment. This increases the strength required to push the Thumb Slide, meaning they can mimic all they like, the door won't budge.</p>",
+            "button_text": "",
+            "button_url": "/",
+            "button_aria": "",
+            "make_link_full_media": false,
+            "overlay_opacity": 30,
+            "overlay_color": "#000000",
+            "image_desktop": "shopify://shop_images/ghost_2_v3.png",
+            "image_border_width": 0,
+            "image_border_indent_desktop": 0,
+            "image_border_indent_mobile": 10,
+            "enable_lazy_load": true,
+            "external_video_url_desktop": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "external_video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "content_alignment": "left",
+            "content_alignment_mobile": "center",
+            "block_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "full_width_4EWNtM"
+      ],
+      "name": "Banner",
+      "settings": {
+        "section_background": "#2f4858",
+        "label_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "link_color": "#d33636",
+        "button_background": "#ffffff",
+        "button_color": "#000000",
+        "button_border": "#ffffff",
+        "button_background_hover": "#000000",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#ffffff",
+        "image_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "full_width": false,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "banner_FnntM4": {
+      "type": "banner",
+      "blocks": {
+        "full_width_7RP3T8": {
+          "type": "full_width",
+          "settings": {
+            "desktop_image_height": "600px",
+            "mobile_image_height": "350px",
+            "media_type": "image",
+            "label": "Active Lock",
+            "heading": "And when your plans requires it, make life simple again",
+            "text": "<p>Parties, workers, or the kids are away... there will always be a time when the extra security isn't required. Use the Active Lock to disengage the measures. </p><p>And simply click back when needed. All this with one single hand.</p>",
+            "button_text": "",
+            "button_url": "/",
+            "button_aria": "",
+            "make_link_full_media": false,
+            "overlay_opacity": 30,
+            "overlay_color": "#000000",
+            "image_desktop": "shopify://shop_images/ghost_3_v3.png",
+            "image_border_width": 0,
+            "image_border_indent_desktop": 10,
+            "image_border_indent_mobile": 10,
+            "enable_lazy_load": true,
+            "external_video_url_desktop": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "external_video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "content_alignment": "right",
+            "content_alignment_mobile": "center",
+            "block_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "full_width_7RP3T8"
+      ],
+      "name": "Banner",
+      "settings": {
+        "section_background": "#2f4858",
+        "label_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "link_color": "#d33636",
+        "button_background": "#ffffff",
+        "button_color": "#000000",
+        "button_border": "#ffffff",
+        "button_background_hover": "#000000",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#ffffff",
+        "image_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "full_width": false,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "banner_64et6M": {
+      "type": "banner",
+      "blocks": {
+        "full_width_dKbCtX": {
+          "type": "full_width",
+          "settings": {
+            "desktop_image_height": "600px",
+            "mobile_image_height": "350px",
+            "media_type": "image",
+            "label": "Thumb Turn",
+            "heading": "Finally, a patented Thumb Turn to ensure no break-ins or sneaky exits",
+            "text": "<p>Fully rotating a traditional thumb turn will disengage the deadbolt and door latch, opening the door. That's why so many lock with a key. </p><p>Rotating our patented Thumb Turn unlocks the deadbolt, but the door latch remains untouched meaning your door always stays closed.</p>",
+            "button_text": "",
+            "button_url": "/",
+            "button_aria": "Button label",
+            "make_link_full_media": false,
+            "overlay_opacity": 30,
+            "overlay_color": "#000000",
+            "image_desktop": "shopify://shop_images/ghost_4_1.png",
+            "image_border_width": 0,
+            "image_border_indent_desktop": 10,
+            "image_border_indent_mobile": 10,
+            "enable_lazy_load": true,
+            "external_video_url_desktop": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "external_video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "content_alignment": "left",
+            "content_alignment_mobile": "center",
+            "block_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "full_width_dKbCtX"
+      ],
+      "name": "Banner",
+      "settings": {
+        "section_background": "#2f4858",
+        "label_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "link_color": "#d33636",
+        "button_background": "#ffffff",
+        "button_color": "#000000",
+        "button_border": "#ffffff",
+        "button_background_hover": "#000000",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#ffffff",
+        "image_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "full_width": false,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "cards_grid_Jyfkay": {
+      "type": "cards-grid",
+      "blocks": {
+        "card_aaHkFV": {
+          "type": "card",
+          "settings": {
+            "title": "Manufactured from a superb alloy material",
+            "text": "<p>It is constructed of a zinc and aluminium alloy renowned for its mechanical properties and corrosion resistance.</p>",
+            "link_url": ""
+          }
+        },
+        "card_cfGwVY": {
+          "type": "card",
+          "settings": {
+            "title": "Configure for left and right-hand doors",
+            "text": "<p>It can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set.</p>",
+            "link_url": ""
+          }
+        },
+        "card_aJPyja": {
+          "type": "card",
+          "settings": {
+            "title": "Works with all doors using a Eurocylinder lock",
+            "text": "<p>It is compatible with all doors with a Eurocylinder lock configuration. Follow our quick guide here on selecting the version you need.</p>",
+            "link_url": ""
+          }
+        },
+        "card_ybDgpV": {
+          "type": "card",
+          "settings": {
+            "title": "Still easily engage the door's Multipoint lock",
+            "text": "<p>It works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way.</p>",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_aaHkFV",
+        "card_cfGwVY",
+        "card_aJPyja",
+        "card_ybDgpV"
+      ],
+      "name": "Cards grid",
+      "settings": {
+        "subtitle": "",
+        "title": "And there's more",
+        "text": "",
+        "cards_per_row": "4",
+        "aspect_ratio": "landscape",
+        "center_cards_on_desktop": false,
+        "full_width": false,
+        "offset_top_desktop": 50,
+        "offset_bottom_desktop": 50,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "our_team_fpD4Re": {
+      "type": "our-team",
+      "blocks": {
+        "card_zDMDt3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/noun-shield-7617028-2f4858.png",
+            "name": "1. Remove your current handle",
+            "role": "Unscrew the two bolts on your current handle. This should allow you to remove both sides of the handle."
+          }
+        },
+        "card_AYABVe": {
+          "type": "card",
+          "settings": {
+            "name": "2. Configure your new handle",
+            "role": "Ensure the handle has the correct left or right configuration. Insert the cam on the square lock rod."
+          }
+        },
+        "card_XQPadF": {
+          "type": "card",
+          "settings": {
+            "name": "3. Fix the new handle into place",
+            "role": "Place both sides of the new handle on the door faces ensuring the square lock rod is correctly aligned. Screw in the handle bolts"
+          }
+        },
+        "card_kRdbVc": {
+          "type": "card",
+          "settings": {
+            "name": "4. Test and adjust",
+            "role": "Test the different features to ensure they all work as expected. Adjust the tension setting to your requirements. And you're done!"
+          }
+        }
+      },
+      "block_order": [
+        "card_zDMDt3",
+        "card_AYABVe",
+        "card_XQPadF",
+        "card_kRdbVc"
+      ],
+      "name": "Our team",
+      "settings": {
+        "heading": "Installation in 4 steps",
+        "label": "",
+        "image_crop": "center",
+        "cards_alignment": "flex-start",
+        "show_border": true,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "default-page",
+    "banner_JpqW8y",
+    "banner_KjmTi9",
+    "banner_FnntM4",
+    "banner_64et6M",
+    "cards_grid_Jyfkay",
+    "our_team_fpD4Re"
+  ]
+}

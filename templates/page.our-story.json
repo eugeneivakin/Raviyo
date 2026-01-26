@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner-with-text": {
+      "type": "banner-with-text",
+      "settings": {
+        "label": "Label",
+        "heading": "Banner with text",
+        "text_content": "<p>Give customers details about the banner image or content on the banner.</p>",
+        "content_alignment": "center",
+        "image_border_width": 0,
+        "image_border_indent_desktop": 30,
+        "image_border_indent_mobile": 16,
+        "is_lazy": true,
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "image_border_color": "#ffffff",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "image-with-text-first": {
+      "type": "image-with-text",
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "heading": "Our Story",
+        "subheading": "Innovation Born from a Parent’s Concern",
+        "text_content": "<p>It all started with a simple home improvement. We replaced our old timber front door with a modern composite one, not realizing that this small change would expose a major safety risk. Unlike the old door, which had a nightlatch placed out of reach, the new door had a standard waist-height handle—easily accessible to little hands.<br/><br/>One day, to our shock, we found our young daughter outside on the driveway. She had simply hung onto the handle, opened the door, and wandered out. The thought of what could have happened sent chills down our spine. We needed a solution—fast.<br/><br/>Traditional fixes like door chains looked unsightly and could trap tiny fingers. Deadlocking with a key wasn’t an option either—what if we needed to exit quickly in an emergency? Nothing on the market provided the safety we needed while keeping the door easy to use.<br/><br/>That’s when I, Rajesh, took matters into my own hands. I taught myself CAD design and started developing a new kind of door handle—one that would prevent accidental escapes while allowing a fast exit when needed. After countless prototypes and 3D-printed models, the concept finally took shape.<br/><br/>Security experts, including Secured by Design, validated the idea, and along the way, I realized this wasn’t just a solution for parents. Nurseries, care homes, and even local authorities could use this innovation to enhance safety in their spaces.<br/><br/>Now, after years of refinement, I’m bringing this groundbreaking handle to market. With your support through crowdfunding, we can manufacture the first batch and make homes and public spaces safer for everyone.<br/><br/>Join us in revolutionizing door security—because peace of mind starts at the front door.</p>",
+        "button_label": "Button label",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": false,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    },
+    "video": {
+      "type": "video",
+      "settings": {
+        "label": "",
+        "heading": "Video heading",
+        "text_content": "<p>Add a short description to the video so that the customer can better understand what it is about.</p>",
+        "aspect_ratio": "sixteen-nine",
+        "video_type": "youtube_vimeo",
+        "external_video_url_desktop": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "external_video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "full_width": true,
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    },
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "section_background": "#222222",
+        "label_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "link_color": "#d33636",
+        "button_background": "#ffffff",
+        "button_color": "#000000",
+        "button_border": "#ffffff",
+        "button_background_hover": "#000000",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#ffffff",
+        "image_border_color": "#ffffff",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "full_width": false,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "banner-with-text",
+    "image-with-text-first",
+    "video",
+    "banner"
+  ]
+}

@@ -1,0 +1,268 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "default-page": {
+      "type": "default-page-template",
+      "disabled": true,
+      "settings": {
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    },
+    "slideshow_TmzR8W": {
+      "type": "slideshow",
+      "blocks": {
+        "image_WkxAfe": {
+          "type": "image",
+          "settings": {
+            "label": "Label",
+            "heading": "Heading",
+            "description": "<p>Text that describe content of slide 1</p>",
+            "button_text": "Button label",
+            "button_aria_label": "Home page",
+            "button_link": "/",
+            "open_in_new_tab": false,
+            "make_link_full_slide": false,
+            "second_button_text": "Button label",
+            "second_button_aria_label": "",
+            "second_button_link": "/",
+            "second_open_in_new_tab": false,
+            "text_alignment_inside_block": "left",
+            "content_alignment": "slideshow__slide-content--left",
+            "background_color": "#757575",
+            "background_content": "",
+            "label_color": "#FFFFFF",
+            "heading_color": "#FFFFFF",
+            "description_color": "#FFFFFF",
+            "button_text_color": "#FFFFFF",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_text_color_hover": "#000000",
+            "button_background_color_hover": "#FFFFFF",
+            "button_border_color_hover": "#000000",
+            "second_button_text_color": "#FFFFFF",
+            "second_button_background_color": "#000000",
+            "second_button_border_color": "#000000",
+            "second_button_text_color_hover": "#000000",
+            "second_button_background_color_hover": "#FFFFFF",
+            "second_button_border_color_hover": "#000000",
+            "overlay_color": "linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_WkxAfe"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "desktop_slide_per_view": "1",
+        "height_desktop": 100,
+        "height_mobile": 100,
+        "subtract_header_height": false,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0,
+        "show_arrows": true,
+        "show_pagination": false,
+        "show_progress_bar": false,
+        "enable_loop": true,
+        "enable_autoplay": false,
+        "autoplay_speed": 5,
+        "animation_speed": 0.5,
+        "animation_type": "creative",
+        "enable_lazy_load": true,
+        "background_color": "#2f4858",
+        "progress_bar_color": "#FFFFFF",
+        "arrows_color": "#FFFFFF",
+        "pagination_color": "#FFFFFF",
+        "play_color": "#2C2A28",
+        "play_background_color": "#f9f9f9",
+        "play_hover_color": "#f9f9f9",
+        "play_background_hover_color": "#2C2A28"
+      }
+    },
+    "story_telling_GzzEhy": {
+      "type": "story-telling",
+      "blocks": {
+        "content_KbELAh": {
+          "type": "content",
+          "settings": {
+            "tab_heading": "Tab 1",
+            "image_position": "left",
+            "text_alignment": "left",
+            "heading": "Heading 1",
+            "subheading": "Subheading 1",
+            "text": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+            "button_text": "See more",
+            "button_aria_label": "",
+            "button_link": "/",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "button_label_color": "#ffffff",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_label_hover_color": "#000000",
+            "button_background_hover_color": "#ffffff",
+            "button_border_hover_color": "#000000"
+          }
+        },
+        "content_t3Qt3a": {
+          "type": "content",
+          "settings": {
+            "tab_heading": "Tab 2",
+            "image_position": "left",
+            "text_alignment": "left",
+            "heading": "Heading 2",
+            "subheading": "Subheading 2",
+            "text": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+            "button_text": "See more",
+            "button_aria_label": "",
+            "button_link": "/",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "button_label_color": "#ffffff",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_label_hover_color": "#000000",
+            "button_background_hover_color": "#ffffff",
+            "button_border_hover_color": "#000000"
+          }
+        },
+        "content_geNRGY": {
+          "type": "content",
+          "settings": {
+            "tab_heading": "Tab 3",
+            "image_position": "left",
+            "text_alignment": "left",
+            "heading": "Heading 3",
+            "subheading": "Subheading 3",
+            "text": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+            "button_text": "See more",
+            "button_aria_label": "",
+            "button_link": "/",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "button_label_color": "#ffffff",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_label_hover_color": "#000000",
+            "button_background_hover_color": "#ffffff",
+            "button_border_hover_color": "#000000"
+          }
+        },
+        "content_pdxXCC": {
+          "type": "content",
+          "settings": {
+            "tab_heading": "Tab 4",
+            "image_position": "left",
+            "text_alignment": "left",
+            "heading": "Heading 4",
+            "subheading": "Subheading 4",
+            "text": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+            "button_text": "See more",
+            "button_aria_label": "",
+            "button_link": "/",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "button_label_color": "#ffffff",
+            "button_background_color": "#000000",
+            "button_border_color": "#000000",
+            "button_label_hover_color": "#000000",
+            "button_background_hover_color": "#ffffff",
+            "button_border_hover_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "content_KbELAh",
+        "content_t3Qt3a",
+        "content_geNRGY",
+        "content_pdxXCC"
+      ],
+      "name": "Story telling",
+      "settings": {
+        "overlay": 65,
+        "full_width": true,
+        "offset_top_desktop": 50,
+        "offset_bottom_desktop": 50,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "image_compare_bX8NcC": {
+      "type": "image-compare",
+      "name": "Image compare",
+      "settings": {
+        "label": "",
+        "heading": "Heading",
+        "text": "",
+        "desktop_image_height": "600px",
+        "mobile_image_height": "400px",
+        "full_width": true,
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 40,
+        "offset_bottom_mobile": 0,
+        "drag_cursor_background": "#000000",
+        "drag_cursor_color": "#ffffff"
+      }
+    },
+    "gallery_4XL7p3": {
+      "type": "gallery",
+      "name": "Image gallery",
+      "settings": {
+        "image_aspect_ratio": "square",
+        "image_crop": "center",
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "image_with_text_e9xyCh": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "heading": "Final CTA",
+        "subheading": "Subheading",
+        "text_content": "<p>Combine an image with text to highlight a specific product, collection, or blog post of your choice. Enhance the content by including information on its availability, style, or possibly a review.</p>",
+        "button_label": "Button label",
+        "button_aria_label": "Button label",
+        "button_url": "/",
+        "button_style": "primary",
+        "is_show_border_top": false,
+        "is_show_border_bottom": false,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 60
+      }
+    }
+  },
+  "order": [
+    "default-page",
+    "slideshow_TmzR8W",
+    "story_telling_GzzEhy",
+    "image_compare_bX8NcC",
+    "gallery_4XL7p3",
+    "image_with_text_e9xyCh"
+  ]
+}

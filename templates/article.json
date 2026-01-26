@@ -1,0 +1,133 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_article_Xb9dRU": {
+      "type": "section-banner-article",
+      "name": "Section banner article",
+      "settings": {
+        "img": "{{ article.image }}",
+        "title": "Elevate Your Home Security Without Compromising on Style",
+        "text": "Unattractive security measures can detract from your home's beauty. Discover how modern design seamlessly integrates aesthetics and safety, proving that protection can be both elegant and effective."
+      }
+    },
+    "article": {
+      "type": "article-template",
+      "blocks": {
+        "meta_Ag8eCm": {
+          "type": "meta",
+          "settings": {}
+        },
+        "text_Qttf9y": {
+          "type": "text",
+          "settings": {
+            "text": "In the realm of interior design, security often takes a back seat. Yet, with thoughtful planning, it's possible to create a secure and stylish home."
+          }
+        },
+        "content_cBBhDa": {
+          "type": "content",
+          "settings": {}
+        },
+        "quote_nLRUWP": {
+          "type": "quote",
+          "settings": {
+            "title": "Final Thoughts",
+            "text": "Creating a secure and stylish home is an investment in your peace of mind and overall well-being. By prioritizing both safety and aesthetics, you can create a living space that is both beautiful and secure."
+          }
+        }
+      },
+      "block_order": [
+        "meta_Ag8eCm",
+        "text_Qttf9y",
+        "content_cBBhDa",
+        "quote_nLRUWP"
+      ],
+      "settings": {
+        "banner_type": "full",
+        "banner_text_color": "#ffffff",
+        "overlay": 50,
+        "banner_button_style": "circle",
+        "button_text_color": "#ffffff",
+        "button_background_color": "#000000",
+        "button_border_color": "#000000",
+        "button_outer_border_color": "#000000",
+        "button_text_color_hover": "#000000",
+        "button_background_color_hover": "#ffffff",
+        "button_border_color_hover": "#000000",
+        "button_outer_border_color_hover": "#000000",
+        "show_date": true,
+        "show_author": true,
+        "show_tag": true,
+        "show_socials": true,
+        "show_related": true,
+        "label": "",
+        "heading": "",
+        "show_back_to_blog_btn": true,
+        "button_style": "primary",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 40,
+        "color_comment_background": "#f9f9f9"
+      }
+    },
+    "newsletter_rnDpie": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "full_width": false,
+        "layout": "one_column",
+        "heading": "Stay in the loop",
+        "subheading": "Subscribe to our newsletter",
+        "success_message": "Thanks for subscribing",
+        "text": "",
+        "image_position": "left",
+        "email_placeholder": "Your email",
+        "button_aria_label": "Submit",
+        "section_background": "#000000",
+        "heading_color": "#757575",
+        "text_color": "#ffffff",
+        "content_color": "#c1bdb9",
+        "input_label_color": "#c1bdb9",
+        "input_color": "#ffffff",
+        "input_border_color": "#c4c4c4",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 0
+      }
+    },
+    "section_related_article_hnKGzc": {
+      "type": "section-related-article",
+      "name": "Section related article",
+      "settings": {
+        "label": "From the Blog",
+        "title": "Read other posts",
+        "text": "The latest industry news, interviews, technologies, and resources.",
+        "btn_name": "View all posts",
+        "url": "shopify://blogs/news"
+      }
+    }
+  },
+  "order": [
+    "section_banner_article_Xb9dRU",
+    "article",
+    "newsletter_rnDpie",
+    "section_related_article_hnKGzc"
+  ]
+}

@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "plp-template": {
+      "type": "collection-template",
+      "settings": {
+        "show_img": true,
+        "show_description": true,
+        "paginate_by": 20,
+        "paginate_by_basic_grid": 16,
+        "pagination_type": "pagination",
+        "grid_view": "big_card",
+        "full_width_grid": true,
+        "offset_top_desktop": 35,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "plp-template"
+  ]
+}

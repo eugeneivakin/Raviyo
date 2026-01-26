@@ -1,0 +1,39 @@
+<div class="custom-article">
+    <div class="custom-article__wrap">
+        <a href="{{ article.url }}" aria-label="{{ article.title }}"></a>
+        <div class="image">
+            <div class="image__wrap">
+                {% if article.metafields.custom.article_img != blank %}
+                    <img src="{{ article.metafields.custom.article_img | image_url: width: article.metafields.custom.article_img.width }}" alt="{{ article.title }}">
+                {% else %}
+                    <img src="{{ article.image | image_url: width: article.image.width }}" alt="{{ article.title }}">
+                {% endif %}
+                {% if article.metafields.custom.pinned and pinnedShow %}
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.891 7.73958L18.9377 3.78358C16.235 1.07692 14.8843 -0.27375 13.4323 0.0462499C11.9803 0.36625 11.3243 2.16225 10.0083 5.75292L9.11767 8.18358C8.767 9.14092 8.591 9.61958 8.275 9.99025C8.13374 10.1569 7.97253 10.3056 7.795 10.4329C7.40034 10.7169 6.90967 10.8516 5.92834 11.1222C3.715 11.7329 2.607 12.0382 2.18967 12.7622C2.00926 13.0756 1.91539 13.4313 1.91767 13.7929C1.923 14.6289 2.735 15.4409 4.35767 17.0662L6.24567 18.9543L0.27767 24.9276C0.0958109 25.1204 -0.00375487 25.3764 0.000108361 25.6414C0.00397159 25.9064 0.11096 26.1595 0.298361 26.3469C0.485762 26.5343 0.738821 26.6413 1.00382 26.6451C1.26881 26.649 1.52489 26.5494 1.71767 26.3676L7.68434 20.3942L9.639 22.3516C11.2737 23.9862 12.091 24.8049 12.9323 24.8049C13.2857 24.8049 13.6337 24.7142 13.9417 24.5382C14.6723 24.1209 14.979 23.0063 15.5937 20.7756C15.863 19.7956 15.9977 19.3063 16.2803 18.9103C16.4048 18.7378 16.5479 18.5814 16.7097 18.4409C17.0763 18.1236 17.5523 17.9449 18.503 17.5876L20.9617 16.6636C24.5137 15.3302 26.2897 14.6622 26.6017 13.2156C26.915 11.7676 25.575 10.4249 22.891 7.73958Z" fill="white"/>
+                    </svg>
+                {% endif %}
+            </div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <h3>
+                    {{ article.title }}
+                </h3>
+            </div>
+            {% if article.excerpt != blank %}
+                <div class="expert">
+                    <p>
+                        {{ article.excerpt }}
+                    </p>
+                </div>
+            {% endif %}
+            {% if isShowInfo %}
+                <div class="post-meta">
+                    <span class="post-meta__author">{% if article.metafields.custom.custom_author != blank %}{{ article.metafields.custom.custom_author }} {% else%} {{ article.author }} {% endif %}</span> <span class="line">|</span>
+                    <span class="post-meta__date">{{ article.created_at | date: "%-d %b %Y" }}</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

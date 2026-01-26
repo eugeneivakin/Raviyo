@@ -1,0 +1,110 @@
+.main-banner {
+    background: #2F4858;
+    padding-bottom: clamp(64px, 7.29vw, 140px);
+    overflow: hidden;
+ 
+}
+.main-banner__wrapper {
+    position: relative;
+    border-radius: 24px;
+    background: rgba(226, 230, 233, 0.10);
+    
+    padding:clamp(50px, 6.25vw,120px) clamp(16px, 7.03vw, 135px) clamp(32px, 9.17vw,176px) clamp(16px, 7.03vw, 135px);
+}
+.main-banner__wrapper .image {
+    --left: clamp(200px, 35.42vw, 670px);
+    position: absolute;
+    left:calc(100% - var(--left));
+    top:0;
+    height: 100%;
+    width: 100%;
+    max-width: clamp(500px, 36.77vw, 706px);
+    z-index: 3;
+}
+.main-banner__wrapper .image .image__wrap {
+    height: 100%;
+    position: relative;
+}
+.main-banner__wrapper .image .image__wrap img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: left center;
+    display: block;
+}
+.main-banner animation-text h2,  .main-banner animation-text h2 span{
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: clamp(32px, 5.21vw, 100px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%; /* 90px */
+}
+.main-banner animation-text {
+    align-items: flex-start;
+    margin-top:0;
+    max-width: 72.666%;
+}
+.main-banner .content {
+    max-width: clamp(400px, 33.33vw, 640px);
+    margin-top:clamp(32px, 5.21vw, 100px);
+    display: flex;
+    justify-content: flex-end;
+}
+.main-banner .content__wrap {
+    max-width: 434px;
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+}
+.main-banner .content__wrap .text p {
+    margin:0;
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: var(--font-size-18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    opacity: 0.8;
+}
+
+@media (max-width:700px) {
+    .main-banner__wrapper .image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+    }
+    .main-banner__wrapper .image .image__wrap {
+        height: auto;
+        padding-top:100%
+    }
+    .main-banner animation-text {
+        width: 100%;
+        max-width: 100%;
+    }
+    .main-banner__wrapper {
+        padding:0 16px 32px 16px;
+    }
+    .main-banner__wrapper .image .image__wrap img {
+        object-position: center center;
+    }
+    .main-banner .container {
+        padding:0;
+    }
+    .main-banner__wrapper {
+        border-radius: 16px;
+    }
+    .main-banner__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap:32px;
+    }
+    .main-banner .content {
+        margin-top:0;
+    }
+ 
+}

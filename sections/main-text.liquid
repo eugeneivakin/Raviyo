@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="{{ 'main-text-container.css' | asset_url }}">
+{% assign size_block = section.blocks | size %}
+<div class="main-text">
+  {% if section.settings.img != blank %}
+    <picture>
+      {% if  section.settings.img_m != blank %}
+        <source srcset="{{ section.settings.img_m |  image_url: width: section.settings.img_m.width  }}" media="(max-width: 500px)" />
+      {% endif %}
+      <img src="{{ section.settings.img |  image_url: width: section.settings.img.width  }}" alt="">
+    </picture>
+  {% endif %}
+  <div class="container">
+     <div class="main-text__wrap">
+        <div class="main-text__info">
+          {%- if section.settings.subtitle != blank -%}
+            <div class="main-text__info__subtitle">
+              <div class="label">
+                <span>
+                   {{ section.settings.subtitle }}
+                </span>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.title != blank -%}
+            <div class="title">
+              <h2>
+                {{ section.settings.title }} 
+              </h2>
+            </div>
+          {%- endif -%}
+          {% if size_block > 0 %}
+            <animation-text>
+              {% for block in section.blocks %}
+                {% assign words =  block.settings.text |  split: " "%}
+                <div class="line">
+                  {% for word in words %}
+                    {% assign letters =  word |  split: ""%}
+                    <div class="animation-word">
+                      {% for letter in letters %}
+                        <span class="animation-letter"> {{ letter }} </span>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </animation-text>
+          {% endif %}
+        </div>
+     </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Text",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default":"Raviyo is not just a door handle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default":"It’s a new layer of protection"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_m",
+      "label": "Background Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name":"text",
+      "settings": [
+        {
+          "type": "text",
+          "label": "text",
+          "id":"text",
+          "default": "It features reliable and proven patented technology."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Text"
+    }
+  ]
+}
+{% endschema %}

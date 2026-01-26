@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact-page-template": {
+      "type": "contact-page-template",
+      "settings": {
+        "label": "",
+        "info_heading": "",
+        "address_heading": "",
+        "address_text": "",
+        "phone_heading": "",
+        "phone_text": "",
+        "email_heading": "",
+        "email_text": "<p><a href=\"mailto:email@email.com\" title=\"mailto:email@email.com\">email@email.com</a></p>",
+        "social_heading": "",
+        "show_social": true,
+        "map_api_key": "",
+        "map_query": "Eiffel+Tower,Paris+France",
+        "map_url": "",
+        "form_heading": "",
+        "name_placeholder": "Your name...",
+        "email_placeholder": "Your email...",
+        "message_placeholder": "Your message...",
+        "submit_label": "Send",
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "contact-page-template"
+  ]
+}

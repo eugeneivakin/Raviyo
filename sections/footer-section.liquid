@@ -1,0 +1,167 @@
+{%- comment -%}
+------------------------------------------------------------------------------
+	Section: Footer Section
+	Based on Figma design node-id=278-2626
+------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{{- 'footer-section.build.css' | asset_url | stylesheet_tag -}}
+
+{%- assign copyright_text = section.settings.copyright_text -%}
+{%- assign current_year = 'now' | date: '%Y' -%}
+{%- assign terms_link = section.settings.terms_link -%}
+{%- assign privacy_link = section.settings.privacy_link -%}
+{%- assign cookie_link = section.settings.cookie_link -%}
+{%- assign background_image = section.settings.background_image -%}
+
+
+{%- assign section_background = section.settings.section_background | default: '#121B22' -%}
+{%- assign text_color = section.settings.text_color | default: '#FFFFFF' -%}
+{%- assign text_opacity = section.settings.text_opacity | default: 0.4 -%}
+
+{%- capture section_styles -%}
+	--section-background: {{ section_background }};
+	--text-color: {{ text_color }};
+	--text-opacity: {{ text_opacity }};
+{%- endcapture -%}
+
+<footer class="footer-section" style="{{ section_styles }}">
+	<div class="footer-section__container">
+		<div class="footer-section__inner">
+			{%- if background_image != blank -%}
+				<div class="footer-section__background">
+					<img
+						src="{{ background_image | img_url: '1920x' }}"
+						srcset="{{ background_image | img_url: '1920x' }} 1x, {{ background_image | img_url: '3840x' }} 2x"
+						alt=""
+						class="footer-section__background-image"
+						width="1840"
+						height="579"
+						loading="lazy"
+					/>
+				</div>
+			{%- else -%}
+				<div class="footer-section__background">
+					<img
+						src="{{ 'footer-background.svg' | asset_url }}"
+						alt=""
+						class="footer-section__background-image"
+						width="1840"
+						height="579"
+						loading="lazy"
+					/>
+				</div>
+			{%- endif -%}
+			
+			<div class="footer-section__gradient-overlay"></div>
+			
+			<div class="footer-section__content">
+				<p class="footer-section__copyright">
+					{{ copyright_text | replace: "%date%", current_year }}
+				</p>
+				
+				<nav class="footer-section__links" aria-label="Footer links">
+					{%- if terms_link != blank -%}
+						<a href="{{ terms_link }}" class="footer-section__link">
+							Terms of Service
+						</a>
+					{%- else -%}
+						<span class="footer-section__link">Terms of Service</span>
+					{%- endif -%}
+					
+					{%- if privacy_link != blank -%}
+						<a href="{{ privacy_link }}" class="footer-section__link">
+							Privacy Policy
+						</a>
+					{%- else -%}
+						<span class="footer-section__link">Privacy Policy</span>
+					{%- endif -%}
+					
+					{%- if cookie_link != blank -%}
+						<a href="{{ cookie_link }}" class="footer-section__link">
+							Cookie Policy
+						</a>
+					{%- else -%}
+						<span class="footer-section__link">Cookie Policy</span>
+					{%- endif -%}
+				</nav>
+			</div>
+		</div>
+	</div>
+</footer>
+
+{% schema %}
+{
+	"name": "Footer Section",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Content"
+		},
+		{
+			"type": "textarea",
+			"id": "copyright_text",
+			"label": "Copyright text",
+			"default": "© %date% Raviyo. All rights reserved.",
+			"info": "%date% will be replaced with current year"
+		},
+		{
+			"type": "url",
+			"id": "terms_link",
+			"label": "Terms of Service link"
+		},
+		{
+			"type": "url",
+			"id": "privacy_link",
+			"label": "Privacy Policy link"
+		},
+		{
+			"type": "url",
+			"id": "cookie_link",
+			"label": "Cookie Policy link"
+		},
+		{
+			"type": "header",
+			"content": "Background"
+		},
+		{
+			"type": "image_picker",
+			"id": "background_image",
+			"label": "Background image",
+			"info": "Optional. If not set, default SVG will be used"
+		},
+		{
+			"type": "header",
+			"content": "Colors"
+		},
+		{
+			"type": "color",
+			"id": "section_background",
+			"label": "Section background",
+			"default": "#121B22"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Text color",
+			"default": "#FFFFFF"
+		},
+		{
+			"type": "range",
+			"id": "text_opacity",
+			"label": "Text opacity",
+			"min": 0,
+			"max": 1,
+			"step": 0.1,
+			"default": 0.4,
+			"unit": "dec"
+		}
+	],
+	"presets": [
+		{
+			"name": "Footer Section"
+		}
+	]
+}
+{% endschema %}
+

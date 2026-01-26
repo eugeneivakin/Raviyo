@@ -1,0 +1,45 @@
+.protection-cta {
+	width: 100%;
+	background: linear-gradient(180deg, #2F4858 0%, #121B22 100%), #677987;
+	padding:clamp(80px, 7.29vw, 140px) 0;
+}
+
+.protection-cta__badge {
+	border-radius: 100px;
+	background: rgba(255, 255, 255, 0.10);
+	padding:16px 24px;
+	margin-bottom: 24px;
+}
+.protection-cta__badge span {
+	color: #FFF;
+	text-align: center;
+	font-family: var(--font-family);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+}
+.protection-cta__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.protection-cta__heading {
+	margin:0 auto;
+	max-width: clamp(400px, 66.67vw, 1280px);
+	background: linear-gradient(75deg, #FFF 10.89%, #677987 99.08%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	text-align: center;
+	font-family: var(--font-family);
+	font-size: clamp(44px, 5.21vw, 100px);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%; 
+}
+.btn__wrap {
+	margin-top:59px;
+}

@@ -1,0 +1,106 @@
+<div class="shop-the-look-video" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+  <div class="look-image-wrapper" style="flex: 1; position: relative;">
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="Shop the Look" style="width: 100%; height: auto;" />
+    
+    {% for block in section.blocks %}
+      <button class="look-hotspot"
+              style="position: absolute; top: {{ block.settings.top }}%; left: {{ block.settings.left }}%; background: #ff4d4f; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; z-index: 2;"
+              data-hotspot
+              data-index="{{ forloop.index0 }}">
+        +
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="video-card-wrapper" style="flex: 1; max-height: 600px; overflow-y: auto; scroll-behavior: smooth;">
+    {% for block in section.blocks %}
+      <div class="video-card" id="product-{{ forloop.index0 }}" style="margin-bottom: 2rem;">
+        <video
+          muted
+          playsinline
+          preload="auto"
+          width="100%"
+          style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.15);"
+        >
+          <source src="{{ block.settings.video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("[data-hotspot]");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = button.getAttribute("data-index");
+        const targetCard = document.getElementById("product-" + index);
+
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          const video = targetCard.querySelector("video");
+          if (video) {
+            setTimeout(() => {
+              video.currentTime = 0;
+              video.play();
+            }, 1000);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shop the Look with Video",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspot",
+      "name": "Hotspot",
+      "settings": [
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Top position (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Left position (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video file URL (upload via Settings > Files)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the Look with Video",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

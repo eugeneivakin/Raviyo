@@ -1,0 +1,102 @@
+.section-video-scroll {
+    position: relative;
+    background: #121B22;
+}
+.video-scroll__wrap {
+    width: 100vw;
+    min-height: 100vh;   /* fallback */
+    position: relative;
+}
+.video-scroll__wrap  .video {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.video-scroll__wrap  .video .video__wrap {
+    position: relative;
+    height: 100%;
+}
+.video-scroll__wrap  .video .video__wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left:0;
+}
+video-scroll {
+    display: block;
+}
+.section-video-scroll .content {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 3;
+}
+.section-video-scroll .content__wrap {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    max-width: 473px;
+    padding-top:clamp(50px, 7.29vw, 140px);
+}
+.section-video-scroll .content .label {
+    display: flex;
+}
+.section-video-scroll .content .label__wrap {
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.10);
+    padding:16px 24px;
+}
+.section-video-scroll .content .label {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+
+}
+.section-video-scroll .content .title h2 {
+    color: #494D50;
+    font-family: var(--font-family);
+    font-size: var(--font-size-64);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 70.4px */
+
+    background: linear-gradient(75deg, #FFF 0%, #677987 30.08%), #494D50;
+    color: transparent;
+    background-clip: text;
+}
+
+@media (max-width:500px) {
+    .section-video-scroll .content__wrap {
+        display: flex;
+        align-items: center;
+    }
+    .section-video-scroll .content .title h2 {
+        text-align: center;
+    }
+    .section-video-scroll .content {
+        position: static;
+        flex:none;
+    }
+    .video-scroll__wrap .video {
+        position: static;
+        height: auto;
+        flex:1;
+    }
+    .video-scroll__wrap .video__wrap {
+        height: 100%;
+    }
+    .video-scroll__wrap {
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+    }
+}

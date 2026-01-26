@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="{{ 'main-list-container.css' | asset_url }}">
+
+<div class="main-list">
+  <div class="container">
+    <div class="main-list__wrapper">
+      {%- if section.settings.image != blank -%}
+        <div class="main-list__left">
+          <div class="image">
+            <div class="image__wrap">
+              <img src="{{ section.settings.image | image_url: width:section.settings.image.width }}" alt="{{ section.settings.image.alt }}">
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="main-list__right">
+        <div class="main-list__right__wrap">
+          <div class="heading">
+            {%- if section.settings.subtitle != blank -%}
+              <div class="main-list__subtitle">
+                <div class="label">
+                  <span>
+                    {{ section.settings.subtitle }}
+                  </span>
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.title != blank -%}
+              <h2 class="main-list__title">{{ section.settings.title }}</h2>
+            {%- endif -%}
+          </div>
+
+          {%- if section.blocks.size > 0 -%}
+            <div class="main-list__feats">
+              {% for block in section.blocks %}
+                {%- if block.settings.number != blank or block.settings.title != blank or block.settings.description != blank -%}
+                  <animation-block class="main-list__point">
+                    {%- if block.settings.number != blank -%}
+                      <div class="main-list__point-number">
+                        {{ block.settings.number }}
+                      </div>
+                    {%- endif -%}
+
+                    <div class="main-list__point-info">
+                      {%- if block.settings.title != blank -%}
+                        <h3>
+                          {{ block.settings.title }}
+                        </h3>
+                      {%- endif -%}
+
+                      {%- if block.settings.description != blank -%}
+                        <p>
+                          {{ block.settings.description }}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  </animation-block>
+                {%- endif -%}
+              {% endfor %}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main List",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your three emergencies"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your One Elegant Solution"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Protects the Most Vulnerable"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Raviyo prevents young children or vulnerable adults from unintentionally opening the door, keeping them safely inside."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main List"
+    }
+  ]
+}
+{% endschema %}
