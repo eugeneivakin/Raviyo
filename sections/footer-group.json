@@ -17,10 +17,10 @@
       "settings": {
         "copyright_text": "© %date% Raviyo. All rights reserved.",
         "terms_link": "",
-        "privacy_link": "",
+        "privacy_link": "shopify://policies/privacy-policy",
         "cookie_link": "",
-        "section_background": "#121B22",
-        "text_color": "#FFFFFF",
+        "section_background": "#121b22",
+        "text_color": "#ffffff",
         "text_opacity": 0.4
       }
     },
