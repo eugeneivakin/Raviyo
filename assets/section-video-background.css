@@ -1,0 +1,77 @@
+.section-video-background {
+  position: relative;
+}
+.section-video-background .section-content {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+.section-video-background .container {
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0 clamp(16px, 2.08vw, 40px);
+}
+.section-video-background .content-frame {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  gap: 16px;
+  max-width: 473px;
+  padding-top: clamp(50px, 7.29vw, 140px);
+  text-align: center;
+}
+@media screen and (min-width: 750px) {
+  .section-video-background .content-frame {
+    text-align: left;
+  }
+}
+.section-video-background .content-frame .section-label {
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: inline-block;
+  vertical-align: top;
+  font: 500 16px/1 var(--font-family);
+  text-transform: uppercase;
+  padding: 16px 24px;
+}
+.section-video-background .content-frame .section-title {
+  color: #494d50;
+  font-family: var(--font-family);
+  font-size: var(--font-size-64);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 70.4px */
+  background: linear-gradient(75deg, #fff 0%, #677987 50%), #494d50;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+@media screen and (min-width: 750px) {
+  .section-video-background .content-frame .section-title {
+    background: linear-gradient(75deg, #fff 0%, #677987 30.08%), #494d50;
+    color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+  }
+}
+.section-video-background .section-video {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.section-video-background .section-video svg,
+.section-video-background .section-video video {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: top;
+  width: 100%;
+  cursor: pointer; /* clickable to pause */
+}

@@ -1,0 +1,70 @@
+<script src="{{ 'section-video-background.js' | asset_url }}" defer></script>
+{{ 'section-video-background.css' | asset_url | stylesheet_tag }}
+
+<div class="section-content">
+  <div class="container">
+    <div class="content-frame">
+      {% unless section.settings.label == blank %}
+        <div>
+          <span class="section-label">
+            {{ section.settings.label }}
+          </span>
+        </div>
+      {% endunless %}
+
+      {% unless section.settings.title == blank %}
+        <h2 class="section-title">
+          {{ section.settings.title }}
+        </h2>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+<div class="section-video video--fullscreen">
+  {% if section.settings.video_desktop != blank or section.settings.video_mobile != blank %}
+    {{ section.settings.video_desktop | video_tag: image_size: '1920x' }}
+  {% else %}
+    {{ 'hero-apparel-1' | placeholder_svg_tag }}
+  {% endif %}
+</div>
+
+{%- schema -%}
+{
+  "name": "Background video",
+  "tag": "section",
+  "class": "section-video-background",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Watch how Raviyo works"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Multi Features For Maximum Safety"
+    },
+    {
+      "type": "video",
+      "label": "Video for desktop",
+      "id": "video_desktop"
+    },
+    {
+      "type": "video",
+      "label": "Video for mobile",
+      "id": "video_mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Background video",
+      "category": "Custom"
+    }
+  ]
+}
+{%- endschema -%}

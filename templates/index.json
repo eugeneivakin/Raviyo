@@ -102,13 +102,12 @@
         "image": "shopify://shop_images/Rectangle_23.png"
       }
     },
-    "section_video_scroll_cBFnBT": {
-      "type": "section-video-scroll",
-      "name": "Section video scroll",
+    "section_video_background_QTQnm7": {
+      "type": "section-video-background",
+      "name": "Background video",
       "settings": {
         "label": "Watch how Raviyo works",
-        "title": "Multi Features For Maximum Safety",
-        "video": "shopify://files/videos/raviyo full animation.mp4"
+        "title": "Multi Features For Maximum Safety"
       }
     },
     "main_more_rBUeBw": {
@@ -383,7 +382,7 @@
     "main_hero_7Fqhjm",
     "main_text_r77nBM",
     "main_list_kaqpHV",
-    "section_video_scroll_cBFnBT",
+    "section_video_background_QTQnm7",
     "main_more_rBUeBw",
     "main_banner_CdhGMy",
     "section_horizontal_scroll_yBy3Hb",

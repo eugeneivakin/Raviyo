@@ -1,0 +1,82 @@
+@use "mixins/media" as *;
+
+.section-video-background {
+  position: relative;
+
+  .section-content {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 1920px;
+    padding: 0 clamp(16px, 2.08vw, 40px);
+  }
+
+  .content-frame {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    gap: 16px;
+    max-width: 473px;
+    padding-top: clamp(50px, 7.29vw, 140px);
+    text-align: center;
+
+    @include sm {
+      text-align: left;
+    }
+
+    .section-label {
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      display: inline-block;
+      vertical-align: top;
+      font: 500 16px/1 var(--font-family);
+      text-transform: uppercase;
+      padding: 16px 24px;
+    }
+
+    .section-title {
+      color: #494d50;
+      font-family: var(--font-family);
+      font-size: var(--font-size-64);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%; /* 70.4px */
+
+      background: linear-gradient(75deg, #fff 0%, #677987 50%), #494d50;
+      color: transparent;
+      background-clip: text;
+
+      @include sm {
+        background: linear-gradient(75deg, #fff 0%, #677987 30.08%), #494d50;
+        color: transparent;
+        background-clip: text;
+      }
+    }
+  }
+
+  .section-video {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    svg,
+    video {
+      height: 100%;
+      object-fit: cover;
+      vertical-align: top;
+      width: 100%;
+      cursor: pointer; /* clickable to pause */
+    }
+  }
+}
