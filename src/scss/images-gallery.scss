@@ -1,0 +1,60 @@
+@use "mixins/media" as *;
+
+.section-images-gallery {
+  position: relative;
+  &:before {
+    background: var(--background-below-color);
+    bottom: 0;
+    content: "";
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @include xs {
+      height: 100px;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    grid-auto-flow: row;
+    position: relative;
+    z-index: 5;
+
+    @include xs {
+      grid-template-columns: 41% 1fr;
+    }
+  }
+
+  gallery-scroll {
+    display: block;
+    position: sticky;
+    top: 10%;
+
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+
+  .gallery-scroll__item,
+  .slider__static {
+    background: #fff;
+    border-radius: clamp(12px, 0.83vw, 16px);
+    overflow: hidden;
+  }
+  .slider__static {
+    order: -1;
+
+    @include xs {
+      order: 0;
+    }
+  }
+}

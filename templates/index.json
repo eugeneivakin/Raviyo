@@ -297,8 +297,49 @@
         "button_link": "shopify://pages/contact"
       }
     },
+    "images_gallery_kHyUhh": {
+      "type": "images-gallery",
+      "blocks": {
+        "slide_KVLLyG": {
+          "type": "slide",
+          "settings": {
+            "image_slide": "shopify://shop_images/Shot_1.png"
+          }
+        },
+        "slide_ga3CY8": {
+          "type": "slide",
+          "settings": {
+            "image_slide": "shopify://shop_images/Shot_10.png"
+          }
+        },
+        "slide_gAxAM8": {
+          "type": "slide",
+          "settings": {
+            "image_slide": "shopify://shop_images/Shot_4.png"
+          }
+        },
+        "slide_nPiwRN": {
+          "type": "slide",
+          "settings": {
+            "image_slide": "shopify://shop_images/Shot_9.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_KVLLyG",
+        "slide_ga3CY8",
+        "slide_gAxAM8",
+        "slide_nPiwRN"
+      ],
+      "name": "Images gallery",
+      "settings": {
+        "image_main": "shopify://shop_images/Rectangle_28.jpg",
+        "background_below_color": "#2f4858"
+      }
+    },
     "section_images_UB4JGA": {
       "type": "section-images",
+      "disabled": true,
       "name": "Main image",
       "settings": {
         "img1": "shopify://shop_images/Rectangle_29.jpg",
@@ -388,6 +429,7 @@
     "main_banner_CdhGMy",
     "section_horizontal_scroll_yBy3Hb",
     "questions_section_yJtbwK",
+    "images_gallery_kHyUhh",
     "section_images_UB4JGA",
     "testimonials_section_dMLBA8",
     "protection_cta_xVtHg3",
