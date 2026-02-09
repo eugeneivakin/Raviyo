@@ -16,6 +16,10 @@ class ScrollTriggerStack {
   init() {
     if (this.inited) return;
     this.inited = true;
+    // initialize step-based sections (e.g. main-list) after queued blocks
+    if (typeof initStepSections === 'function') {
+      try { initStepSections(); } catch (e) { console.error(e); }
+    }
 
     this.queue.sort((a, b) => {
       if (a.el === b.el) return 0;
@@ -31,10 +35,6 @@ class ScrollTriggerStack {
 
     this.queue.length = 0;
 
-    // initialize step-based sections (e.g. main-list) after queued blocks
-    if (typeof initStepSections === 'function') {
-      try { initStepSections(); } catch (e) { console.error(e); }
-    }
 
     if (window.ScrollTrigger) {
       ScrollTrigger.refresh();
