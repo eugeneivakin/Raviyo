@@ -5,13 +5,29 @@
     <div class="main-list__wrapper">
       {%- if section.settings.image != blank -%}
         <div class="main-list__left">
+          {% for block in section.blocks %}
+            {%- if block.settings.number != blank
+              or block.settings.title != blank
+              or block.settings.description != blank
+            -%}
+            {%- endif -%}
+            <div data-animation-video="{{ forloop.index }}" class="main-list__media-wrapper">
+              {% if block.settings.video != blank %}
+                {{ block.settings.video | video_tag: image_size: '640x', muted: true, controls: false }}
+              {% endif %}
+            </div>
+          {% endfor %}
           <div class="image">
             <div class="image__wrap">
-              <img src="{{ section.settings.image | image_url: width:section.settings.image.width }}" alt="{{ section.settings.image.alt }}">
+              <img
+                src="{{ section.settings.image | image_url: width:section.settings.image.width }}"
+                alt="{{ section.settings.image.alt }}"
+              >
             </div>
           </div>
         </div>
       {%- endif -%}
+
       <div class="main-list__right">
         <div class="main-list__right__wrap">
           <div class="heading">
@@ -32,8 +48,11 @@
           {%- if section.blocks.size > 0 -%}
             <div class="main-list__feats">
               {% for block in section.blocks %}
-                {%- if block.settings.number != blank or block.settings.title != blank or block.settings.description != blank -%}
-                  <animation-block class="main-list__point">
+                {%- if block.settings.number != blank
+                  or block.settings.title != blank
+                  or block.settings.description != blank
+                -%}
+                  <animation-block class="main-list__point" data-animation-content="{{ forloop.index }}">
                     {%- if block.settings.number != blank -%}
                       <div class="main-list__point-number">
                         {{ block.settings.number }}
@@ -100,6 +119,11 @@
           "id": "number",
           "label": "Number",
           "default": "1"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
         },
         {
           "type": "text",
