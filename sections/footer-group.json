@@ -18,7 +18,7 @@
         "copyright_text": "© %date% Raviyo. All rights reserved.",
         "terms_link": "shopify://policies/terms-of-service",
         "privacy_link": "shopify://policies/privacy-policy",
-        "cookie_link": "",
+        "cookie_link": "https://www.shopify.com/legal/cookies",
         "section_background": "#121b22",
         "text_color": "#ffffff",
         "text_opacity": 0.4
