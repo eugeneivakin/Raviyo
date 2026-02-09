@@ -16,7 +16,7 @@
       "name": "Footer Section",
       "settings": {
         "copyright_text": "© %date% Raviyo. All rights reserved.",
-        "terms_link": "",
+        "terms_link": "shopify://policies/terms-of-service",
         "privacy_link": "shopify://policies/privacy-policy",
         "cookie_link": "",
         "section_background": "#121b22",
