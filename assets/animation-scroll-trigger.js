@@ -31,6 +31,11 @@ class ScrollTriggerStack {
 
     this.queue.length = 0;
 
+    // initialize step-based sections (e.g. main-list) after queued blocks
+    if (typeof initStepSections === 'function') {
+      try { initStepSections(); } catch (e) { console.error(e); }
+    }
+
     if (window.ScrollTrigger) {
       ScrollTrigger.refresh();
     }
@@ -298,3 +303,65 @@ customElements.define('video-scroll', VideoScroll);
 document.addEventListener('DOMContentLoaded', () => {
   scrollTriggerStack.init();
 });
+
+function initStepSections() {
+  if (!window.gsap || !window.ScrollTrigger) return;
+  document.querySelectorAll('.main-list__feats').forEach(feats => {
+    const blocks = gsap.utils.toArray(feats.querySelectorAll('animation-block'));
+    if (blocks.length < 2) return;
+    const container = feats.closest('.main-list__wrapper') || feats;
+
+    if (feats._stepInit) return;
+    feats._stepInit = true;
+
+    const snapStep = 1 / (blocks.length - 1);
+
+    // map corresponding video wrappers by data attribute (1-based index)
+    const sectionRoot = container.closest('.main-list') || container;
+    const videoEls = blocks.map((_, i) => sectionRoot.querySelector(`[data-animation-video="${i+1}"]`));
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "+=" + (window.innerHeight * blocks.length),
+        pin: true,
+        scrub: 0.5,
+        invalidateOnRefresh: true,
+        onRefresh: self => {
+          try {
+            const pinEl = self.pin || self.trigger;
+            if (pinEl && pinEl.style) {
+              pinEl.style.top = "var(--header-height-static, 90px)";
+            }
+          } catch (e) { /* ignore */ }
+        },
+        snap: {
+          snapTo: (value) => Math.round(value / snapStep) * snapStep,
+          duration: 0.25,
+          ease: "power1.inOut"
+        },
+        onUpdate: self => {
+          const index = Math.round(self.progress * (blocks.length - 1));
+          blocks.forEach((b, i) => b.classList.toggle('active', i === index));
+          // toggle video wrappers and start playback for the active one
+          videoEls.forEach((ve, i) => {
+            if (!ve) return;
+            const isActive = i === index;
+            const hadActive = ve.classList.contains('active');
+            ve.classList.toggle('active', isActive);
+            if (isActive && !hadActive) {
+              const v = ve.querySelector('video');
+              if (v && typeof v.play === 'function') {
+                v.play().catch(() => {});
+              }
+            }
+          });
+        }
+      }
+    });
+
+    // dummy tween to provide timeline length
+    tl.to({}, { duration: 1 });
+  });
+}
