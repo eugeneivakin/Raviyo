@@ -12,6 +12,10 @@
   text-align: left;
   margin: 0;
 }
+.template-search .search .search__header {
+  max-width: 1562px;
+  padding: 0 16px;
+}
 .template-search .search .search__header-row {
   display: flex;
   flex-wrap: wrap;
@@ -155,4 +159,9 @@
   width: calc(50% - 10px) !important;
   border: 0 !important;
   padding: 0 !important;
+}
+@media (max-width: 767px) {
+  .template-search .search__grid .search__item {
+    width: 100% !important;
+  }
 }

@@ -17,6 +17,11 @@
   }
 
   .search {
+    .search__header {
+      max-width: 1562px;
+      padding: 0 16px;
+    }
+
     .search__header-row {
       display: flex;
       flex-wrap: wrap;
@@ -179,6 +184,10 @@
       width: calc(50% - 10px) !important;
       border: 0 !important;
       padding: 0 !important;
+
+      @media (max-width: 767px) {
+        width: 100% !important;
+      }
     }
   }
 }
