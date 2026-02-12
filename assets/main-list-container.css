@@ -211,11 +211,15 @@ animation-block.active {
   z-index: 1;
 }
 
+.main-list__left .main-list__media-wrapper:first-child:not(.active) {
+  opacity: 1;
+}
+
 .main-list__left .main-list__media-wrapper.active {
   opacity: 1;
 }
 
-.main-list__left .main-list__media-wrapper.active ~ .image {
+.main-list__left .main-list__media-wrapper ~ .image {
   opacity: 0;
 }
 
