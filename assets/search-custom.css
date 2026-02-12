@@ -13,6 +13,7 @@
   margin: 0;
 }
 .template-search .search .search__header {
+  margin: 0 auto;
   max-width: 1562px;
   padding: 0 16px;
 }
@@ -147,6 +148,7 @@
 }
 .template-search .search__body {
   margin-top: 0;
+  margin: 0 auto;
   max-width: 1562px !important;
   padding: 0 16px !important;
 }
