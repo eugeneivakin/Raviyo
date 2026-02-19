@@ -69,7 +69,7 @@
           "type": "point",
           "settings": {
             "number": "01",
-            "video": "shopify://files/videos/InShot_20260219_145634814_1752c90d-1dd9-46c7-b69f-e07b041c5a93.mp4",
+            "video": "shopify://files/videos/InShot_20260219_145634814.mp4",
             "title": "Protects the Most Vulnerable",
             "description": "Raviyo prevents young children or vulnerable adults from unintentionally opening the door, keeping them safely inside."
           }
@@ -87,7 +87,7 @@
           "type": "point",
           "settings": {
             "number": "03",
-            "video": "shopify://files/videos/InShot_20260219_145634814_1752c90d-1dd9-46c7-b69f-e07b041c5a93.mp4",
+            "video": "shopify://files/videos/InShot_20260219_145634814.mp4",
             "title": "Stops Intruders at the Letterbox",
             "description": "Raviyo blocks common break-in methods using tools through the letterbox by requiring deliberate human interaction."
           }
