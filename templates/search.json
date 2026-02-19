@@ -17,7 +17,7 @@
         "search_pages": true,
         "show_color_swatch_in_filters": false,
         "enable_cards_indent": false,
-        "filters_type": "sidebar",
+        "filters_type": "drawer",
         "paginate_by": 16,
         "pagination_type": "pagination",
         "show_border": true,
