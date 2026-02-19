@@ -11,7 +11,23 @@
   "sections": {
     "search-template": {
       "type": "search-template",
-      "settings": {}
+      "settings": {
+        "label": "",
+        "search_articles": true,
+        "search_pages": true,
+        "show_color_swatch_in_filters": false,
+        "enable_cards_indent": false,
+        "filters_type": "sidebar",
+        "paginate_by": 16,
+        "pagination_type": "pagination",
+        "show_border": true,
+        "border_color": "#e6e6e6",
+        "full_width": true,
+        "offset_top_desktop": 60,
+        "offset_bottom_desktop": 60,
+        "offset_top_mobile": 30,
+        "offset_bottom_mobile": 30
+      }
     }
   },
   "order": [
