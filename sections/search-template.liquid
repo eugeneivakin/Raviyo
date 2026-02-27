@@ -134,31 +134,33 @@
             {%- endif -%}
           </div>
 
-          {% comment %} {%- if design == 'alternate' -%}
-            <button
-              class="button-circle search__button"
-              type="submit"
-              aria-label="{{- 'general.search.search_submit_button' | t | escape -}}"
-            >
-              <span class="button__text">
-                {{- 'general.search.search_submit_button' | t -}}
-              </span>
-
-              <span class="button-new__icon-container">
-                <span class="button-new__icon-wrapper">
-                  {% render 'icons-new', icon: 'wave' %}
+          {% comment %}
+            {%- if design == 'alternate' -%}
+              <button
+                class="button-circle search__button"
+                type="submit"
+                aria-label="{{- 'general.search.search_submit_button' | t | escape -}}"
+              >
+                <span class="button__text">
+                  {{- 'general.search.search_submit_button' | t -}}
                 </span>
-              </span>
-            </button>
-          {%- else -%}
-            <button
-              class="button button--secondary search__button"
-              type="submit"
-              aria-label="{{- 'general.search.search_submit_button' | t | escape -}}"
-            >
-              {{- 'general.search.search_submit_button' | t -}}
-            </button>
-          {%- endif -%} {% endcomment %}
+
+                <span class="button-new__icon-container">
+                  <span class="button-new__icon-wrapper">
+                    {% render 'icons-new', icon: 'wave' %}
+                  </span>
+                </span>
+              </button>
+            {%- else -%}
+              <button
+                class="button button--secondary search__button"
+                type="submit"
+                aria-label="{{- 'general.search.search_submit_button' | t | escape -}}"
+              >
+                {{- 'general.search.search_submit_button' | t -}}
+              </button>
+            {%- endif -%}
+          {% endcomment %}
 
           <input name="options[prefix]" type="hidden" value="last">
           <input type="hidden" name="type" value="{{- search_type_values -}}">
@@ -175,23 +177,6 @@
               {{- 'general.search.results_with_count.other' | t: count: search.results_count, terms: search.terms -}}
             {%- endif -%}
           </p>
-        {%- endif -%}
-      </div>
-      <div>
-        {%- if search.performed and search.sort_options.size > 0 and filters_type == 'drawer' -%}
-          <div class="search__header-col search__header-col--filter">
-            {%- if design == 'alternate' -%}
-              {%- render 'product-filters-and-sort-new',
-                product_list: search,
-                show_swatches: show_color_swatch_in_filters
-              -%}
-            {%- else -%}
-              {%- render 'product-filters-and-sort',
-                product_list: search,
-                show_swatches: show_color_swatch_in_filters
-              -%}
-            {%- endif -%}
-          </div>
         {%- endif -%}
       </div>
     </div>
