@@ -1,5 +1,5 @@
 .main-list {
-  padding: clamp(64px, 7.292vw, 140px) 0;
+  padding: clamp(0, 7.292vw, 10px) 0;
 }
 .main-list .heading {
   display: flex;
@@ -211,8 +211,12 @@ animation-block.active {
   z-index: 1;
 }
 
-.main-list__left .main-list__media-wrapper:first-child:not(.active) {
+.main-list__left .main-list__media-wrapper:first-child {
   opacity: 1;
+}
+
+.main-list__left:has(.active) .main-list__media-wrapper:first-child:not(.active) {
+  opacity: 0;
 }
 
 .main-list__left .main-list__media-wrapper.active {

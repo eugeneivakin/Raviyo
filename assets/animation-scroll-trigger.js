@@ -320,9 +320,33 @@ function initStepSections() {
     const sectionRoot = container.closest('.main-list') || container;
     const videoEls = blocks.map((_, i) => sectionRoot.querySelector(`[data-animation-video="${i+1}"]`));
 
+    const resetVideos = () => {
+      videoEls.forEach(ve => {
+        if (!ve) return;
+        const v = ve.querySelector('video');
+        if (!v) return;
+        try {
+          if (!v.paused) v.pause();
+          v.currentTime = 0;
+        } catch (e) {}
+        ve.classList.remove('active');
+      });
+    };
+
+    if ('IntersectionObserver' in window) {
+      const visibilityObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            resetVideos();
+          }
+        });
+      }, { threshold: 0 });
+      visibilityObserver.observe(sectionRoot);
+    }
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: container,
+        trigger: sectionRoot,
         start: "top top",
         end: "+=" + (window.innerHeight * blocks.length),
         pin: true,
@@ -350,11 +374,20 @@ function initStepSections() {
             const isActive = i === index;
             const hadActive = ve.classList.contains('active');
             ve.classList.toggle('active', isActive);
+            const v = ve.querySelector('video');
+            if (!v) return;
+            
             if (isActive && !hadActive) {
-              const v = ve.querySelector('video');
-              if (v && typeof v.play === 'function') {
+              // start playback when becoming active
+              if (typeof v.play === 'function') {
                 v.play().catch(() => {});
               }
+            } else if (!isActive && hadActive) {
+              // reset video when becoming inactive
+              try {
+                if (!v.paused) v.pause();
+                v.currentTime = 0;
+              } catch (e) {}
             }
           });
         }
