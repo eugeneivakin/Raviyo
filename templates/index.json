@@ -13,7 +13,7 @@
       "type": "main-hero",
       "name": "Main Hero",
       "settings": {
-        "text": "A patented door handle that protects your loved ones, blocks intruders, and keeps your home safe.",
+        "text": "",
         "img": "shopify://shop_images/compressed.webp",
         "img_m": "shopify://shop_images/main_hero_2.webp",
         "btn_name": "Join the waitlist",
