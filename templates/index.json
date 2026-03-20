@@ -111,7 +111,8 @@
       "settings": {
         "label": "Watch how Raviyo works",
         "title": "Multi Features For Maximum Safety",
-        "video_desktop": "shopify://files/videos/raviyo full animation.mp4"
+        "video_desktop": "shopify://files/videos/raviyo full animation.mp4",
+        "video_mobile": "shopify://files/videos/InShot_20260219_145634814.mp4"
       }
     },
     "main_more_rBUeBw": {
