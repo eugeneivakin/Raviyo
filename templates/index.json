@@ -353,10 +353,31 @@
     "testimonials_section_dMLBA8": {
       "type": "testimonials-section",
       "blocks": {
+        "testimonial_azNxhf": {
+          "type": "testimonial",
+          "settings": {
+            "text": "1. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
+            "author_name": "— Author name"
+          }
+        },
+        "testimonial_UKLmeY": {
+          "type": "testimonial",
+          "settings": {
+            "text": "2. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
+            "author_name": "— Author name"
+          }
+        },
+        "testimonial_WLnghE": {
+          "type": "testimonial",
+          "settings": {
+            "text": "3. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
+            "author_name": "— Author name"
+          }
+        },
         "testimonial_iJHf4B": {
           "type": "testimonial",
           "settings": {
-            "text": "“Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
+            "text": "4. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
             "author_name": "— Sarah, mother of two",
             "img": "shopify://shop_images/Ellipse_1.jpg"
           }
@@ -364,13 +385,16 @@
         "testimonial_EYyHgB": {
           "type": "testimonial",
           "settings": {
-            "text": "“As a care home manager, Raviyo gives us peace of mind knowing residents are safe without making life harder for staff.”",
+            "text": "5. “As a care home manager, Raviyo gives us peace of mind knowing residents are safe without making life harder for staff.”",
             "author_name": "— Mark, UK care facility",
             "img": "shopify://shop_images/Ellipse_1_1.jpg"
           }
         }
       },
       "block_order": [
+        "testimonial_azNxhf",
+        "testimonial_UKLmeY",
+        "testimonial_WLnghE",
         "testimonial_iJHf4B",
         "testimonial_EYyHgB"
       ],
