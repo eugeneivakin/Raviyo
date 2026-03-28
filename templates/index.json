@@ -54,7 +54,7 @@
         "text_8XQLRC",
         "text_LNncpP"
       ],
-      "name": "Main Text",
+      "name": "Not just a door handle",
       "settings": {
         "subtitle": "Raviyo is not just a door handle1",
         "title": "It’s a new layer of protection1",
@@ -98,7 +98,7 @@
         "point_U8yC8G",
         "point_RWUhar"
       ],
-      "name": "Main List",
+      "name": "Three emergencies",
       "settings": {
         "subtitle": "Three emergencies1",
         "title": "One Elegant Solution1",
@@ -107,7 +107,7 @@
     },
     "section_video_background_QTQnm7": {
       "type": "section-video-background",
-      "name": "Background video",
+      "name": "How Raviyo works",
       "settings": {
         "label": "Watch how Raviyo works1",
         "title": "Multi Features For Maximum Safety1",
@@ -157,14 +157,14 @@
         "feature_LD6hmN",
         "feature_QWdinj"
       ],
-      "name": "Main More",
+      "name": "And there's more",
       "settings": {
         "title": "And there's more...1"
       }
     },
     "main_banner_CdhGMy": {
       "type": "main-banner",
-      "name": "Main Banner",
+      "name": "Be the first",
       "settings": {
         "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security1",
         "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.1",
@@ -242,7 +242,7 @@
         "image_text_hWLAnq",
         "title_JJHhcQ"
       ],
-      "name": "Section horizontal scroll",
+      "name": "Not just for the home",
       "settings": {
         "bg": "shopify://shop_images/Group_3.png"
       }
@@ -293,7 +293,7 @@
         "question_WHxJ6K",
         "question_aqinjw"
       ],
-      "name": "Questions Section",
+      "name": "FAQs",
       "settings": {
         "heading": "Questions We Know You're Asking1",
         "description": "Have more questions? Get in touch with us — we'll be happy to provide the answers you need.1",
@@ -335,7 +335,7 @@
         "slide_gAxAM8",
         "slide_nPiwRN"
       ],
-      "name": "Images gallery",
+      "name": "Scrolling gallery",
       "settings": {
         "image_main": "shopify://shop_images/Rectangle_28.jpg",
         "background_below_color": "#2f4858"
@@ -398,14 +398,14 @@
         "testimonial_iJHf4B",
         "testimonial_EYyHgB"
       ],
-      "name": "Testimonials Section",
+      "name": "Testimonials",
       "settings": {
         "heading": "What Families and Professionals Say1"
       }
     },
     "protection_cta_xVtHg3": {
       "type": "protection-cta",
-      "name": "Protection CTA",
+      "name": "Born from real life",
       "settings": {
         "badge_text": "Born from real life events1",
         "heading": "Protecting your loved ones isn't optional - it's essential1",
@@ -440,7 +440,7 @@
         "article_BpGkdK",
         "article_RYBi67"
       ],
-      "name": "Section articles",
+      "name": "Blog",
       "settings": {
         "title": "From the Blog1",
         "btn_name": "View all posts1",
