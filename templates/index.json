@@ -200,7 +200,7 @@
             "label": "Medical Institutions",
             "title": "Protect Vulnerable Patients Without Restricting Care",
             "text": "Hospitals, dementia care homes, and mental health institutions need a delicate balance between security and accessibility. Patients with cognitive conditions may unknowingly put themselves at risk by exiting unattended. Raviyo offers an intuitive yet controlled locking mechanism that prevents unauthorized exits while ensuring easy operation for caregivers.",
-            "btn_name": "Contact Us1",
+            "btn_name": "Contact Us",
             "url": ""
           }
         },
@@ -208,10 +208,10 @@
           "type": "image-text",
           "settings": {
             "img": "shopify://shop_images/stock-photo-communal-corridor-of-george-loveless-house-a-huge-council-housing-block-around-haggerston-in-london-1279840015.jpg",
-            "label": "Local Authorities1",
-            "title": "Safety & Security for Every Home1",
-            "text": "Community-Wide Protection Councils and housing associations are responsible for ensuring resident safety, particularly in social housing, assisted living, and family accommodations. Traditional security measures often sacrifice convenience, but Raviyo provides an elegant, tamper-resistant solution that secures homes without the need for constant locking and unlocking with a key.1",
-            "btn_name": "Contact Us1",
+            "label": "Local Authorities",
+            "title": "Safety & Security for Every Home",
+            "text": "Community-Wide Protection Councils and housing associations are responsible for ensuring resident safety, particularly in social housing, assisted living, and family accommodations. Traditional security measures often sacrifice convenience, but Raviyo provides an elegant, tamper-resistant solution that secures homes without the need for constant locking and unlocking with a key.",
+            "btn_name": "Contact Us",
             "url": ""
           }
         },
@@ -219,10 +219,10 @@
           "type": "image-text",
           "settings": {
             "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
-            "label": "Hotels1",
-            "title": "Elevate Guest Safety & Security1",
-            "text": "Hotel guests trust you to provide not only comfort but also security. Our unique handle prevents unauthorized room access by blocking common forced-entry tactics, such as coat hangers or improvised tools used to manipulate traditional handles. Unlike deadbolts, which guests often forget to lock, this system ensures a higher level of security without additional effort.1",
-            "btn_name": "Contact Us1",
+            "label": "Hotels",
+            "title": "Elevate Guest Safety & Security",
+            "text": "Hotel guests trust you to provide not only comfort but also security. Our unique handle prevents unauthorized room access by blocking common forced-entry tactics, such as coat hangers or improvised tools used to manipulate traditional handles. Unlike deadbolts, which guests often forget to lock, this system ensures a higher level of security without additional effort.",
+            "btn_name": "Contact Us",
             "url": ""
           }
         },
@@ -295,9 +295,9 @@
       ],
       "name": "FAQs",
       "settings": {
-        "heading": "Questions We Know You're Asking1",
-        "description": "Have more questions? Get in touch with us — we'll be happy to provide the answers you need.1",
-        "button_label": "Contact us1",
+        "heading": "Questions We Know You're Asking",
+        "description": "Have more questions? Get in touch with us — we'll be happy to provide the answers you need.",
+        "button_label": "Contact us",
         "button_link": "shopify://pages/contact"
       }
     },
@@ -400,16 +400,16 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "heading": "What Families and Professionals Say1"
+        "heading": "What Families and Professionals Say"
       }
     },
     "protection_cta_xVtHg3": {
       "type": "protection-cta",
       "name": "Born from real life",
       "settings": {
-        "badge_text": "Born from real life events1",
-        "heading": "Protecting your loved ones isn't optional - it's essential1",
-        "button_label": "Contact us1",
+        "badge_text": "Born from real life events",
+        "heading": "Protecting your loved ones isn't optional - it's essential",
+        "button_label": "Contact us",
         "button_link": "shopify://pages/contact"
       }
     },
@@ -442,8 +442,8 @@
       ],
       "name": "Blog",
       "settings": {
-        "title": "From the Blog1",
-        "btn_name": "View all posts1",
+        "title": "From the Blog",
+        "btn_name": "View all posts",
         "url": "shopify://blogs/news"
       }
     }
