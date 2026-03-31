@@ -15,8 +15,8 @@
       "settings": {
         "img": "shopify://shop_images/Image.jpg",
         "img_m": "shopify://shop_images/Frame_1984077997.jpg",
-        "title": "How to keep your home safe without sacrificing style",
-        "text": "Bulky chains and plastic clips might make you feel safe, but they ruin the aesthetics of your home. Here’s how modern design blends beauty and protection, proving that safety can look as elegant as it feels.",
+        "title": "How to keep your home safe without sacrificing style1",
+        "text": "Bulky chains and plastic clips might make you feel safe, but they ruin the aesthetics of your home. Here’s how modern design blends beauty and protection, proving that safety can look as elegant as it feels.1",
         "padding_top": 0,
         "padding_bottom": 54
       }
@@ -24,9 +24,9 @@
     "blog": {
       "type": "blog-template",
       "settings": {
-        "title": "Read latest blog posts",
+        "title": "Read latest blog posts1",
         "design": "custom",
-        "label": "",
+        "label": "1",
         "paginate_by": 9,
         "pagination_type": "pagination",
         "lazy_load_button_type": "secondary",
@@ -53,13 +53,13 @@
       "settings": {
         "full_width": false,
         "layout": "one_column",
-        "heading": "Stay in the loop",
-        "subheading": "Subscribe to our newsletter",
+        "heading": "Stay in the loop1",
+        "subheading": "Subscribe to our newsletter1",
         "success_message": "Thanks for subscribing",
         "text": "",
         "image_position": "left",
-        "email_placeholder": "Your email",
-        "button_aria_label": "Submit",
+        "email_placeholder": "Your email1",
+        "button_aria_label": "Submit1",
         "section_background": "#000000",
         "heading_color": "#757575",
         "text_color": "#ffffff",
