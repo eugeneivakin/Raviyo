@@ -80,6 +80,7 @@
     },
     "newsletter_rnDpie": {
       "type": "newsletter",
+      "disabled": true,
       "name": "Newsletter",
       "settings": {
         "full_width": false,
@@ -112,6 +113,16 @@
         "offset_bottom_mobile": 0
       }
     },
+    "protection_cta_BC6tpk": {
+      "type": "protection-cta",
+      "name": "Born from real life",
+      "settings": {
+        "badge_text": "Born from real life events",
+        "heading": "Protecting your loved ones isn't optional - it's essential",
+        "button_label": "Join the waitlist",
+        "button_link": "shopify://pages/contact"
+      }
+    },
     "section_related_article_hnKGzc": {
       "type": "section-related-article",
       "name": "Section related article",
@@ -128,6 +139,7 @@
     "section_banner_article_Xb9dRU",
     "article",
     "newsletter_rnDpie",
+    "protection_cta_BC6tpk",
     "section_related_article_hnKGzc"
   ]
 }
