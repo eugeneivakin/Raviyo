@@ -13,10 +13,10 @@
       "type": "main-hero",
       "name": "Main Hero",
       "settings": {
-        "text": "1",
+        "text": "",
         "img": "shopify://shop_images/compressed.webp",
         "img_m": "shopify://shop_images/main_hero_2.webp",
-        "btn_name": "Join the waitlist1",
+        "btn_name": "Join the waitlist",
         "url": "#"
       }
     },
@@ -26,25 +26,25 @@
         "text_KQpzed": {
           "type": "text",
           "settings": {
-            "text": "It features reliable and proven patented technology.1"
+            "text": "It features reliable and proven patented technology."
           }
         },
         "text_AkXhdt": {
           "type": "text",
           "settings": {
-            "text": "It is designed to prevent accidental exits or forced entry.1"
+            "text": "It is designed to prevent accidental exits or forced entry."
           }
         },
         "text_8XQLRC": {
           "type": "text",
           "settings": {
-            "text": "It protects your loved ones, both young and vulnerable.1"
+            "text": "It protects your loved ones, both young and vulnerable."
           }
         },
         "text_LNncpP": {
           "type": "text",
           "settings": {
-            "text": "It provides you the peace of mind you need.1"
+            "text": "It provides you the peace of mind you need."
           }
         }
       },
@@ -56,8 +56,8 @@
       ],
       "name": "Not just a door handle",
       "settings": {
-        "subtitle": "Raviyo is not just a door handle1",
-        "title": "It’s a new layer of protection1",
+        "subtitle": "Raviyo is not just a door handle",
+        "title": "It’s a new layer of protection",
         "img": "shopify://shop_images/Group_3.png",
         "img_m": "shopify://shop_images/Group_2.png"
       }
@@ -70,8 +70,8 @@
           "settings": {
             "number": "01",
             "video": "shopify://files/videos/InShot_20260219_145634814.mp4",
-            "title": "Protects the Most Vulnerable1",
-            "description": "Raviyo prevents young children or vulnerable adults from unintentionally opening the door, keeping them safely inside.1"
+            "title": "Protects the Most Vulnerable",
+            "description": "Raviyo prevents young children or vulnerable adults from unintentionally opening the door, keeping them safely inside."
           }
         },
         "point_U8yC8G": {
@@ -79,8 +79,8 @@
           "settings": {
             "number": "02",
             "video": "shopify://files/videos/InShot_20260219_145634814.mp4",
-            "title": "Fast Exit When Seconds Matter1",
-            "description": "Raviyo allows quick and secure door release in emergencies—no need to fumble for keys or unlock deadbolts.1"
+            "title": "Fast Exit When Seconds Matter",
+            "description": "Raviyo allows quick and secure door release in emergencies—no need to fumble for keys or unlock deadbolts."
           }
         },
         "point_RWUhar": {
@@ -88,8 +88,8 @@
           "settings": {
             "number": "03",
             "video": "shopify://files/videos/InShot_20260219_145634814.mp4",
-            "title": "Stops Intruders at the Letterbox1",
-            "description": "Raviyo blocks common break-in methods using tools through the letterbox by requiring deliberate human interaction.1"
+            "title": "Stops Intruders at the Letterbox",
+            "description": "Raviyo blocks common break-in methods using tools through the letterbox by requiring deliberate human interaction."
           }
         }
       },
@@ -100,8 +100,8 @@
       ],
       "name": "Three emergencies",
       "settings": {
-        "subtitle": "Three emergencies1",
-        "title": "One Elegant Solution1",
+        "subtitle": "Three emergencies",
+        "title": "One Elegant Solution",
         "image": "shopify://shop_images/Rectangle_23.png"
       }
     },
@@ -109,8 +109,8 @@
       "type": "section-video-background",
       "name": "How Raviyo works",
       "settings": {
-        "label": "Watch how Raviyo works1",
-        "title": "Multi Features For Maximum Safety1",
+        "label": "Watch how Raviyo works",
+        "title": "Multi Features For Maximum Safety",
         "video_desktop": "shopify://files/videos/raviyo full animation.mp4",
         "video_mobile": "shopify://files/videos/InShot_20260219_145634814.mp4"
       }
@@ -122,32 +122,32 @@
           "type": "feature",
           "settings": {
             "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
-            "title": "Raviyo is an entirely unhackable line of defence1",
-            "description": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely.1"
+            "title": "Raviyo is an entirely unhackable line of defence",
+            "description": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely."
           }
         },
         "feature_rnPHH3": {
           "type": "feature",
           "settings": {
             "img": "shopify://shop_images/1000_F_307573786_sAj0us0QVdoKZi7c5pri9XE7PFFCVDuE.jpg",
-            "title": "It works with all doors using a Eurocylinder lock1",
-            "description": "Raviyo is compatible with all doors with a Eurocylinder lock configuration. The handle comes with comprehensive instructions for quick installation.1"
+            "title": "It works with all doors using a Eurocylinder lock",
+            "description": "Raviyo is compatible with all doors with a Eurocylinder lock configuration. The handle comes with comprehensive instructions for quick installation."
           }
         },
         "feature_LD6hmN": {
           "type": "feature",
           "settings": {
             "img": "shopify://shop_images/1000_F_608373535_j9SLvTu8ExqWfMFrB3ZG9GWVwjt1oo7d.jpg",
-            "title": "Still easily engage the door's Multipoint lock1",
-            "description": "Raviyo works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way.1"
+            "title": "Still easily engage the door's Multipoint lock",
+            "description": "Raviyo works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way."
           }
         },
         "feature_QWdinj": {
           "type": "feature",
           "settings": {
             "img": "shopify://shop_images/stock-photo-a-luxurious-backyard-with-a-swimming-pool-hot-tub-and-patio-furniture-at-a-modern-house-during-2489280435.jpg",
-            "title": "Configure Raviyo for left and right-hand doors1",
-            "description": "The handle can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set.1"
+            "title": "Configure Raviyo for left and right-hand doors",
+            "description": "The handle can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set."
           }
         }
       },
@@ -159,17 +159,17 @@
       ],
       "name": "And there's more",
       "settings": {
-        "title": "And there's more...1"
+        "title": "And there's more..."
       }
     },
     "main_banner_CdhGMy": {
       "type": "main-banner",
       "name": "Be the first",
       "settings": {
-        "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security1",
-        "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.1",
+        "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security",
+        "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.",
         "image": "shopify://shop_images/image_1.png",
-        "btn_name": "Join the waitlist1",
+        "btn_name": "Join the waitlist",
         "url": "#"
       }
     },
@@ -179,17 +179,17 @@
         "title_w8CpjA": {
           "type": "title",
           "settings": {
-            "title": "And Raviyo is not just for the home1"
+            "title": "And Raviyo is not just for the home"
           }
         },
         "image_text_A96LH9": {
           "type": "image-text",
           "settings": {
             "img": "shopify://shop_images/Image_4.jpg",
-            "label": "Keep Little Ones Safely Inside1",
-            "title": "Nurseries & Childcare Centers1",
-            "text": "Young children are naturally curious, but when that curiosity leads them toward an open door, the risks are real. Our innovative door handle prevents accidental escapes by requiring a coordinated movement to operate something small children simply can’t do. Unlike door chains or high-mounted locks, it blends seamlessly into daily use without inconvenience  to staff.1",
-            "btn_name": "Contact Us1",
+            "label": "Keep Little Ones Safely Inside",
+            "title": "Nurseries & Childcare Centers",
+            "text": "Young children are naturally curious, but when that curiosity leads them toward an open door, the risks are real. Our innovative door handle prevents accidental escapes by requiring a coordinated movement to operate something small children simply can’t do. Unlike door chains or high-mounted locks, it blends seamlessly into daily use without inconvenience  to staff.",
+            "btn_name": "Contact Us",
             "url": ""
           }
         },
@@ -197,9 +197,9 @@
           "type": "image-text",
           "settings": {
             "img": "shopify://shop_images/stock-photo-nurse-or-doctor-give-man-support-during-recovery-or-loss-caregiver-holding-hand-of-her-sad-senior-2203716633.jpg",
-            "label": "Medical Institutions1",
-            "title": "Protect Vulnerable Patients Without Restricting Care1",
-            "text": "Hospitals, dementia care homes, and mental health institutions need a delicate balance between security and accessibility. Patients with cognitive conditions may unknowingly put themselves at risk by exiting unattended. Raviyo offers an intuitive yet controlled locking mechanism that prevents unauthorized exits while ensuring easy operation for caregivers.1",
+            "label": "Medical Institutions",
+            "title": "Protect Vulnerable Patients Without Restricting Care",
+            "text": "Hospitals, dementia care homes, and mental health institutions need a delicate balance between security and accessibility. Patients with cognitive conditions may unknowingly put themselves at risk by exiting unattended. Raviyo offers an intuitive yet controlled locking mechanism that prevents unauthorized exits while ensuring easy operation for caregivers.",
             "btn_name": "Contact Us1",
             "url": ""
           }
