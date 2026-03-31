@@ -111,7 +111,7 @@
       "settings": {
         "label": "Watch how Raviyo works",
         "title": "Multi Features For Maximum Safety",
-        "video_desktop": "shopify://files/videos/raviyo full animation.mp4",
+        "video_desktop": "shopify://files/videos/file_example_MP4_480_1_5MG.mp4",
         "video_mobile": "shopify://files/videos/InShot_20260219_145634814.mp4"
       }
     },
@@ -121,7 +121,7 @@
         "feature_NjCxaw": {
           "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
+            "img": "shopify://shop_images/Image_3.jpg",
             "title": "Raviyo is an entirely unhackable line of defence",
             "description": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely."
           }
@@ -129,7 +129,7 @@
         "feature_rnPHH3": {
           "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/1000_F_307573786_sAj0us0QVdoKZi7c5pri9XE7PFFCVDuE.jpg",
+            "img": "shopify://shop_images/Frame_770.jpg",
             "title": "It works with all doors using a Eurocylinder lock",
             "description": "Raviyo is compatible with all doors with a Eurocylinder lock configuration. The handle comes with comprehensive instructions for quick installation."
           }
@@ -137,7 +137,7 @@
         "feature_LD6hmN": {
           "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/1000_F_608373535_j9SLvTu8ExqWfMFrB3ZG9GWVwjt1oo7d.jpg",
+            "img": "shopify://shop_images/Image_4.jpg",
             "title": "Still easily engage the door's Multipoint lock",
             "description": "Raviyo works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way."
           }
@@ -145,7 +145,7 @@
         "feature_QWdinj": {
           "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/stock-photo-a-luxurious-backyard-with-a-swimming-pool-hot-tub-and-patio-furniture-at-a-modern-house-during-2489280435.jpg",
+            "img": "shopify://shop_images/Image.jpg",
             "title": "Configure Raviyo for left and right-hand doors",
             "description": "The handle can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set."
           }
@@ -168,7 +168,7 @@
       "settings": {
         "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security",
         "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.",
-        "image": "shopify://shop_images/image_1.png",
+        "image": "shopify://shop_images/Rectangle_29.jpg",
         "btn_name": "Join the waitlist",
         "url": "#"
       }
@@ -218,7 +218,7 @@
         "image_text_hWLAnq": {
           "type": "image-text",
           "settings": {
-            "img": "shopify://shop_images/stock-photo-close-up-of-unrecognizable-black-woman-entering-hotel-room-and-holding-suitcase-upon-travelling-to-2465756177.jpg",
+            "img": "shopify://shop_images/Rectangle_23.png",
             "label": "Hotels",
             "title": "Elevate Guest Safety & Security",
             "text": "Hotel guests trust you to provide not only comfort but also security. Our unique handle prevents unauthorized room access by blocking common forced-entry tactics, such as coat hangers or improvised tools used to manipulate traditional handles. Unlike deadbolts, which guests often forget to lock, this system ensures a higher level of security without additional effort.",
@@ -307,25 +307,25 @@
         "slide_KVLLyG": {
           "type": "slide",
           "settings": {
-            "image_slide": "shopify://shop_images/Shot_1.png"
+            "image_slide": "shopify://shop_images/Image.jpg"
           }
         },
         "slide_ga3CY8": {
           "type": "slide",
           "settings": {
-            "image_slide": "shopify://shop_images/Shot_9.png"
+            "image_slide": "shopify://shop_images/image_1_b41d1208-010f-4527-bb6e-cc0aa631fe87.png"
           }
         },
         "slide_gAxAM8": {
           "type": "slide",
           "settings": {
-            "image_slide": "shopify://shop_images/Shot_4.png"
+            "image_slide": "shopify://shop_images/a-bridge-sitting-in-thick-pink-and-purple-fog.jpg"
           }
         },
         "slide_nPiwRN": {
           "type": "slide",
           "settings": {
-            "image_slide": "shopify://shop_images/Shot_9.png"
+            "image_slide": "shopify://shop_images/Frame_770.jpg"
           }
         }
       },
@@ -357,14 +357,16 @@
           "type": "testimonial",
           "settings": {
             "text": "1. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
-            "author_name": "— Author name"
+            "author_name": "— Author name",
+            "img": "shopify://shop_images/Ellipse_1.jpg"
           }
         },
         "testimonial_UKLmeY": {
           "type": "testimonial",
           "settings": {
             "text": "2. “Finally, a safety solution that doesn’t look like a child lock. It blends perfectly into our home.”",
-            "author_name": "— Author name"
+            "author_name": "— Author name",
+            "img": "shopify://shop_images/Logo_only4_-_Full_2.png"
           }
         },
         "testimonial_WLnghE": {
