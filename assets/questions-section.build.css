@@ -107,6 +107,18 @@
 	width: 100%;
 }
 
+.questions-section__item .icon--minus {
+	display: none;
+}
+
+.questions-section__item.is-active .icon--plus {
+	display: none;
+}
+
+.questions-section__item.is-active .icon--minus {
+	display: inline;
+}
+
 .questions-section__item-title {
 	margin: 0;
 	padding: 16px 20px;
@@ -121,7 +133,6 @@
 	justify-content: space-between;
 	align-items: center;
 	gap:20px;
-
 }
 
 .questions-section__item-control:hover {
