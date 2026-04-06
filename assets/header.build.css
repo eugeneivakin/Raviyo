@@ -1465,7 +1465,7 @@
 .header-section.header-section--transparent.header-section--top-position.is-hover .header {
 	box-shadow: none;
 }
-.header-section.header-section--transparent.header-section--top-position.is-hover .header-menu .header-menu__item.header-menu__item--main .header-menu__item-text {
+.header-section.header-section--transparent.header-section--top-position .header-menu .header-menu__item.header-menu__item--main .header-menu__item-text {
 	color: var(--header-transparent-text-color);
     
 }
