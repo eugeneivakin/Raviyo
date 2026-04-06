@@ -73,10 +73,27 @@
     svg,
     video {
       height: 100%;
+      left: 0;
       object-fit: cover;
+      position: absolute;
+      top: 0;
       vertical-align: top;
       width: 100%;
       cursor: pointer; /* clickable to pause */
+    }
+
+    .video__player--mobile {
+      @include sm {
+        display: none;
+      }
+    }
+
+    .video__player--desktop {
+      display: none;
+
+      @include sm {
+        display: block;
+      }
     }
   }
 }

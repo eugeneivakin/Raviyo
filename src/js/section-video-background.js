@@ -4,76 +4,109 @@
   // Start playback when at least 33% of the section is visible and play to the end.
   var PLAY_VISIBILITY = 0.33;
 
-  function initSectionVideo(section) {
-    var video = section.querySelector('video');
+
+  function getCurrentVideo(section) {
+    var isMobile = window.innerWidth <= 768;
+    var videoMobile = section.querySelector('video[data-device="mobile"]');
+    var videoDesktop = section.querySelector('video[data-device="desktop"]');
+    if (isMobile && videoMobile) return videoMobile;
+    if (!isMobile && videoDesktop) return videoDesktop;
+    // fallback: if we don’t have what we need, we take any
+    return section.querySelector('video');
+  }
+
+  function prepareVideo(video) {
     if (!video) return;
-
-    // video is always muted in this project, set it and don't try to restore
     try { video.muted = true; } catch (e) {}
-
-    // make sure video is prepared for inline autoplay
     video.playsInline = true;
     video.setAttribute('webkit-playsinline', '');
     video.preload = video.preload || 'auto';
+  }
 
-    // flag to mark user-initiated pause (click). When user leaves the section we clear this flag so replay on return works.
+  function initSectionVideo(section) {
+    var videoMobile = section.querySelector('video[data-device="mobile"]');
+    var videoDesktop = section.querySelector('video[data-device="desktop"]');
+    if (videoMobile) prepareVideo(videoMobile);
+    if (videoDesktop) prepareVideo(videoDesktop);
+
     var userPaused = false;
+    var currentVideo = getCurrentVideo(section);
 
     function startPlayback() {
-      // don't auto-resume if user explicitly paused
+      var v = getCurrentVideo(section);
+      if (!v) return;
       if (userPaused) return;
-
-      // if already playing, nothing to do
-      if (!video.paused && !video.ended) return;
-
-      try { video.currentTime = 0; } catch (e) {}
-
-      var playPromise = video.play();
+      if (!v.paused && !v.ended) return;
+      try { v.currentTime = 0; } catch (e) {}
+      var playPromise = v.play();
       if (playPromise && typeof playPromise.then === 'function') {
         playPromise.catch(function (err) {
-          // autoplay blocked or other error
           console.warn('section-video: play() rejected', err);
         });
       }
-
       section.classList.remove('video--paused-by-user');
     }
 
     function stopAndReset() {
-      // clear user pause on leave so that returning will auto-play
       userPaused = false;
+      var v = getCurrentVideo(section);
+      if (!v) return;
       try {
-        if (!video.paused) video.pause();
-        // do NOT reset currentTime to avoid visual jump when leaving mid-play
+        if (!v.paused) v.pause();
+        // do not reset currentTime so that there is no jump
       } catch (e) {}
-      // remove user pause visual state on exit
       section.classList.remove('video--paused-by-user');
+    }
+
+    function pauseAllExceptCurrent() {
+      var v = getCurrentVideo(section);
+      [videoMobile, videoDesktop].forEach(function (vid) {
+        if (vid && vid !== v) {
+          try { vid.pause(); } catch (e) {}
+        }
+      });
     }
 
     function onIntersection(entries) {
       entries.forEach(function (entry) {
         if (entry.intersectionRatio >= PLAY_VISIBILITY) {
+          pauseAllExceptCurrent();
           startPlayback();
         } else {
           stopAndReset();
+          pauseAllExceptCurrent();
         }
       });
     }
 
-    // click to pause (only pause; do NOT resume on click)
-    video.addEventListener('click', function () {
-      if (!video.paused) {
-        try { video.pause(); } catch (e) {}
-        userPaused = true;
-        section.classList.add('video--paused-by-user');
-      }
+    // click to pause (pause only, do not launch on click)
+    [videoMobile, videoDesktop].forEach(function (vid) {
+      if (!vid) return;
+      vid.addEventListener('click', function () {
+        if (!vid.paused) {
+          try { vid.pause(); } catch (e) {}
+          userPaused = true;
+          section.classList.add('video--paused-by-user');
+        }
+      });
     });
+
+    // resize processing: if the video type changes, switch
+    var lastIsMobile = window.innerWidth <= 768;
+    function onResize() {
+      var isMobile = window.innerWidth <= 768;
+      if (isMobile !== lastIsMobile) {
+        pauseAllExceptCurrent();
+        userPaused = false;
+        startPlayback();
+        lastIsMobile = isMobile;
+      }
+    }
 
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(onIntersection, { threshold: [PLAY_VISIBILITY] });
       io.observe(section);
     } else {
-      // fallback for older browsers: simple scroll/resize check that supports replay
       var checkVisibility = function () {
         var rect = section.getBoundingClientRect();
         var h = rect.height || section.offsetHeight;
@@ -81,15 +114,18 @@
         var visible = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
         var ratio = visible / h;
         if (ratio >= PLAY_VISIBILITY) {
+          pauseAllExceptCurrent();
           startPlayback();
         } else {
           stopAndReset();
+          pauseAllExceptCurrent();
         }
       };
       window.addEventListener('scroll', checkVisibility, { passive: true });
       window.addEventListener('resize', checkVisibility);
       setTimeout(checkVisibility, 50);
     }
+    window.addEventListener('resize', onResize);
   }
 
   function initAll() {

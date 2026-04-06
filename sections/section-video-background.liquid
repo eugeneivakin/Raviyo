@@ -22,7 +22,33 @@
 </div>
 <div class="section-video video--fullscreen">
   {% if section.settings.video_desktop != blank or section.settings.video_mobile != blank %}
-    {{ section.settings.video_desktop | video_tag: image_size: '1920x' }}
+    <video
+      class="video__player video__player--desktop js-video"
+      data-device="desktop"
+      data-type="html"
+      muted
+      playsinline
+    >
+      {%- for source in section.settings.video_desktop.sources -%}
+        {%- if source.mime_type == 'video/mp4' -%}
+          <source src="{{- source.url -}}" type="{{- source.mime_type -}}">
+        {%- endif -%}
+      {%- endfor -%}
+    </video>
+
+    <video
+      class="video__player video__player--mobile js-video"
+      data-device="mobile"
+      data-type="html"
+      muted
+      playsinline
+    >
+      {%- for source in section.settings.video_mobile.sources -%}
+        {%- if source.mime_type == 'video/mp4' -%}
+          <source src="{{- source.url -}}" type="{{- source.mime_type -}}">
+        {%- endif -%}
+      {%- endfor -%}
+    </video>
   {% else %}
     {{ 'hero-apparel-1' | placeholder_svg_tag }}
   {% endif %}

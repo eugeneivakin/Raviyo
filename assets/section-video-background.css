@@ -69,9 +69,25 @@
 .section-video-background .section-video svg,
 .section-video-background .section-video video {
   height: 100%;
+  left: 0;
   -o-object-fit: cover;
      object-fit: cover;
+  position: absolute;
+  top: 0;
   vertical-align: top;
   width: 100%;
   cursor: pointer; /* clickable to pause */
+}
+@media screen and (min-width: 750px) {
+  .section-video-background .section-video .video__player--mobile {
+    display: none;
+  }
+}
+.section-video-background .section-video .video__player--desktop {
+  display: none;
+}
+@media screen and (min-width: 750px) {
+  .section-video-background .section-video .video__player--desktop {
+    display: block;
+  }
 }
