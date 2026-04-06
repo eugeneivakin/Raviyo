@@ -21,9 +21,13 @@
   {%- assign tag = article.tags[0] -%}
   {%- assign article_title = article.title | default: 'Article title' -%}
   {%- assign article_url = article.url | default: '#' -%}
-  {%- assign article_image = article.image | default: settings.article_default_image -%}
+  {% if article.metafields.custom.article_img != blank %}
+    {%- assign article_image = article.metafields.custom.article_img -%}
+  {% else %}
+    {%- assign article_image = article.image | default: settings.article_default_image -%}
+  {% endif %}
 
-  {%- if article.image == blank and settings.article_default_image != blank -%}
+  {%- if article_image == blank and settings.article_default_image != blank -%}
     {%- capture img_focal -%}
 			--img-desktop-pos: {{ settings.article_default_image.presentation.focal_point }};
 		{%- endcapture -%}
@@ -143,7 +147,7 @@
     <a
       class="focus-visible-outline article-card__link-image-wrapper"
       href="{{- article_url -}}"
-      {% if article.image == blank %}
+      {% if article_image == blank %}
         aria-label="{{ article.title | escape }}"
       {% endif %}
     >
