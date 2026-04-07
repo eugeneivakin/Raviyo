@@ -112,7 +112,7 @@ class AnimationText extends HTMLElement {
           trigger: this,
           start: "top bottom", // section is just appearing
           end: "bottom bottom", // section is completely visible
-          scrub: true,
+          scrub: 5,
         },
       };
       this.tl = gsap.timeline(this.scrollTriggerObject);
