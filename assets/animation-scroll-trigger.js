@@ -105,33 +105,33 @@ class AnimationText extends HTMLElement {
       this.animation(); 
     }
     createScrollTrigger() {
-        this.scrollTriggerObject = {
-            scrollTrigger: {
-                trigger: this,
-                start: "-140% 70%",
-                end: "bottom center",
-                scrub: 3
-            }
+      this.scrollTriggerObject = {
+        scrollTrigger: {
+          trigger: this,
+          start: "top 80%",
+          end: "top center",
+          scrub: true
         }
-        this.tl = gsap.timeline(this.scrollTriggerObject);
+      }
+      this.tl = gsap.timeline(this.scrollTriggerObject);
     }
 
-   animation() {
+       animation() {
         this.words.forEach((word, index) => {
-            this.tl.fromTo(
-                word,
-                {
-                    opacity: .2
-                },
-                {
-                    duration: 1.2,
-                    opacity: 1,
-                    ease: "power3.out"
-                },
-                index * 0.25
-            );
+          this.tl.fromTo(
+            word,
+            {
+              opacity: .2
+            },
+            {
+              duration: 0.4,
+              opacity: 1,
+              ease: "power3.out"
+            },
+            index * 0.05
+          );
         });
-    }
+      }
 }
 
 customElements.define('animation-text', AnimationText);
