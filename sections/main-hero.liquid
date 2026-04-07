@@ -7,13 +7,10 @@
         {% if section.settings.img_m != blank %}
           <source
             srcset="{{ section.settings.img_m |  image_url: width: section.settings.img_m.width  }}"
-            media="(max-width: 500px)"
+            media="(max-width: 1024px) and (orientation: portrait)"
           >
         {% endif %}
-        <img
-          src="{{ section.settings.img |  image_url: width: section.settings.img.width  }}"
-          alt="{{ section.settings.img.alt }}"
-        >
+        {{ section.settings.img | image_url: width: section.settings.img.width | image_tag }}
       </picture>
     {% endif %}
     <div class="main-hero__wrap">
