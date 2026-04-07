@@ -17,14 +17,18 @@ class ScrollTriggerStack {
     if (this.inited) return;
     this.inited = true;
     // initialize step-based sections (e.g. main-list) after queued blocks
-    if (typeof initStepSections === 'function') {
-      try { initStepSections(); } catch (e) { console.error(e); }
+    if (typeof initStepSections === "function") {
+      try {
+        initStepSections();
+      } catch (e) {
+        console.error(e);
+      }
     }
 
     this.queue.sort((a, b) => {
       if (a.el === b.el) return 0;
       const pos = a.el.compareDocumentPosition(b.el);
-      if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;  
+      if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
       if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1;
       return 0;
     });
@@ -34,7 +38,6 @@ class ScrollTriggerStack {
     });
 
     this.queue.length = 0;
-
 
     if (window.ScrollTrigger) {
       ScrollTrigger.refresh();
@@ -56,14 +59,14 @@ class ShowScrollBlock extends HTMLElement {
   }
 
   connectedCallback() {
-    scrollTriggerStack.add(this,() => {
+    scrollTriggerStack.add(this, () => {
       this.createScrollTrigger();
-    })
-    window.addEventListener('resize', this.handleResize);
+    });
+    window.addEventListener("resize", this.handleResize);
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener("resize", this.handleResize);
     this.scrollTrigger?.kill();
   }
 
@@ -73,68 +76,67 @@ class ShowScrollBlock extends HTMLElement {
     if (w !== this.prevWidth) {
       this.scrollTrigger?.kill();
       this.createScrollTrigger();
-      this.prevWidth = w; 
+      this.prevWidth = w;
     }
-   
   }
 
   createScrollTrigger() {
     this.scrollTrigger = ScrollTrigger.create({
       trigger: this,
       start: "-50% center",
-      onEnter: () => this.classList.add('active'),
-      onLeaveBack: () => this.classList.remove('active'),
+      onEnter: () => this.classList.add("active"),
+      onLeaveBack: () => this.classList.remove("active"),
     });
   }
 }
 
-customElements.define('animation-block', ShowScrollBlock);
+customElements.define("animation-block", ShowScrollBlock);
 class AnimationText extends HTMLElement {
-    constructor() {
-        super();
-        this.words = this.querySelectorAll('.animation-letter');
-        this.prevWidth = window.innerWidth;
-    }
-    connectedCallback() {
-      scrollTriggerStack.add(this,() => {
-        this.init();
-      });
-    }
-    init() {
-      this.createScrollTrigger()
-      this.animation(); 
-    }
-    createScrollTrigger() {
-        this.scrollTriggerObject = {
-            scrollTrigger: {
-                trigger: this,
-                start: "-140% 70%",
-                end: "bottom center",
-                scrub: 3
-            }
-        }
-        this.tl = gsap.timeline(this.scrollTriggerObject);
-    }
+  constructor() {
+    super();
+    this.words = this.querySelectorAll(".animation-letter");
+    this.prevWidth = window.innerWidth;
+  }
+  connectedCallback() {
+    scrollTriggerStack.add(this, () => {
+      this.init();
+    });
+  }
+  init() {
+    this.createScrollTrigger();
+    this.animation();
+  }
+  createScrollTrigger() {
+    this.scrollTriggerObject = {
+      scrollTrigger: {
+        trigger: this,
+        start: "top 80%",
+        end: "top center",
+        scrub: true,
+      },
+    };
+    this.tl = gsap.timeline(this.scrollTriggerObject);
+  }
 
-   animation() {
-        this.words.forEach((word, index) => {
-            this.tl.fromTo(
-                word,
-                {
-                    opacity: .2
-                },
-                {
-                    duration: 1.2,
-                    opacity: 1,
-                    ease: "power3.out"
-                },
-                index * 0.25
-            );
-        });
-    }
+  animation() {
+    this.words.forEach((word, index) => {
+      this.tl.fromTo(
+        word,
+        {
+          opacity: 0.2,
+        },
+        {
+          duration: 0.4,
+          opacity: 1,
+          ease: "power3.out",
+        },
+        index * 0.05,
+      );
+    });
+  }
 }
 
-customElements.define('animation-text', AnimationText);
+customElements.define("animation-text", AnimationText);
 
 class AnimationHorizontalScroll extends HTMLElement {
   constructor() {
@@ -151,17 +153,17 @@ class AnimationHorizontalScroll extends HTMLElement {
     scrollTriggerStack.add(this, () => {
       this.init();
     });
-    window.addEventListener('resize', this.resizeWindow);
+    window.addEventListener("resize", this.resizeWindow);
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resizeWindow);
+    window.removeEventListener("resize", this.resizeWindow);
     this.destroyTimeline();
   }
 
   init() {
-    this.blocks = gsap.utils.toArray(this.querySelectorAll('.block'));
-    this.container = this.querySelector('.animation-scroll__wrap');
+    this.blocks = gsap.utils.toArray(this.querySelectorAll(".block"));
+    this.container = this.querySelector(".animation-scroll__wrap");
 
     if (!this.container || this.blocks.length < 2) {
       this.destroyTimeline();
@@ -184,15 +186,14 @@ class AnimationHorizontalScroll extends HTMLElement {
     const w = window.innerWidth;
 
     if (w !== this.prevWidth) {
-     clearTimeout(this.resizeTimeout);
+      clearTimeout(this.resizeTimeout);
       this.resizeTimeout = setTimeout(() => {
         if (this.tween && this.tween.scrollTrigger) {
-          this.tween.scrollTrigger.refresh(); 
-          this.prevWidth = w; 
+          this.tween.scrollTrigger.refresh();
+          this.prevWidth = w;
         }
       }, 150);
     }
-    
   }
 
   createScrollTrigger() {
@@ -211,16 +212,16 @@ class AnimationHorizontalScroll extends HTMLElement {
   }
 }
 
-customElements.define('animation-scroll', AnimationHorizontalScroll);
+customElements.define("animation-scroll", AnimationHorizontalScroll);
 class VideoScroll extends HTMLElement {
   constructor() {
     super();
-    this.video = this.querySelector('video');
-    this.container = this.querySelector('.video-scroll__wrap');
+    this.video = this.querySelector("video");
+    this.container = this.querySelector(".video-scroll__wrap");
     this.tl = null;
     this.prevWidth = window.innerWidth;
     this.resizeWindow = this.resizeWindow.bind(this);
-    window.addEventListener('resize', this.resizeWindow);
+    window.addEventListener("resize", this.resizeWindow);
   }
 
   connectedCallback() {
@@ -234,7 +235,7 @@ class VideoScroll extends HTMLElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resizeWindow);
+    window.removeEventListener("resize", this.resizeWindow);
     if (this.tl) {
       this.tl.scrollTrigger?.kill();
       this.tl.kill();
@@ -250,21 +251,24 @@ class VideoScroll extends HTMLElement {
         this.video.currentTime = 0.01;
       } catch (e) {}
 
-      this.video.classList.add('is-video-ready');
+      this.video.classList.add("is-video-ready");
 
       if (this.video.paused) {
-        this.video.play().then(() => {
-          this.video.pause();
-        }).catch(() => {});
+        this.video
+          .play()
+          .then(() => {
+            this.video.pause();
+          })
+          .catch(() => {});
       }
 
       this.animation();
     };
 
-    if (this.video.readyState >= 3) { 
+    if (this.video.readyState >= 3) {
       onReady();
     } else {
-      this.video.addEventListener('canplay', onReady, { once: true });
+      this.video.addEventListener("canplay", onReady, { once: true });
     }
   }
 
@@ -273,7 +277,7 @@ class VideoScroll extends HTMLElement {
 
     if (w !== this.prevWidth) {
       this.tl?.scrollTrigger?.refresh();
-      this.prevWidth = w; 
+      this.prevWidth = w;
     }
   }
 
@@ -282,7 +286,7 @@ class VideoScroll extends HTMLElement {
 
     this.tl.to(this.video, {
       currentTime: Math.max(this.video.duration - 1, 0),
-      ease: "none"
+      ease: "none",
     });
   }
 
@@ -293,23 +297,23 @@ class VideoScroll extends HTMLElement {
         start: "top top",
         end: "+=7000",
         pin: true,
-        scrub: true
-      }
+        scrub: true,
+      },
     });
   }
 }
 
-customElements.define('video-scroll', VideoScroll);
-document.addEventListener('DOMContentLoaded', () => {
+customElements.define("video-scroll", VideoScroll);
+document.addEventListener("DOMContentLoaded", () => {
   scrollTriggerStack.init();
 });
 
 function initStepSections() {
   if (!window.gsap || !window.ScrollTrigger) return;
-  document.querySelectorAll('.main-list__feats').forEach(feats => {
-    const blocks = gsap.utils.toArray(feats.querySelectorAll('animation-block'));
+  document.querySelectorAll(".main-list__feats").forEach((feats) => {
+    const blocks = gsap.utils.toArray(feats.querySelectorAll("animation-block"));
     if (blocks.length < 2) return;
-    const container = feats.closest('.main-list__wrapper') || feats;
+    const container = feats.closest(".main-list__wrapper") || feats;
 
     if (feats._stepInit) return;
     feats._stepInit = true;
@@ -317,30 +321,33 @@ function initStepSections() {
     const snapStep = 1 / (blocks.length - 1);
 
     // map corresponding video wrappers by data attribute (1-based index)
-    const sectionRoot = container.closest('.main-list') || container;
-    const videoEls = blocks.map((_, i) => sectionRoot.querySelector(`[data-animation-video="${i+1}"]`));
+    const sectionRoot = container.closest(".main-list") || container;
+    const videoEls = blocks.map((_, i) => sectionRoot.querySelector(`[data-animation-video="${i + 1}"]`));
 
     const resetVideos = () => {
-      videoEls.forEach(ve => {
+      videoEls.forEach((ve) => {
         if (!ve) return;
-        const v = ve.querySelector('video');
+        const v = ve.querySelector("video");
         if (!v) return;
         try {
           if (!v.paused) v.pause();
           v.currentTime = 0;
         } catch (e) {}
-        ve.classList.remove('active');
+        ve.classList.remove("active");
       });
     };
 
-    if ('IntersectionObserver' in window) {
-      const visibilityObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            resetVideos();
-          }
-        });
-      }, { threshold: 0 });
+    if ("IntersectionObserver" in window) {
+      const visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              resetVideos();
+            }
+          });
+        },
+        { threshold: 0 },
+      );
       visibilityObserver.observe(sectionRoot);
     }
 
@@ -348,38 +355,40 @@ function initStepSections() {
       scrollTrigger: {
         trigger: sectionRoot,
         start: "top top",
-        end: "+=" + (window.innerHeight * blocks.length),
+        end: "+=" + window.innerHeight * blocks.length,
         pin: true,
         scrub: 0.5,
         invalidateOnRefresh: true,
-        onRefresh: self => {
+        onRefresh: (self) => {
           try {
             const pinEl = self.pin || self.trigger;
             if (pinEl && pinEl.style) {
               pinEl.style.top = "var(--header-height-static, 90px)";
             }
-          } catch (e) { /* ignore */ }
+          } catch (e) {
+            /* ignore */
+          }
         },
         snap: {
           snapTo: (value) => Math.round(value / snapStep) * snapStep,
           duration: 0.25,
-          ease: "power1.inOut"
+          ease: "power1.inOut",
         },
-        onUpdate: self => {
+        onUpdate: (self) => {
           const index = Math.round(self.progress * (blocks.length - 1));
-          blocks.forEach((b, i) => b.classList.toggle('active', i === index));
+          blocks.forEach((b, i) => b.classList.toggle("active", i === index));
           // toggle video wrappers and start playback for the active one
           videoEls.forEach((ve, i) => {
             if (!ve) return;
             const isActive = i === index;
-            const hadActive = ve.classList.contains('active');
-            ve.classList.toggle('active', isActive);
-            const v = ve.querySelector('video');
+            const hadActive = ve.classList.contains("active");
+            ve.classList.toggle("active", isActive);
+            const v = ve.querySelector("video");
             if (!v) return;
-            
+
             if (isActive && !hadActive) {
               // start playback when becoming active
-              if (typeof v.play === 'function') {
+              if (typeof v.play === "function") {
                 v.play().catch(() => {});
               }
             } else if (!isActive && hadActive) {
@@ -390,8 +399,8 @@ function initStepSections() {
               } catch (e) {}
             }
           });
-        }
-      }
+        },
+      },
     });
 
     // dummy tween to provide timeline length
