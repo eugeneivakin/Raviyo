@@ -107,15 +107,15 @@ class AnimationText extends HTMLElement {
     this.animation();
   }
   createScrollTrigger() {
-    this.scrollTriggerObject = {
-      scrollTrigger: {
-        trigger: this,
-        start: "top 80%",
-        end: "top center",
-        scrub: true,
-      },
-    };
-    this.tl = gsap.timeline(this.scrollTriggerObject);
+      this.scrollTriggerObject = {
+        scrollTrigger: {
+          trigger: this,
+          start: "top bottom", // section is just appearing
+          end: "bottom bottom", // section is completely visible
+          scrub: true,
+        },
+      };
+      this.tl = gsap.timeline(this.scrollTriggerObject);
   }
 
   animation() {
