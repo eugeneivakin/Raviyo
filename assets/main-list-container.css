@@ -172,7 +172,7 @@
     order: 1;
   }
   .main-list__left {
-    order: 3;
+    order: 0;
   }
   .main-list__point:first-child {
     order: 2;
@@ -201,13 +201,13 @@ animation-block.active {
 .main-list__left .main-list__media-wrapper {
   border-radius: 16px;
   height: auto;
-  left: 0;
+  left: clamp(16px, 2.08vw, 40px);
   opacity: 0;
   overflow: hidden;
   position: absolute;
+  right: clamp(16px, 2.08vw, 40px);
   transition: opacity 0.3s ease-in-out;
-  top: 0;
-  width: 100%;
+  top: clamp(16px, 2.08vw, 40px);
   z-index: 1;
 }
 
