@@ -14,7 +14,7 @@
       "name": "Main Hero",
       "settings": {
         "text": "",
-        "img": "shopify://shop_images/Image_4.jpg",
+        "img": "shopify://shop_images/compressed.webp",
         "img_m": "shopify://shop_images/Shot_4.png",
         "btn_name": "Join the waitlist",
         "url": "#"
@@ -111,13 +111,21 @@
       "settings": {
         "label": "Watch how Raviyo works",
         "title": "Multi Features For Maximum Safety",
-        "video_desktop": "shopify://files/videos/file_example_MP4_480_1_5MG.mp4",
+        "video_desktop": "shopify://files/videos/raviyo full animation.mp4",
         "video_mobile": "shopify://files/videos/VN20260331_151037.mp4"
       }
     },
     "main_more_rBUeBw": {
       "type": "main-more",
       "blocks": {
+        "feature_HjeRkB": {
+          "type": "feature",
+          "settings": {
+            "img": "shopify://shop_images/Frame_770.jpg",
+            "title": "Raviyo is an entirely unhackable  line of defence",
+            "description": "It contains no smart technology, ensuring there is nothing to hack. Unlike other sectors that remain vulnerable, we eliminate the risk completely."
+          }
+        },
         "feature_NjCxaw": {
           "type": "feature",
           "settings": {
@@ -152,6 +160,7 @@
         }
       },
       "block_order": [
+        "feature_HjeRkB",
         "feature_NjCxaw",
         "feature_rnPHH3",
         "feature_LD6hmN",
@@ -168,7 +177,7 @@
       "settings": {
         "title": "Be among the very first to experience Raviyo - the patented door handle that redefines home security",
         "description": "Early supporters get exclusive updates, special launch pricing, and priority delivery. Don’t wait - protection for your home starts here.",
-        "image": "shopify://shop_images/Rectangle_29.jpg",
+        "image": "shopify://shop_images/image_1_1.png",
         "image_mobile": "shopify://shop_images/Frame_770.jpg",
         "btn_name": "Join the waitlist",
         "url": "#"
