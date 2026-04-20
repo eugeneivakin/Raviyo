@@ -38,17 +38,17 @@ if (!window.customSliderConfigs) {
           spaceBetween: 16
         },
         500: {
-          slidesPerView: 2,
+          slidesPerView: 2.25,
           slidesOffsetBefore: 0,
           slidesOffsetAfter: 0
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 3.25,
           slidesOffsetBefore: 0,
           slidesOffsetAfter: 0
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 4.25,
           spaceBetween: 20
         },
         1440: {
