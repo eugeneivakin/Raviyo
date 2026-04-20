@@ -1,6 +1,8 @@
 @use "mixins/media" as *;
 
 .section-video-background {
+  height: 300vh;
+  // overflow: hidden;
   position: relative;
 
   .section-content {
@@ -66,7 +68,8 @@
 
   .section-video {
     height: 100vh;
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 1;
 
