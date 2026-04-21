@@ -1,0 +1,199 @@
+@use "mixins/media" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  max-width: 390px;
+
+  @include xs {
+    max-width: none;
+  }
+}
+
+.temaplte--contact {
+}
+
+.shopify-section--contact {
+  --color-text-secondary: #fff;
+  --color-heading: #d9d9d9;
+  --color-text-primary: #fff;
+  --link-color: #fff;
+  --heading-font-family: "Inter Tight", sans-serif;
+  --base-font-family: "Inter Tight", sans-serif;
+  --body-font-size: 18px;
+  background: #2f4858;
+  color: #fff;
+  font-family: var(--base-font-family);
+
+  @include md {
+    --body-font-size: 20px;
+  }
+
+  .contact {
+    .contact__container {
+      padding-left: 0;
+      padding-right: 0;
+
+      @include sm {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @include md {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+
+    .contact__content {
+      margin-top: 0;
+    }
+
+    .contact__content-row {
+      @include sm {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        gap: 18px;
+        margin: 0;
+      }
+
+      @include md {
+        grid-template-columns: 50% 1fr;
+      }
+
+      @include lg {
+        grid-template-columns: 41% 1fr;
+        gap: 35px;
+      }
+    }
+
+    .contact__content-col {
+      background: rgba(226, 230, 233, 0.1);
+      border: 1px solid rgba(226, 230, 233, 0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 34px 16px 40px;
+
+      @include sm {
+        flex-grow: 0;
+        width: auto;
+      }
+
+      @include md {
+        padding: 55px 63px 40px;
+      }
+
+      &.contact__content-col--banner {
+        border: 0;
+        padding: 0;
+      }
+    }
+
+    .contact__content-col-heading {
+      color: var(--color-heading);
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 11px;
+
+      @include md {
+        font-size: 64px;
+        margin-bottom: 13px;
+      }
+    }
+
+    .contact__form-fields {
+      margin-top: 32px;
+
+      @include md {
+        margin-top: 41px;
+      }
+    }
+
+    .contact__form-fields-row {
+      @include md {
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+    }
+
+    .contact__field {
+      margin-bottom: 20px;
+    }
+
+    .contact__textarea {
+      border-radius: 24px;
+      height: 118px;
+      padding-top: 14px;
+
+      @include sm {
+        height: 119px;
+      }
+    }
+
+    .contact__submit {
+      margin-top: 32px;
+
+      @include md {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .contact__content-col-content {
+    font-weight: 500;
+  }
+
+  .section-rte {
+    font-size: var(--body-font-size);
+    line-height: 140%;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .input-wrapper {
+    .input {
+      &::placeholder {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        + .input-label {
+          opacity: 1;
+        }
+      }
+    }
+
+    .input-label {
+      opacity: 0.5;
+      left: 23px;
+      top: 15px;
+    }
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
+  textarea,
+  select {
+    --color-background: rgba(255, 255, 255, 0.1);
+    // background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    margin-bottom: 0;
+    padding: 14px 23px;
+  }
+
+  .btn {
+    justify-content: space-between;
+    min-width: 0;
+  }
+}

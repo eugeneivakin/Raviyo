@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  max-width: 390px;
+}
+@media screen and (min-width: 576px) {
+  body {
+    max-width: none;
+  }
+}
+
+.shopify-section--contact {
+  --color-text-secondary: #fff;
+  --color-heading: #d9d9d9;
+  --color-text-primary: #fff;
+  --link-color: #fff;
+  --heading-font-family: "Inter Tight", sans-serif;
+  --base-font-family: "Inter Tight", sans-serif;
+  --body-font-size: 18px;
+  background: #2f4858;
+  color: #fff;
+  font-family: var(--base-font-family);
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact {
+    --body-font-size: 20px;
+  }
+}
+.shopify-section--contact .contact .contact__container {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media screen and (min-width: 750px) {
+  .shopify-section--contact .contact .contact__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.shopify-section--contact .contact .contact__content {
+  margin-top: 0;
+}
+@media screen and (min-width: 750px) {
+  .shopify-section--contact .contact .contact__content-row {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    gap: 18px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__content-row {
+    grid-template-columns: 50% 1fr;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .shopify-section--contact .contact .contact__content-row {
+    grid-template-columns: 41% 1fr;
+    gap: 35px;
+  }
+}
+.shopify-section--contact .contact .contact__content-col {
+  background: rgba(226, 230, 233, 0.1);
+  border: 1px solid rgba(226, 230, 233, 0.4);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 34px 16px 40px;
+}
+@media screen and (min-width: 750px) {
+  .shopify-section--contact .contact .contact__content-col {
+    flex-grow: 0;
+    width: auto;
+  }
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__content-col {
+    padding: 55px 63px 40px;
+  }
+}
+.shopify-section--contact .contact .contact__content-col.contact__content-col--banner {
+  border: 0;
+  padding: 0;
+}
+.shopify-section--contact .contact .contact__content-col-heading {
+  color: var(--color-heading);
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 11px;
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__content-col-heading {
+    font-size: 64px;
+    margin-bottom: 13px;
+  }
+}
+.shopify-section--contact .contact .contact__form-fields {
+  margin-top: 32px;
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__form-fields {
+    margin-top: 41px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__form-fields-row {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+.shopify-section--contact .contact .contact__field {
+  margin-bottom: 20px;
+}
+.shopify-section--contact .contact .contact__textarea {
+  border-radius: 24px;
+  height: 118px;
+  padding-top: 14px;
+}
+@media screen and (min-width: 750px) {
+  .shopify-section--contact .contact .contact__textarea {
+    height: 119px;
+  }
+}
+.shopify-section--contact .contact .contact__submit {
+  margin-top: 32px;
+}
+@media screen and (min-width: 990px) {
+  .shopify-section--contact .contact .contact__submit {
+    margin-top: 40px;
+  }
+}
+.shopify-section--contact .contact__content-col-content {
+  font-weight: 500;
+}
+.shopify-section--contact .section-rte {
+  font-size: var(--body-font-size);
+  line-height: 140%;
+}
+.shopify-section--contact .section-rte a {
+  text-decoration: none;
+}
+.shopify-section--contact .section-rte a:hover {
+  text-decoration: underline;
+}
+.shopify-section--contact .input-wrapper .input::-moz-placeholder {
+  opacity: 0.5;
+}
+.shopify-section--contact .input-wrapper .input::placeholder {
+  opacity: 0.5;
+}
+.shopify-section--contact .input-wrapper .input:focus + .input-label {
+  opacity: 1;
+}
+.shopify-section--contact .input-wrapper .input-label {
+  opacity: 0.5;
+  left: 23px;
+  top: 15px;
+}
+.shopify-section--contact input[type=text],
+.shopify-section--contact input[type=number],
+.shopify-section--contact input[type=email],
+.shopify-section--contact input[type=password],
+.shopify-section--contact input[type=search],
+.shopify-section--contact input[type=tel],
+.shopify-section--contact input[type=date],
+.shopify-section--contact textarea,
+.shopify-section--contact select {
+  --color-background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  margin-bottom: 0;
+  padding: 14px 23px;
+}
+.shopify-section--contact .btn {
+  justify-content: space-between;
+  min-width: 0;
+}

@@ -107,7 +107,7 @@
 	</head>
 
 	{%- capture classes -%}
-		design-{{- settings.design }} template-{{ template | split: '.' | first }}{% if settings.enable_sepia %} sepia-background{% endif %}
+		design-{{- settings.design }} template-{{ template | split: '.' | first }}{% if settings.enable_sepia %} sepia-background{% endif %} template--{{ template.suffix }}
 	{%-endcapture-%}
 
 	<body class="{{- classes -}}" data-template="{{ template.name }}">
