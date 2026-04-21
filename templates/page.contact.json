@@ -11,6 +11,7 @@
   "sections": {
     "contact-page-template": {
       "type": "contact-page-template",
+      "disabled": true,
       "settings": {
         "label": "",
         "info_heading": "",
@@ -35,9 +36,42 @@
         "offset_top_mobile": 30,
         "offset_bottom_mobile": 30
       }
+    },
+    "x_contact_page_template_bXYkF6": {
+      "type": "x-contact-page-template",
+      "name": "X: Contact",
+      "settings": {
+        "label": "",
+        "info_heading": "Contact Us",
+        "info_content": "<p>You can either send us an email at <a href=\"mailto:contact@raviyo.com\" title=\"mailto:contact@raviyo.com\">contact@raviyo.com</a> or  fill out the contact form, and our team will get back to you shortly.</p>",
+        "address_heading": "",
+        "address_text": "",
+        "phone_heading": "",
+        "phone_text": "",
+        "email_heading": "",
+        "email_text": "",
+        "social_heading": "",
+        "show_social": false,
+        "map_api_key": "",
+        "map_query": "Eiffel+Tower,Paris+France",
+        "map_url": "",
+        "form_banner": "shopify://shop_images/Contact_us_banner.jpg",
+        "form_heading": "",
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "phone_placeholder": "Phone",
+        "question_placeholder": "How did you hear about Raviyo? (Optional)",
+        "message_placeholder": "Message",
+        "submit_label": "Submit",
+        "offset_top_desktop": 108,
+        "offset_bottom_desktop": 130,
+        "offset_top_mobile": 35,
+        "offset_bottom_mobile": 0
+      }
     }
   },
   "order": [
-    "contact-page-template"
+    "contact-page-template",
+    "x_contact_page_template_bXYkF6"
   ]
 }

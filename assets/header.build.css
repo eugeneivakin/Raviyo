@@ -434,7 +434,7 @@
 		color: var(--header-transparent-text-color);
 	}
 	.header-section.header-section--transparent.header-section--top-position .header-menu .header-menu__item.header-menu__item--main .header-menu__item-text {
-		color: var(--header-transparent-text-color);
+		color: var(--header-transparent-text-color) !important;
 	}
 	.header-section.header-section--transparent.header-section--top-position .header-menu .header-menu__item-text::after {
 		background-color: var(--header-transparent-text-color);

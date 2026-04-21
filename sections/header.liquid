@@ -146,7 +146,7 @@
 {%- endcapture -%}
 
 <header
-	class="{{- classes | strip_newlines }} js-header {% if enable_transparent_header and template.name != "search"  and template.name != "collection" and template.name != "product" and template.name != "page"%} header-fixed {% endif %}"
+	class="{{- classes | strip_newlines }} js-header {% if enable_transparent_header and template.name != "search"  and template.name != "collection" and template.name != "product" and template.name != "page"%} header-fixed {% endif %} {% if template.suffix == 'contact' %}header-fixed{% endif %}"
 	data-open-menu-type="{{- open_menu_type -}}"
 	{% if header_type == "sticky_hide" %}
 		data-hide-on-scroll-down
@@ -155,6 +155,10 @@
 		data-static-header
 	{% endif %}
 	{% if enable_transparent_header and template.name != "search"  and template.name != "collection" and template.name != "product"  and template.name != "page" %}
+		data-header-transparent
+	{% endif %}
+
+	{% if enable_transparent_header and template.suffix == 'contact' %}
 		data-header-transparent
 	{% endif %}
 >
