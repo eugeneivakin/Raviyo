@@ -68,10 +68,45 @@
         "offset_top_mobile": 35,
         "offset_bottom_mobile": 0
       }
+    },
+    "x_newsletter_TBY8dU": {
+      "type": "x-newsletter",
+      "name": "X: Newsletter",
+      "settings": {
+        "full_width": false,
+        "layout": "one_column",
+        "heading": "Stay in the loop",
+        "subheading": "Subscribe to our newsletter",
+        "success_message": "Thanks for subscribing",
+        "text": "",
+        "image_position": "left",
+        "email_placeholder": "Your email",
+        "button_aria_label": "Subscribe",
+        "section_background": "#000000",
+        "heading_color": "#757575",
+        "text_color": "#ffffff",
+        "content_color": "#c1bdb9",
+        "input_label_color": "#c1bdb9",
+        "input_color": "#ffffff",
+        "input_border_color": "#c4c4c4",
+        "button_circle_text_color": "#f9f5f0",
+        "button_circle_background_color": "rgba(0,0,0,0)",
+        "button_circle_border_color": "#f9f5f0",
+        "button_circle_outer_border_color": "#8b8885",
+        "button_circle_text_color_hover": "#2c2a28",
+        "button_circle_background_color_hover": "#eab88c",
+        "button_circle_border_color_hover": "#eab88c",
+        "button_circle_outer_border_color_hover": "#8b8885",
+        "offset_top_desktop": 116,
+        "offset_bottom_desktop": 118,
+        "offset_top_mobile": 150,
+        "offset_bottom_mobile": 112
+      }
     }
   },
   "order": [
     "contact-page-template",
-    "x_contact_page_template_bXYkF6"
+    "x_contact_page_template_bXYkF6",
+    "x_newsletter_TBY8dU"
   ]
 }
