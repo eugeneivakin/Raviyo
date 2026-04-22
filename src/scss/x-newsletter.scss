@@ -1,0 +1,65 @@
+@use "mixins/media" as *;
+
+// body {
+//   max-width: 390px;
+
+//   @include xs {
+//     max-width: none;
+//   }
+// }
+
+.shopify-section--newsletter {
+  .newsletter {
+    background: linear-gradient(180deg, #2f4858, #121b22), #677987;
+
+    .newsletter__wrapper {
+      background: none;
+    }
+
+    .newsletter__content {
+      padding: 0 !important;
+    }
+  }
+
+  .newsletter__label {
+    background: rgba(226, 230, 233, 0.1);
+    border: 1px solid rgba(226, 230, 233, 0.4);
+  }
+
+  .newsletter__heading {
+    letter-spacing: 0;
+    margin-bottom: clamp(26px, 3.33vw, 50px);
+    margin-top: 17px;
+
+    @include lg {
+      margin-top: 10px;
+    }
+  }
+
+  .newsletter__form-wrapper {
+    form {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+      gap: 24px;
+      margin: 0 auto;
+      max-width: 564px;
+
+      @include lg {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+  }
+
+  .newsletter-form .input-wrapper .input-label.newsletter-form__label {
+    display: none;
+  }
+
+  .newsletter .newsletter-form__field input {
+    padding: 0 22px !important;
+  }
+}

@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-body {
-  max-width: 390px;
-}
-@media screen and (min-width: 576px) {
-  body {
-    max-width: none;
-  }
-}
-
 .shopify-section--contact {
   --color-text-secondary: #fff;
   --color-heading: #d9d9d9;
