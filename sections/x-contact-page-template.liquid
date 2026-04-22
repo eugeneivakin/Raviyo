@@ -205,7 +205,7 @@
             name="contact[phone]"
             placeholder="{{- phone_placeholder -}}"
             pattern="[0-9\-]*"
-            autocomplete="name"
+            autocomplete="tel"
             autocapitalize="off"
             value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
           />
@@ -219,7 +219,7 @@
       <div class="contact__form-fields-row">
         <div class="input-wrapper contact__field">
           <input
-            id="ContactForm-hear--{{- section.id -}}"
+            id="ContactForm-question--{{- section.id -}}"
             class="input contact__input"
             type="text"
             name="contact[question]"
@@ -228,7 +228,7 @@
             autocapitalize="off"
           />
 
-          <label class="input-label" for="ContactForm-phone--{{- section.id -}}">
+          <label class="input-label" for="ContactForm-question--{{- section.id -}}">
             {{- question_placeholder -}}
           </label>
         </div>
