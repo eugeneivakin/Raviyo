@@ -1,0 +1,24 @@
+body {
+  max-width: 390px;
+}
+@media screen and (min-width: 576px) {
+  body {
+    max-width: none;
+  }
+}
+
+.shopify-section--newsletter .newsletter__label {
+  background: rgba(226, 230, 233, 0.1);
+  border: 1px solid rgba(226, 230, 233, 0.4);
+}
+.shopify-section--newsletter .newsletter__heading {
+  letter-spacing: 0;
+  margin-bottom: clamp(26px, 3.33vw, 64px);
+  margin-top: 17px;
+}
+.shopify-section--newsletter .newsletter-form .input-wrapper .input-label.newsletter-form__label {
+  display: none;
+}
+.shopify-section--newsletter .newsletter .newsletter-form__field input {
+  padding: 0 22px !important;
+}
