@@ -65,7 +65,7 @@
         "submit_label": "Submit",
         "offset_top_desktop": 108,
         "offset_bottom_desktop": 130,
-        "offset_top_mobile": 35,
+        "offset_top_mobile": 90,
         "offset_bottom_mobile": 0
       }
     },
