@@ -149,22 +149,13 @@
             "title": "Still easily engage the door's Multipoint lock",
             "description": "Raviyo works with multipoint locks where lifting the handle engages the additional bolts. Use ours in exactly the same way."
           }
-        },
-        "feature_QWdinj": {
-          "type": "feature",
-          "settings": {
-            "img": "shopify://shop_images/4_E.svg",
-            "title": "Configure Raviyo for left and right-hand doors",
-            "description": "The handle can be switched between left and right hung doors with a few simple steps. Or go for a pre-configured handle so you're all set."
-          }
         }
       },
       "block_order": [
         "feature_HjeRkB",
         "feature_NjCxaw",
         "feature_rnPHH3",
-        "feature_LD6hmN",
-        "feature_QWdinj"
+        "feature_LD6hmN"
       ],
       "name": "And there's more",
       "settings": {
