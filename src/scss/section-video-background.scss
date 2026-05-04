@@ -11,6 +11,15 @@
     top: 0;
     width: 100%;
     z-index: 5;
+
+    &.fixed {
+      position: fixed;
+    }
+
+    &.sticky--bottom {
+      bottom: 0;
+      top: auto;
+    }
   }
 
   .container {

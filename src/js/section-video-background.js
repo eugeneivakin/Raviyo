@@ -126,6 +126,60 @@
       setTimeout(checkVisibility, 50);
     }
     window.addEventListener('resize', onResize);
+
+    // --- Adding .section-content commit handling ---
+    var sectionContent = section.querySelector('.section-content');
+    if (sectionContent) {
+      function updateFixedClass() {
+        var sectionRect = section.getBoundingClientRect();
+        var contentRect = sectionContent.getBoundingClientRect();
+        var contentHeight = sectionContent.offsetHeight;
+        var sectionHeight = section.offsetHeight;
+        var windowHeight = window.innerHeight;
+
+        // Resetting classes and inline styles
+        function resetAll() {
+          sectionContent.classList.remove('fixed');
+          sectionContent.classList.remove('sticky--bottom');
+          sectionContent.style.top = '';
+        }
+
+        // We process only if the section is at least partially visible
+        if (sectionRect.bottom <= 0 || sectionRect.top >= windowHeight) {
+          resetAll();
+          return;
+        }
+
+        // sticky-logic:
+        // 1. If the top of the section >= 0 -reset
+        if (sectionRect.top >= 0) {
+          resetAll();
+          return;
+        }
+
+        // 2. If bottom .section-content >= bottom of section -sticky--bottom
+        if (contentRect.bottom >= sectionRect.bottom && sectionRect.bottom <= windowHeight) {
+          sectionContent.classList.remove('fixed');
+          sectionContent.classList.add('sticky--bottom');
+          sectionContent.style.top = (sectionHeight - contentHeight) + 'px';
+          return;
+        }
+
+        // 3. If top .section-content <= 0 -fixed
+        if (contentRect.top <= 0) {
+          sectionContent.classList.add('fixed');
+          sectionContent.classList.remove('sticky--bottom');
+          sectionContent.style.top = '0px';
+          return;
+        }
+
+        // 4. In other cases -reset
+        resetAll();
+      }
+      window.addEventListener('scroll', updateFixedClass, { passive: true });
+      window.addEventListener('resize', updateFixedClass);
+      setTimeout(updateFixedClass, 50);
+    }
   }
 
   function initAll() {
@@ -140,3 +194,4 @@
     initAll();
   }
 })();
+
