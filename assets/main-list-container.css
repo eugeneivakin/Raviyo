@@ -297,6 +297,7 @@ animation-block.active {
     position: absolute;
     top: 0;
     width: 100%;
+    transition: opacity 0.3s ease-in-out;
     z-index: 0;
   }
 }
@@ -304,5 +305,10 @@ animation-block.active {
   .main-list__wrapper .main-list__point.active {
     opacity: 1;
     z-index: 10;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-list__wrapper .main-list__point.active ~ .active {
+    opacity: 0 !important;
   }
 }
