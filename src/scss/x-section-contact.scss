@@ -147,13 +147,11 @@
 
   .input-wrapper {
     .input {
-      &::placeholder {
-        opacity: 0.5;
-      }
-
       &:focus {
         + .input-label {
+          font-size: calc(var(--body-font-size) * 0.6125);
           opacity: 1;
+          top: 0;
         }
       }
     }
@@ -175,9 +173,18 @@
   textarea,
   select {
     --color-background: rgba(255, 255, 255, 0.1);
+    --color-border-thirdly: #fff;
     border-radius: 100px;
     margin-bottom: 0;
     padding: 14px 23px;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:focus-visible {
+      border-color: var(--color-border-thirdly);
+    }
   }
 
   .btn {
