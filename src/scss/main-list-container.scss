@@ -295,6 +295,7 @@ animation-block.active {
       position: absolute;
       top: 0;
       width: 100%;
+      transition: opacity 0.3s ease-in-out;
       z-index: 0;
     }
 
@@ -303,13 +304,12 @@ animation-block.active {
         opacity: 1;
         z-index: 10;
       }
-    }
 
-    // &.active:not(:only-child) {
-    //   &:nth-child(1),
-    //   &:nth-child(2) {
-    //     opacity: 0;
-    //   }
-    // }
+      ~ .active {
+        @include sm-max {
+          opacity: 0 !important;
+        }
+      }
+    }
   }
 }
