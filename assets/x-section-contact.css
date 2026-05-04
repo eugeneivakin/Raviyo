@@ -136,14 +136,10 @@
 .shopify-section--contact .section-rte a:hover {
   text-decoration: underline;
 }
-.shopify-section--contact .input-wrapper .input::-moz-placeholder {
-  opacity: 0.5;
-}
-.shopify-section--contact .input-wrapper .input::placeholder {
-  opacity: 0.5;
-}
 .shopify-section--contact .input-wrapper .input:focus + .input-label {
+  font-size: calc(var(--body-font-size) * 0.6125);
   opacity: 1;
+  top: 0;
 }
 .shopify-section--contact .input-wrapper .input-label {
   opacity: 0.5;
@@ -160,9 +156,35 @@
 .shopify-section--contact textarea,
 .shopify-section--contact select {
   --color-background: rgba(255, 255, 255, 0.1);
+  --color-border-thirdly: #fff;
   border-radius: 100px;
   margin-bottom: 0;
   padding: 14px 23px;
+}
+.shopify-section--contact input[type=text]::-moz-placeholder, .shopify-section--contact input[type=number]::-moz-placeholder, .shopify-section--contact input[type=email]::-moz-placeholder, .shopify-section--contact input[type=password]::-moz-placeholder, .shopify-section--contact input[type=search]::-moz-placeholder, .shopify-section--contact input[type=tel]::-moz-placeholder, .shopify-section--contact input[type=date]::-moz-placeholder, .shopify-section--contact textarea::-moz-placeholder, .shopify-section--contact select::-moz-placeholder {
+  opacity: 0;
+}
+.shopify-section--contact input[type=text]::placeholder,
+.shopify-section--contact input[type=number]::placeholder,
+.shopify-section--contact input[type=email]::placeholder,
+.shopify-section--contact input[type=password]::placeholder,
+.shopify-section--contact input[type=search]::placeholder,
+.shopify-section--contact input[type=tel]::placeholder,
+.shopify-section--contact input[type=date]::placeholder,
+.shopify-section--contact textarea::placeholder,
+.shopify-section--contact select::placeholder {
+  opacity: 0;
+}
+.shopify-section--contact input[type=text]:focus-visible,
+.shopify-section--contact input[type=number]:focus-visible,
+.shopify-section--contact input[type=email]:focus-visible,
+.shopify-section--contact input[type=password]:focus-visible,
+.shopify-section--contact input[type=search]:focus-visible,
+.shopify-section--contact input[type=tel]:focus-visible,
+.shopify-section--contact input[type=date]:focus-visible,
+.shopify-section--contact textarea:focus-visible,
+.shopify-section--contact select:focus-visible {
+  border-color: var(--color-border-thirdly);
 }
 .shopify-section--contact .btn {
   justify-content: space-between;
