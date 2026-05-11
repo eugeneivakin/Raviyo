@@ -15,6 +15,12 @@
   gap: 40px;
 }
 
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: portrait) {
+  .main-list__wrapper {
+    flex-direction: column;
+  }
+}
+
 /* allow controlling the pinned top offset via CSS variable */
 .main-list__wrapper {
   top: var(--header-height-static, 20px);
@@ -70,6 +76,26 @@
   position: sticky;
   top: 20px;
 }
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+  .main-list__left {
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: portrait) {
+  .main-list__left {
+    max-width: none;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: landscape) {
+  .main-list__left {
+    max-width: 45%;
+    width: 45%;
+  }
+}
+
 .main-list__left .image .image__wrap {
   position: relative;
   padding-top: 100%;
@@ -90,11 +116,41 @@
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+  .main-list__right {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: portrait) {
+  .main-list__right {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: landscape) {
+  .main-list__right {
+    max-width: 55%;
+    width: 55%;
+  }
+}
+
 .main-list__right__wrap {
   max-width: 587px;
   display: flex;
   flex-direction: column;
   gap: clamp(40px, 2.083vw, 64px);
+}
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: portrait) {
+  .main-list__right__wrap {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 767px) and (orientation: portrait) {
+  .main-list__point-info {
+    max-width: none;
+  }
 }
 .main-list__point-number {
   color: #494d50;
@@ -129,7 +185,8 @@
 }
 
 /* Mobile styles */
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
   .main-list__subtitle {
     justify-content: center;
   }
@@ -189,6 +246,9 @@
   }
 }
 
+@media screen and (max-width: 767px) and (orientation: landscape) {
+}
+
 animation-block {
   display: block;
   opacity: 0.5;
@@ -238,7 +298,7 @@ animation-block.active {
 }
 
 .main-list__wrapper {
-  @include sm-max {
+  @media screen and (max-width: 767px) and (orientation: portrait) {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -247,17 +307,14 @@ animation-block.active {
     align-items: stretch;
     height: 100vh;
   }
+
   .main-list__left {
-    @include sm-max {
-    }
     @include sm-max {
       flex: 0 1 auto;
     }
   }
 
   .main-list__right {
-    @include sm-max {
-    }
     @include sm-max {
       flex: 1 1 auto;
     }
@@ -282,14 +339,24 @@ animation-block.active {
   }
 
   .main-list__feats {
-    @include sm-max {
+    @media screen and (max-width: 990px) {
       flex-grow: 1;
       position: relative;
     }
   }
 
   .main-list__point {
-    @include sm-max {
+    @media screen and (max-width: 990px) and (orientation: landscape) {
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 0;
+    }
+
+    @media screen and (max-width: 767px) {
       left: 0;
       opacity: 0;
       position: absolute;
@@ -300,13 +367,22 @@ animation-block.active {
     }
 
     &.active {
-      @include sm-max {
+      @media screen and (max-width: 990px) and (orientation: landscape) {
+        opacity: 1;
+        z-index: 10;
+      }
+
+      @media screen and (max-width: 767px) {
         opacity: 1;
         z-index: 10;
       }
 
       ~ .active {
-        @include sm-max {
+        @media screen and (max-width: 990px) and (orientation: landscape) {
+          opacity: 0 !important;
+        }
+
+        @media screen and (max-width: 767px) {
           opacity: 0 !important;
         }
       }
