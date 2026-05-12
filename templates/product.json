@@ -63,15 +63,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "wait_li_product_wait_lists_app_block_VynENd": {
-          "type": "shopify://apps/wait-li-product-wait-lists/blocks/app-block/1bd0c559-5fc0-417e-9a82-17fb9b0a5e63",
-          "settings": {
-            "disable_js": false,
-            "disable_css": false,
-            "custom_js": "",
-            "custom_css": ""
-          }
-        },
         "pickup_availability": {
           "type": "pickup_availability",
           "settings": {}
@@ -105,7 +96,6 @@
         "quantity",
         "price",
         "add_to_cart",
-        "wait_li_product_wait_lists_app_block_VynENd",
         "pickup_availability",
         "drawers",
         "complementary"
