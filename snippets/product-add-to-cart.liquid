@@ -222,14 +222,16 @@
 		{% endif %}
 	</button>
 
-{% comment %} Wait.li Hide Code 2/2 {% endcomment %}{% endif %}
-{% comment %} End Wait.li Hide Code 2/2 {% endcomment %}
+
 
 	{% if block.settings.show_additional_buttons %}
 		<div class="product-add-to-cart__additional-buttons">
 			{{ form | payment_button }}
 		</div>
 	{% endif %}
+
+	{% comment %} Wait.li Hide Code 2/2 {% endcomment %}{% endif %}
+{% comment %} End Wait.li Hide Code 2/2 {% endcomment %}
 
 	{% if block.settings.show_enabled_payment_types %}
 		<div class="product-add-to-cart__enabled-payment-types">
