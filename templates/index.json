@@ -171,7 +171,7 @@
         "image": "shopify://shop_images/image_1_1.png",
         "image_mobile": "shopify://shop_images/image_1_1.png",
         "btn_name": "Join the waitlist",
-        "url": "#"
+        "url": "shopify://products/test-title"
       }
     },
     "section_horizontal_scroll_yBy3Hb": {
