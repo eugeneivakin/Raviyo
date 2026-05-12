@@ -17,7 +17,7 @@
         "img": "shopify://shop_images/compressed.webp",
         "img_m": "shopify://shop_images/main_hero_2.webp",
         "btn_name": "Join the waitlist",
-        "url": "#"
+        "url": "shopify://products/test-title"
       }
     },
     "main_text_r77nBM": {
