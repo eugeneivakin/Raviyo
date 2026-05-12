@@ -1,3 +1,7 @@
+{% comment %} Wait.li Config Snippet (Required) {% endcomment %}
+{% capture 'wait_li_capture' %}{% render 'wait_li_config', product: product %}{% endcapture %}{%- assign wait_li_capture_results = wait_li_capture | split: '|' -%}{%- assign wait_li_active = wait_li_capture_results[0] | strip -%}{%- assign show_waiting_snippet = wait_li_capture_results[1] | strip -%}{%- assign is_customer = wait_li_capture_results[2] | strip -%}{%- assign customer_status = wait_li_capture_results[3] | strip -%}
+{% comment %} End Wait.li Config Snippet (Required) {% endcomment %}
+ 
 {%- comment -%}
 ------------------------------------------------------------------------------
   Section: Product template

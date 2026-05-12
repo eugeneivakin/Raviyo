@@ -189,6 +189,10 @@
 		</div>
 	{% endif %}
 
+{% comment %} Wait.li Hide Code 1/2 {% endcomment %}
+{% if wait_li_active == 'false' or show_waiting_snippet == 'false' %}
+{% comment %} End Wait.li Hide Code 1/2 {% endcomment %}
+
 	<button
 		type="submit"
 		class="
@@ -217,6 +221,9 @@
 			{{- 'products.product.sold_out' | t -}}
 		{% endif %}
 	</button>
+
+{% comment %} Wait.li Hide Code 2/2 {% endcomment %}{% endif %}
+{% comment %} End Wait.li Hide Code 2/2 {% endcomment %}
 
 	{% if block.settings.show_additional_buttons %}
 		<div class="product-add-to-cart__additional-buttons">
@@ -262,6 +269,10 @@
 				{% include 'product-quantity', additional: true, hide_compare: true, design: design %}
 			</div>
 
+			{% comment %} Wait.li Hide Code 1/2 {% endcomment %}
+{% if wait_li_active == 'false' or show_waiting_snippet == 'false' %}
+{% comment %} End Wait.li Hide Code 1/2 {% endcomment %}
+
 			<button
 				type="submit"
 				class="
@@ -290,6 +301,9 @@
 					{{- 'products.product.sold_out' | t -}}
 				{% endif %}
 			</button>
+
+			{% comment %} Wait.li Hide Code 2/2 {% endcomment %}{% endif %}
+{% comment %} End Wait.li Hide Code 2/2 {% endcomment %}
 		</div>
 
 		<style>
