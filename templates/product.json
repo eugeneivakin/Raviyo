@@ -36,11 +36,11 @@
           "settings": {
             "show_labels": true,
             "show_size_guide": true,
+            "variant_picker": "radio",
             "size_guide_option_name": "Size",
             "size_guide_tab_general_name": "Dimensions",
             "size_guide_tab_model_name": "Parameters of the model in the photo",
             "size_guide_title": "Size guide",
-            "size_guide_icon": "",
             "size_guide_text": "Size Guide"
           }
         },
@@ -59,7 +59,17 @@
           "settings": {
             "button_type": "secondary",
             "show_additional_buttons": true,
-            "show_enabled_payment_types": false
+            "show_enabled_payment_types": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "wait_li_product_wait_lists_app_block_VynENd": {
+          "type": "shopify://apps/wait-li-product-wait-lists/blocks/app-block/1bd0c559-5fc0-417e-9a82-17fb9b0a5e63",
+          "settings": {
+            "disable_js": false,
+            "disable_css": false,
+            "custom_js": "",
+            "custom_css": ""
           }
         },
         "pickup_availability": {
@@ -73,7 +83,10 @@
             "description_toggle_text": "DESCRIPTION",
             "description_drawer_title": "Description",
             "shipping_and_returns": "",
-            "shipping_and_returns_toggle_text": "SHIPPING & RETURNS"
+            "shipping_and_returns_toggle_text": "SHIPPING & RETURNS",
+            "shipping_and_returns_drawer_title": "Shipping and returns",
+            "custom_drawer_title_1": "Drawer heading",
+            "custom_drawer_text_1": ""
           }
         },
         "complementary": {
@@ -92,6 +105,7 @@
         "quantity",
         "price",
         "add_to_cart",
+        "wait_li_product_wait_lists_app_block_VynENd",
         "pickup_availability",
         "drawers",
         "complementary"
@@ -100,14 +114,19 @@
         "is_lazy": true,
         "is_zoom_enabled": true,
         "show_borders": true,
-        "border_color": "#e6e6e6",
+        "show_arrows_mobile": true,
         "media_layout": "carousel",
         "thumbnails_position": "bottom",
         "media_height": "full_size",
         "stacked_smooth_scroll": true,
+        "is_enable_media_scroller": false,
         "show_taxes_included": true,
         "show_pay_installments": true,
         "show_share_buttons": true,
+        "show_sticky_add_to_cart": false,
+        "border_color": "#e6e6e6",
+        "ui_button_color": "#000000",
+        "ui_button_background_color": "#ffffff",
         "offset_top_desktop": 0,
         "offset_bottom_desktop": 50,
         "offset_top_mobile": 0,
@@ -116,15 +135,48 @@
     },
     "simple-description": {
       "type": "simple-description",
-      "settings": {}
+      "settings": {
+        "heading": "Simple description",
+        "subheading": "Subheading",
+        "content": "<p>Add text to share customers about your store, products, brand.</p>",
+        "content_alignment": "left",
+        "block_alignment": "flex-start",
+        "offset_top_desktop": 100,
+        "offset_bottom_desktop": 100,
+        "offset_top_mobile": 50,
+        "offset_bottom_mobile": 50
+      }
     },
     "images-row": {
       "type": "images-row",
-      "settings": {}
+      "settings": {
+        "is_lazy": true,
+        "full_width": true,
+        "offset_top_desktop": 0,
+        "offset_bottom_desktop": 50,
+        "offset_top_mobile": 0,
+        "offset_bottom_mobile": 25
+      }
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "subheading": "",
+        "enable_shopify_recommendations": true,
+        "collection": "",
+        "heading": "Recommendations",
+        "products_to_show": 4,
+        "show_recently_viewed": false,
+        "recently_viewed_label": "Recently viewed",
+        "recently_viewed_limit": 4,
+        "layout": "main",
+        "enable_cards_indent": false,
+        "full_width": true,
+        "offset_top_desktop": 50,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 30
+      }
     }
   },
   "order": [
