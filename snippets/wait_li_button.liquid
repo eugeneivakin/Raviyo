@@ -1,670 +1,502 @@
-{% comment %}
-  Product Metafield Logic
-{% endcomment %}
+{%- liquid
+  ############################################
+  # 1.DATA PREP
+  ############################################
+  assign variant = product.selected_or_first_available_variant
 
-{% assign og_wait_li_product_id = product.id | downcase %}
-{% assign og_wait_li_product_metafield = product.metafields.wait_li[og_wait_li_product_id] %}
-{% assign new_wait_li_product_id = product.selected_or_first_available_variant.id | downcase %}
-{% assign new_wait_li_product_metafield = product.selected_or_first_available_variant.metafields.wait_li[new_wait_li_product_id] %}
-{% if og_wait_li_product_metafield %}
-  {% assign wait_li_product_metafield = og_wait_li_product_metafield %}
-  {% assign wait_li_product_id = og_wait_li_product_id %}
-{% else %}
-  {% assign wait_li_product_metafield = new_wait_li_product_metafield %}
-  {% assign wait_li_product_id = new_wait_li_product_id %}
-{% endif %}
-{% comment %}
-End Product Logic
-{% endcomment %}
+  # Product‑level metafield (FIXED - use original logic)
+  assign og_wait_li_product_id = product.id | downcase
+  assign og_wait_li_product_metafield = product.metafields.wait_li[og_wait_li_product_id]
+  assign new_wait_li_product_id = variant.id | downcase
+  assign new_wait_li_product_metafield = variant.metafields.wait_li[new_wait_li_product_id]
 
-{% comment %}
-Customer Metafield
-{% endcomment %}
-{% assign wait_li_customer_metafield = customer.metafields.wait_li[wait_li_product_id] %}
-{% comment %}
-End Customer Metafields
-{% endcomment %}
+  if og_wait_li_product_metafield
+    assign wl_product_metafield = og_wait_li_product_metafield
+    assign wl_product_id = og_wait_li_product_id
+  else
+    assign wl_product_metafield = new_wait_li_product_metafield
+    assign wl_product_id = new_wait_li_product_id
+  endif
 
-{% comment %}
-Shop Settings
-{% endcomment %}
-{% assign wait_li_settings = shop.metafields.wait_li.settings %}
-{% assign list_count = wait_li_product_metafield.list_count %}
-{% assign wait_li_settings = shop.metafields.wait_li.settings %}
-{% assign sign_in_text = wait_li_settings.sign_in_text | default: "There are currently list_count people on the waiting list. Click the button below to join!" | replace: "list_count", list_count %}
-{% if list_count == 1 %}
-  {% assign sign_in_text = sign_in_text | replace: "list_count", list_count | replace: "people", "person" | replace: "are", "is" %}
-{% endif %}
-{% assign currently_waiting_text = wait_li_settings.currently_waiting_text | default: "You are currently #current_position on the waiting list. Please keep an eye on your inbox." %}
-{% assign full_currently_waiting_text = currently_waiting_text | replace: "list_count", list_count %}
-{% assign join_text = wait_li_settings.join_text | default: "Join Waiting List" %}
-{% assign success_text = wait_li_settings.success_text | default: 'Congratulations! You are now #current_position on the waiting list. Keep an eye on your email for when you are activated!' | replace: "list_count", list_count %}
-{% assign button_colour = wait_li_settings.button_colour | default: '#3d85c6' %}
-{% assign button_text_colour = wait_li_settings.button_text_colour | default: "white" %}
+  # Customer status check (FIXED - this was missing)
+  assign wl_customer_metafield = customer.metafields.wait_li[wl_product_id]
+  assign customer_status = wl_customer_metafield.customer_status
 
-{% if wait_li_product_metafield.wl_list_limit != blank and wait_li_product_metafield.wl_list_limit != 0 %}
-  {% assign wl_list_limit = wait_li_product_metafield.wl_list_limit %}
-  {% assign spots_left = wl_list_limit | minus: list_count %}
-  {% assign wl_lang_list_limit_info = wait_li_product_metafield.wl_lang_list_limit_info | default: 'There are spots_left spots left on the waiting list. Join now to get a spot!' | replace: "spots_left", spots_left %}
-  {% if spots_left == 1 %}
-    {% assign wl_lang_list_limit_info = wl_lang_list_limit_info | replace: "spots", "spot" | replace: "are", "is" %}
-  {% endif %}    
-{% assign wl_lang_no_spots_left= wait_li_product_metafield.wl_lang_no_spots_left | default: 'There are no spots left on the waiting list right now. Please wait until a spot opens up.' %}
-{% endif %}
-{% comment %}
-End Shop Settings
-{% endcomment %}
+  assign wl_settings = shop.metafields.wait_li.settings
+  assign list_count = wl_product_metafield.list_count | default: 0
+  assign list_limit = wl_product_metafield.wl_list_limit | plus: 0
+  assign spots_left = list_limit | minus: list_count
 
-{% comment %}
-Wait.li Language Translations
-{% endcomment %}
-{% assign wl_lang_join_waiting_list = 'Join Waiting List' %}
-{% assign wl_lang_register = 'Register Account' %}
-{% assign wl_lang_register_join_list = 'Register & Join Waiting List' %}
-{% assign wl_lang_sign_in = 'Sign In' %}
-{% assign wl_lang_sign_in_to_purchase = 'Sign In To Purchase' %}
-{% assign wl_lang_sign_in_check_status = 'or Sign In To Check Status' %}
-{% assign wl_lang_email = 'Email' %}
-{% assign wl_lang_password = 'Password' %}
-{% assign wl_lang_generic_error = 'Something went wrong with while joining the waiting list - please try again later.' %}
-{% assign wl_lang_empty_email = 'Please enter your email' %}
-{% assign wl_lang_empty_password = 'Please enter your password' %}
-{% assign wl_lang_password_length = 'Please make sure your password is over 6 characters long' %}
-{% assign wl_lang_valid_email = 'Please check that your email is valid' %}
-{% assign wl_lang_already_on_list = 'You are already on the waiting list! Please sign in to check your status on the list.' %}
-{% assign wl_lang_account_valid = 'Please make sure your email and password are valid, then try again.' %}
-{% comment %}
-End Language Translations
-{% endcomment %}
+  #  Strings (fallbacks + quick plural helper)
+  assign sign_in_raw = wl_settings.sign_in_text | default: 'There are currently list_count people on the waiting list. Click the button below to join!'
+  assign sign_in_text = sign_in_raw | replace: 'list_count', list_count
+  if list_count == 1
+    assign sign_in_text = sign_in_text | replace: 'people', 'person' | replace: 'are', 'is'
+  endif
 
-{% comment %}
-Wait.li Button Form
-{% endcomment %}
-<div id="wait_li_form" class="wla_form" >
-{% if customer %}
-  {% if customer_status == 'waiting' %}
-    <p class="wla_text currently_waiting">{{- full_currently_waiting_text -}}</p>  
-  {% else %}
-    {% if spots_left < 1 %}
-      <p>{{- wl_lang_no_spots_left -}}</p>
-    {% else %}
-      {% if wl_list_limit > 0 %}
-        <p class="wla_text">{{- wl_lang_list_limit_info -}}</p>
-      {% else %}
-        <p class="wla_text">{{- sign_in_text -}}</p>
-      {% endif %}
-      <span class="wla_button" id="wl_join_button">{{- join_text -}}</span>
-      <p id="wla_text"></p>
-    {% endif %}
-  {% endif %}
-{% else %}
-  {% if spots_left < 1 %}
-    <p>{{- wl_lang_no_spots_left -}}</p>
-  {% else %}
-    {% if wl_list_limit > 0 %}
-      <p class="wla_text">{{- wl_lang_list_limit_info -}}</p>
-    {% else %}
-      <p class="wla_text">{{- sign_in_text -}}</p>
-    {% endif %}
-    <span class="wla_button" id="wait_li_register_trigger">{{- join_text -}}</span>
-    <a id="wait_li_login_trigger" class="wla_login_text">{{- wl_lang_sign_in_check_status -}}</a>
-  {% endif %}
-{% endif %}
-</div>
-<div id="wait_li_success">
-<p id="join_success_text" class="currently_waiting">{{- success_text -}}</p>
-</div>
-{% comment %}
-End Wait.li Button Form
-{% endcomment %}
+  assign waiting_raw = wl_settings.currently_waiting_text | default: 'You are currently #current_position on the waiting list. Please keep an eye on your inbox.'
+  assign waiting_text = waiting_raw | replace: 'list_count', list_count
 
-{% comment %}
-Wait.li Modal
-{% endcomment %}
-<div id="wait_li_modal" class="wait_li_modal">
-  <div class="wait_li_modal_content">
-    <div class="tabs">
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-        <label id="register_tab" for="tab-1" class="tab-label">{{- wl_lang_register -}}</label>
-        <div class="tab-content">
-          <div id="tab_success">
-            <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm7 7.457l-9.005 9.565-4.995-5.865.761-.649 4.271 5.016 8.24-8.752.728.685z"/></svg>
-            <br>
-            <p id="modal_success_text" class="currently_waiting">{{ success_text }}</p>
-          </div>
-          <div id="register_form">
-            <div class="section-header section-header--large">
-              <h1 class="section-header__title">{{- wl_lang_register -}}</h1>
-            </div>
-          <form id="CustomerRegisterForm" class="wait_li_form">
-              <div class="wla_input wla_email">
-                <input type="email" id="wl_customer_email" placeholder="Email" required />
-                <span id="wl_customer_email_error"></span>
-              </div>
-              <div class="wla_input wla_password">
-                <input type="password" id="wl_customer_password" placeholder="Password" required/>
-                <span id="wl_customer_password_error"></span>
-              </div>
-              <button type="submit" class="wla_button" id="wl_register_button">{{- wl_lang_join_waiting_list -}}</button>
-              <span id="error_field"></span>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-        <label id="login_tab" for="tab-2" class="tab-label">{{- wl_lang_sign_in -}}</label>
-        <div class="tab-content">
-          <div id="CustomerLoginForm" class="wait_li_form">
-              {% form 'customer_login' %}
-                <div class="section-header section-header--large">
-                  <h1 id="sign_in_header" class="section-header__title">{{- wl_lang_sign_in -}}</h1>
-                </div>
-                {{ form.errors | default_errors }}
-                <input type="email" name="customer[email]" id="CustomerEmail" required placeholder="Email"{% if form.errors contains "email" %} class="error"{% endif %} autocorrect="off" autocapitalize="off" autofocus>
-                <input type="password" value="" name="customer[password]" required id="CustomerPassword" placeholder="Password" {% if form.errors contains "password" %} class="error"{% endif %}>
-                <input type="hidden" name="checkout_url" id="redirect_url" value="" />
-                <button type="submit" class="wla_button">{{- wl_lang_sign_in -}}</button>
-              {% endform %}
-            </div>
-        </div>
-      </div>
-    </div>
+  assign join_text = wl_settings.join_text | default: 'Join WaitList'
+  assign success_raw = wl_settings.success_text | default: 'Congratulations! You are now #current_position on the waiting list. Keep an eye on your email for when you are activated!'
+  assign success_text = success_raw | replace: 'list_count', list_count
+
+  #  Colours
+  assign button_colour = wl_settings.button_colour | default: '#3d85c6'
+  assign button_text_colour = wl_settings.button_text_colour | default: 'white'
+
+  #  Limit messaging
+  if list_limit > 0
+    assign limit_info_raw = wl_product_metafield.wl_lang_list_limit_info | default: 'There are spots_left spots left on the waiting list. Join now to get a spot!'
+    assign limit_info = limit_info_raw | replace: 'spots_left', spots_left
+    if spots_left == 1
+      assign limit_info = limit_info | replace: 'spots', 'spot' | replace: 'are', 'is'
+    endif
+    assign no_spots_left = wl_product_metafield.wl_lang_no_spots_left | default: 'There are no spots left on the waiting list right now. Please wait until a spot opens up.'
+  endif
+
+  #  Referral settings
+  # Language settings (FIXED - match original structure)
+
+  assign wl_lang_join_waiting_list = wl_settings.meta_settings.register_btn_txt | default: 'Join WaitList'
+  assign wl_lang_main_referral_msg = wl_settings.meta_settings.main_referral_msg | default: 'Share the link below to refer your friends and jump up spots on the waiting list!'
+  assign wl_lang_custom_column = wl_settings.meta_settings.custom_column_txt
+-%}
+
+{%- capture wait_li_referral_box -%}
+{% if wl_product_metafield.metaSettings.isReferral %}
+  <div class="wait_li_referral_box">
+    <p>{{ wl_lang_main_referral_msg }}</p>
+    <textarea id="in_page_referral_box" class="wait_li_copy_field">{{ shop.url }}{{ product.url }}?ref=__referral_id__</textarea>
+    <button id="in_page_copy_btn" class="wait_li_copy_button" wait_li_tooltip="Copied!">
+      Copy
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 2A1.5 1.5 0 006 3.5V13a1 1 0 001 1h9.5a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0016.5 2h-9zm-4 4H4v10h10v.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 16.5v-9A1.5 1.5 0 013.5 6z" fill="#5C5F62"/></svg>
+    </button>
   </div>
-</div>
-{% comment %}
-End Wait.li Modal 
-{% endcomment %}
+{% endif %}
+{%- endcapture -%}
+<!-- 2 · MAIN WRAPPER -->
+{% if customer %}
+  {% unless customer_status == 'active' %}
+    <div id="wait_li_form" class="wla_form">
+      <p class="wla_text wait_li_list_status">
+        {% if list_limit > 0 %}
+          {{ limit_info }}
+        {% endif %}
+      </p>
+      {% if customer_status == 'waiting' %}
+        <p class="wla_text currently_waiting" style="display:none;">{{ waiting_text }}</p>
+        <div class="wait_li_referral_box_wrapper" style="display:none;">{{ wait_li_referral_box }}</div>
+        <div class="wait_li_spinner"></div>
+      {% else %}
+        {% if list_limit > 0 and spots_left < 1 %}
+          <p>{{ no_spots_left }}</p>
+        {% else %}
+          {% if wl_lang_custom_column %}
+            <div class="wla_input wla_custom_column">
+              <input
+                type="text"
+                id="signed_in_custom_column"
+                placeholder="{{ wl_lang_custom_column }}">
+            </div>
+          {% endif %}
+          <p>{{ sign_in_text }}</p>
+          <button class="wla_button" id="wl_join_button">{{ join_text }}</button>
+          <div id="list-join-loading" class="wait_li_spinner"></div>
+          <div class="wait_li_referral_box_wrapper" style="display:none;">{{ wait_li_referral_box }}</div>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endunless %}
+{% else %}
+  <!-- GUEST LINK → Shopify hosted login with return_to -->
+  <div id="wait_li_form" class="wla_form">
+    {% assign current_url_with_param = product.url | append: '?join_waitlist=1' %}
+    <p>{{ sign_in_text }}</p>
+    <a
+      id="waitli_join_link"
+      class="wla_button wla_join_link"
+      href="/customer_authentication/login?return_to={{ current_url_with_param | url_encode }}">
+      {{ wl_lang_join_waiting_list }}
+    </a>
+  </div>
+{% endif %}
 
-{% comment %}
-Wait.li Styling
-{% endcomment %}
+<div id="wait_li_success" style="display:none;">
+  <p id="join_success_text" class="currently_waiting">{{ success_text }}</p>
+</div>
+
+<!-- 3 · STYLE -->
 <style>
-.page-container {
-    transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-}
-#wait_li_success,
-.wla_form {
-    margin: 10px 0;
+  :root {
+    --wl-btn-bg: {{ button_colour }};
+    --wl-btn-text: {{ button_text_colour }};
+    --wl-btn-radius: 8px;
+    --wl-spacing: 10px;
+  }
+
+  .wla_form {
+    margin: var(--wl-spacing) auto;
+    padding: var(--wl-spacing);
     text-align: center;
-    box-sizing: border-box;
-}
-.wait_li_atc_status_hide {
-    display: none !important;
-}
-#wait_li_success {
-    display: none;
-}
-.wait_li_modal .tab-content .section-header__title {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-.wait_li_modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999999;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-    box-sizing: border-box;
-}
-.wait_li_modal_content {
-    -webkit-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-    background-color: white;
-    width: 450px;
-    border-radius: 1px;
-    margin: auto;
     position: relative;
-    top: 25%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: table;
-    box-sizing: border-box;
-}
-@media only screen and (max-width: 500px) {
-    .wait_li_modal_content {
-        width: 100%;
-        top: 15%;
-    }
-}
-.wait_li_modal_content form {
-    margin-bottom: 0;
-}
-.wait_li_modal_content .section-header {
-    margin-bottom: 0;
-    text-align: center;
-}
-.wait_li_form input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-}
-.wait_li_form .btn {
-    background: {{button_colour}};
-    color: {{button_text_colour}}
-}
-.wait_li_close_button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
+    border-radius: var(--wl-btn-radius);
+    background: none;
+    border: none;
+    max-width: 400px;
+  }
+
+  .wla_button {
+    background: var(--wl-btn-bg);
+    color: var(--wl-btn-text);
+    padding: 10px 18px;
+    min-height: 36px;
+    border: none;
+    border-radius: var(--wl-btn-radius);
     cursor: pointer;
-    border-radius: 0;
-}
-.wait_li_close_button:hover {
-    background-color: darkgray;
-}
-.wait_li_show_modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-    background: rgba(0,0,0, 0.75);
-    z-index: 2147483647;
-}
-.wla_input {
-    float: left;
-}
-.wla_first_name {
-    width: 50%;
-    padding-right: 6px;
-}
-.wla_last_name {
-    width: 50%;
-    padding-left: 6px;
-}
-.wla_email {
     width: 100%;
-}
-.wla_password,
-.wla_password_confirmation {
-    width: 100%;
-}
-#wl_customer_email {
-    width: 100%;
-}
-.wla_button {
-    width: 100%;
-}
-.wla_login_text {
-    text-align: center;
-    display: block;
-    padding: 10px;
-}
-.wait_li_modal .tabs {
+    display: inline-block;
     position: relative;
-    margin: 0;
-    background: {{button_colour}}
-}
-.wait_li_modal .tabs::after,
-.wait_li_modal .tabs::before {
-    content: "";
-    display: table;
-}
-.wait_li_modal .tabs input[type="radio"] {
-    position: fixed;
-    opacity: 0;
-}
-.wait_li_modal .tabs::after {
-    clear: both;
-}
-.wait_li_modal .tab {
-    float: left;
-    width: 50%;
-}
-.wait_li_modal .section-header {
-  padding: 0;
-}
-.wait_li_modal .tab-switch {
-    display: none;
-}
-.wait_li_modal .tab-label {
-    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s
+    , color 0.2s;
+    box-shadow: none;
+  }
+
+  .wla_button:hover {
+    color: var(--wl-btn-text);
+    filter: brightness(0.95);
+  }
+
+  .wla_text {
+    margin: 0 0 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: inherit;
+    background: none;
+    padding: 0;
+  }
+
+  .wla_form p {
+    text-transform: initial;
+    padding-bottom: 10px;
+  }
+
+  /* FIXED: Spinner for join button */
+  .wla_button.spinner {
     position: relative;
-    display: block;
-    line-height: 2.75em;
-    height: 3em;
-    padding: 0 1.618em;
-    background: {{button_colour}};
-    border-right: 0.125rem solid{{button_colour}};
-    color: {{button_text_colour}};
-    cursor: pointer;
-    top: 0;
-    transition: all 0.25s;
-    width: 100%;
-    z-index: 6;
-    margin-bottom: 0;
-}
-.wait_li_modal .tab-label:hover {
-    top: -0.25rem;
-    transition: all 0.25s;
-}
-.wait_li_modal .tab-content {
-    padding: 1.618rem;
-    background: #fff;
-    color: #2c3e50;
-    height: auto;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    opacity: 0;
-    transition: all 0.35s;
-    -webkit-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
-}
-.wait_li_modal .tab-switch:checked + .tab-label {
-    background: #fff;
-    color: #2c3e50;
-    border-bottom: 0;
-    border-right: 0.0625rem solid #fff;
-    transition: all 0.35s;
-    z-index: 6;
-}
-.wait_li_modal .tab-switch:checked + .tab-label:hover {
-    top: 0;
-}
-.wait_li_modal .tab-switch:checked + .tab-label + .tab-content {
-    opacity: 1;
-    transition: all 0.35s;
-    z-index: 3;
-}
-@keyframes spinner {
-    to {
-        transform: rotate(360deg);
-    }
-}
-.wait_li_modal .spinner:before {
+  }
+  .wla_button.spinner:before {
     content: '';
-    box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--wl-btn-text);
+    animation: wl-spin 0.6s linear infinite;
+  }
+
+  .wait_li_spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
     border-top-color: #333;
-    animation: spinner 0.6s linear infinite;
-}
-.wla_button {
-    background: {{button_colour}};
-    color: {{button_text_colour}};
-    padding: 10px 25px;
-    min-height: 47px;
-    min-width: 150px;
-    border: none;
-    position: relative;
-    margin-top: 10px;
-    width: 100%;
-    display: inline-block;
-    cursor: pointer;
-}
-.wla_button:hover {
-    color: {{button_text_colour}}
-}
-.wait_li_modal #tab_success {
-    display: none;
+    animation: wl-spin 0.6s linear infinite;
+  }
+  @keyframes wl-spin {
+    to {
+      transform: rotate(360deg)
+    }
+  }
+
+  /* Success message */
+  #wait_li_success {
+    margin: var(--wl-spacing) auto;
+    padding: var(--wl-spacing);
     text-align: center;
-}
-.wait_li_modal #tab_success svg {
-    fill: {{button_colour}} !important;
-    margin: 10px 0 20px;
-}
-.wait_li_modal #success_content {
-    display: none;
-}
-.wait_li_modal .page-container {
-    transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-}
-.wla_text {
-  margin: 0;
-}
+    background: none;
+    border: none;
+    border-radius: var(--wl-btn-radius);
+    max-width: 400px;
+  }
+
+  .currently_waiting {
+    color: inherit;
+    font-weight: 500;
+    margin: 0;
+    background: none;
+  }
+
+  /* Referral box */
+  .wait_li_referral_box {
+    margin-top: 10px;
+    padding: 8px;
+    background: none;
+    border-radius: var(--wl-btn-radius);
+    border: none;
+  }
+
+  .wait_li_referral_box p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: inherit;
+    background: none;
+  }
+
+  .wait_li_copy_field {
+    padding: 8px;
+    background: none;
+    width: 100%;
+    min-height: 36px;
+    text-align: center;
+    overflow: hidden;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    color: inherit;
+  }
+
+  .wait_li_copy_button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+  }
+
+  .wait_li_copy_button:hover {
+    background: #f3f3f3;
+  }
+
+  .wait_li_copy_button svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Form inputs */
+  #signed_in_custom_column {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 0 0 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: inherit;
+    background: none;
+  }
+
+  #signed_in_custom_column:focus {
+    outline: none;
+    border-color: var(--wl-btn-bg);
+    box-shadow: none;
+  }
+
+  .wla_custom_column {
+    width: 100%;
+  }
+
+  .wl_validation_error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+    background: none;
+  }
 </style>
-{% comment %}
-End Wait.li Styling
-{% endcomment %}
 
-{% comment %}
-Wait.li Script
-{% endcomment %}
+<!-- 4 · SCRIPT (modernised, same endpoints) -->
 <script>
-document.addEventListener("DOMContentLoaded", function(event) {
-var modal = document.getElementById("wait_li_modal");
-var register_trigger = document.getElementById("wait_li_register_trigger");
-var login_trigger = document.getElementById("wait_li_login_trigger");
-var close_modal_button = document.getElementById("wait_li_close_button");
+  (() => {
+  /* ======================= CONFIG ======================= */
+  const BASE_URL = 'https://app.wait.li';
 
-// Various functions for the modal popup and other scripts
-function isEmpty(value) {
-  if (typeof value === 'number') return false
-  else if (typeof value === 'string') return value.trim().length === 0
-  else if (Array.isArray(value)) return value.length === 0
-  else if (typeof value === 'object') return value == null || Object.keys(value).length === 0
-  else if (typeof value === 'boolean') return false
-  else return !value
-};
-function toggleModal(stat) {
-  modal.classList.toggle("wait_li_show_modal")
-}
-function validateEmail(email) {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-}
-function windowOnClick(event) {
-  if (event.target === modal) {
-    toggleModal()
-  }
-}
+  const productId      = {{ wl_product_id | json }};
+  const customerId     = {{ customer.id | json }};
+  const customerEmail  = {{ customer.email | json }};
+  const productTitle   = {{ product.title | json }};
+  const productHandle  = {{ product.handle | json }};
+  const shopDomain     = {{ shop.permanent_domain | json }};
 
-// Event trigger for opening register popup
-if (register_trigger) {
-  register_trigger.addEventListener("click", function() {
-    toggleModal();
-    document.getElementById("tab-1").checked = true;
-    document.getElementById("tab-2").checked = false
-  })
-}
+  const referredId = new URL(location.href).searchParams.get('ref');
 
-// Event trigger for opening sign in popup
-if (login_trigger) {
-  login_trigger.addEventListener("click", function() {
-    toggleModal();
-    document.getElementById("tab-1").checked = false;
-    document.getElementById("tab-2").checked = true
-  })
-}
+  /* ======================= HELPERS ====================== */
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => document.querySelectorAll(sel);
 
-// Event trigger to close popup
-if (close_modal_button) {
-  close_modal_button.addEventListener("click", toggleModal)
-}
+  const setCookie = (k,v,min) => {
+    const d = new Date(Date.now() + min*60000);
+    document.cookie = `${k}=${v};expires=${d.toUTCString()};path=/`;
+  };
+  const getCookie = k => (`; ${document.cookie}`).split(`; ${k}=`).pop().split(';')[0] || '';
 
-// Show waiting list popup for customers visiting via the link
-{% unless customer %}
-  if (window.location.href.indexOf('#waiting_list') > 0) {
-    toggleModal();
-    document.getElementById("tab-1").checked = false;
-    document.getElementById("tab-2").checked = true;
-    document.getElementById("sign_in_header").innerHTML = "{{- wl_lang_sign_in_to_purchase -}}";
-  }
-{% endunless %}
+  // FIXED: Simple position fetcher - no polling needed
+  const fetchPosition = (referralId) =>
+    fetch(`${BASE_URL}/current_position?referralId=${referralId}`)
+      .then(r=>r.json());
 
-window.addEventListener("click", windowOnClick);
-var signed_in_button = document.getElementById("wl_join_button");
-var register_button = document.getElementById("wl_register_button");
+  const saveReferralId = id => setCookie(`waitli_customer_referral_id_${productId}`, id, 30);
+  const getSavedReferralId = () => getCookie(`waitli_customer_referral_id_${productId}`);
 
-// Script for signing up for waiting list via the already signed in button
-if (signed_in_button) {
-  const joinData = {
-    customerId: '{{ customer.id }}',
-    productId: '{{ wait_li_product_id }}',
-    productTitle: '{{ product.title | escape }}',
-    productHandle: '{{ product.handle }}',
-    shopDomain: '{{ shop.permanent_domain }}',
-    customerEmail: '{{ customer.email }}'
+  const show = el => el && (el.style.display='block');
+  const hide = el => el && (el.style.display='none');
+
+  const toggleSpinner = on => $$('.wait_li_spinner').forEach(el => el.style.display = on ? 'block' : 'none');
+
+  const initReferralBox = id => {
+    $$('.wait_li_referral_box_wrapper').forEach(el=>show(el));
+    $$('.wait_li_copy_field').forEach(el=>el.value = el.value.replace(/__referral_id__/g, id));
+    $$('.wait_li_copy_button').forEach(btn => btn.onclick = () => {
+      const ta = btn.previousElementSibling; ta.select(); document.execCommand('copy');
+    });
+    $$('.wait_li_list_status').forEach(hide);
   };
 
-  signed_in_button.addEventListener("click", function() {
-    console.log('clicked btn', joinData);
-    signed_in_button.classList.add("spinner");
-    signed_in_button.innerHTML = '';
-    document.getElementById("wl_join_button").disabled = true;
-    fetch("https://app.wait.li/list/join", {
-      method: 'POST',
-      body: JSON.stringify(joinData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => {
-      console.log(response.status);
-	})
-    .then(function(data) {
-      document.getElementById('wait_li_form').style.display = 'none';
-      document.getElementById('wait_li_success').style.display = 'block';
-      document.getElementById('register_form').style.display = 'none';
-      document.getElementById('register_tab').style.display = 'none';
-      document.getElementById('login_tab').style.display = 'none';
-      document.getElementById('tab_success').style.display = 'block';
-      var currently_elements = document.getElementsByClassName('currently_waiting');
-      if (currently_elements.length > 0) {
-        for (let i = 0; i < currently_elements.length; i++) {
-          var element = currently_elements[i];
-          element.innerHTML = element.innerHTML.replace(/current_position/g, data.position);
-        }
-      }
-    })
-    .catch(error => console.error('Error:', error))
-  })
-}
+  /* ======================= JOIN FLOW ===================== */
+  $('#wl_join_button')?.addEventListener('click', async (e) => {
+    // FIXED: Only allow join if customer is actually logged in
+    if (!customerId || !customerEmail) {
+      console.error('No customer logged in');
+      return;
+    }
 
-// Script for signing up for waiting list via the register page button
-if (register_button) {
-  register_button.addEventListener("click", function(e) {
-    e.preventDefault();
-    const errors = [];
-    const new_email = document.getElementById('wl_customer_email').value;
-    const new_password = document.getElementById('wl_customer_password').value;
-    const new_password_confirmation = document.getElementById('wl_customer_password').value;
-    if (isEmpty(new_email)) {
-      document.getElementById('wl_customer_email_error').innerHTML = '{{- wl_lang_empty_email -}}';
-      errors.push('Please enter your email')
-    }
-    if (!validateEmail(new_email)) {
-      document.getElementById('wl_customer_email_error').innerHTML = '{{- wl_lang_valid_email -}}';
-      errors.push('Please check that your email is correct')
-    }
-    if (isEmpty(new_password)) {
-      document.getElementById('wl_customer_password_error').innerHTML = '{{- wl_lang_empty_password -}}';
-      errors.push('Please enter a password.');
-    }
-    if (new_password.length < 6) {
-      errors.push('Please make sure your password is over 6 characters in length');
-      document.getElementById('wl_customer_password_error').innerHTML = '{{- wl_lang_password_length -}}';
-    }
-    if (errors.length === 0) {
-      const createData = {
-        customerEmail: new_email,
-        password: new_password,
-        password_confirmation: new_password_confirmation,
-        productId: '{{ wait_li_product_id }}',
-        productTitle: '{{ product.title | escape }}',
-        productHandle: '{{ product.handle }}',
-        shopDomain: '{{ shop.permanent_domain }}'
+    const btn = e.currentTarget;
+    const customColumn = $('#signed_in_custom_column')?.value || null;
+
+    btn.classList.add('spinner');
+    btn.innerHTML = '';
+    btn.disabled = true;
+
+    try {
+      // FIXED: Use correct parameters for backend
+      const joinData = {
+        shopDomain: shopDomain,
+        productId: productId,
+        productTitle: productTitle,
+        customerEmail: customerEmail,
+        referred_id: referredId,
+        custom_column: customColumn,
+        skipAccountInvite: true
       };
-      document.getElementById("wl_register_button").classList.add("spinner");
-      document.getElementById("wl_register_button").innerHTML = '';
-      document.getElementById("wl_register_button").disabled = true;
-      fetch("https://app.wait.li/list/join", {
-        method: 'POST',
-        body: JSON.stringify(createData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.status == 200) {
-          document.getElementById('register_form').style.display = 'none';
-          document.getElementById('register_tab').style.display = 'none';
-          document.getElementById('login_tab').style.display = 'none';
-          document.getElementById('tab_success').style.display = 'block';
-          document.getElementById('wait_li_success').style.display = 'block';
-          document.getElementById('wait_li_form').style.display = 'none'
-          return response.json();
-        } else if (response.status == 409) {
-          document.getElementById("wl_register_button").classList.remove("spinner");
-          document.getElementById("wl_register_button").innerHTML = "{{ wl_lang_join_waiting_list }}";
-          document.getElementById("wl_register_button").disabled = true;
-          document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_already_on_list -}}</p>';
-        } else if (response.status == 422) {
-          document.getElementById("wl_register_button").classList.remove("spinner");
-          document.getElementById("wl_register_button").innerHTML = "{{ wl_lang_join_waiting_list }}";
-          document.getElementById("wl_register_button").disabled = false;
-          document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_account_valid -}}</p>';
-        } else {
-          document.getElementById("wl_register_button").classList.remove("spinner");
-          document.getElementById("wl_register_button").innerHTML = "{{ wl_lang_join_waiting_list }}";
-          document.getElementById("wl_register_button").disabled = false;
-          document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_generic_error -}}</p>';
-        }
-      })
-      .then(function(data) {
-        var currently_elements = document.getElementsByClassName('currently_waiting');
-        if (currently_elements.length > 0) {
-          for (let i = 0; i < currently_elements.length; i++) {
-            var element = currently_elements[i];
-            element.innerHTML = element.innerHTML.replace(/current_position/g, data.position);
-          }
-        }
-      })
-      .catch(error => console.error('Error:', error))
-    }
-  }, false)
-}
 
-// Add current page url to the login form for redirect purposes
-var login_redirect_url = document.getElementById("redirect_url");
-var current_url = window.location.href.replace('#waiting_list', '');;
-if (login_redirect_url) {
-  login_redirect_url.value = current_url;
-}
+      const response = await fetch(`${BASE_URL}/list/join`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(joinData)
+      });
 
-// Grab the customer's current position on the list if they are waiting
-{% if customer.id and customer_status == 'waiting' %}
-  (function(){
-    var url = 'https://app.wait.li/list/check/{{ customer.id }}&{{ wait_li_product_id }}';
-    fetch(url)
-    .then((resp) => resp.json())
-    .then(function(data) {
-      var currently_elements = document.getElementsByClassName('currently_waiting');
-      if (currently_elements.length > 0) {
-        for (let i = 0; i < currently_elements.length; i++) {
-          var element = currently_elements[i];
-          element.innerHTML = element.innerHTML.replace(/current_position/g, data.position);
+      if (response.status === 200) {
+        const data = await response.json();
+
+        if (data.referralId) {
+          saveReferralId(data.referralId);
+          initReferralBox(data.referralId);
         }
+
+        // Update position display
+        $$('.currently_waiting').forEach(el => {
+          el.innerHTML = el.innerHTML.replace(/current_position/g, data.position);
+        });
+
+        hide($('#wait_li_form'));
+        show($('#wait_li_success'));
+
+      } else if (response.status === 409) {
+        alert('You are already on the waiting list!');
+      } else {
+        alert('Something went wrong. Please try again.');
       }
-    })
-  })();
-{% endif %}
 
-});
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      btn.classList.remove('spinner');
+      btn.innerHTML = '{{ join_text }}';
+      btn.disabled = false;
+    }
+  });
+
+  /* ======================= ON LOAD ====================== */
+  // Rewrite hosted login URL with return params
+  // FIXED: Set up proper login redirect URL
+  // Login redirect is now handled in Liquid using /customer_authentication/login
+
+  // Auto‑join after login
+  if(new URLSearchParams(location.search).get('join_waitlist') && customerId){
+    $('#wl_join_button')?.click();
+  }
+
+  // FIXED: Logged‑in waiting customer position check
+  {% if customer and customer_status == 'waiting' %}
+    (async () => {
+      toggleSpinner(true);
+      try {
+        const data = await fetch(`${BASE_URL}/current_position?customerId=${customerId}&productId=${productId}&shopDomain=${shopDomain}`).then(r=>r.json());
+        if(data?.position && data.referralId){
+          initReferralBox(data.referralId);
+          $$('.currently_waiting').forEach(el=>{
+            el.innerHTML=el.innerHTML.replace(/current_position/g,data.position);
+            show(el);
+          });
+        }
+      } catch(error) {
+        console.error('Error fetching position:', error);
+      } finally {
+        toggleSpinner(false);
+      }
+    })();
+  {% endif %}
+
+  // FIXED: Guest with saved referral ID
+  {% unless customer %}
+    const saved = getSavedReferralId();
+    if(saved){
+      (async () => {
+        $$('.wait_li_list_status').forEach(hide);
+        toggleSpinner(true);
+        try {
+          const posData = await fetchPosition(saved);
+          if(posData?.position && posData.status==='waiting'){
+            initReferralBox(posData.referralId);
+            $$('.currently_waiting').forEach(el=>{
+              el.innerHTML=el.innerHTML.replace(/current_position/g,posData.position);
+              show(el);
+            });
+          } else {
+            saveReferralId(''); // Clear invalid referral ID
+            $$('.wait_li_list_status').forEach(show);
+          }
+        } catch(error) {
+          console.error('Error checking saved position:', error);
+          saveReferralId(''); // Clear on error
+          $$('.wait_li_list_status').forEach(show);
+        } finally {
+          toggleSpinner(false);
+        }
+      })();
+    }
+  {% endunless %}
+  })();
 </script>
-{% comment %}
-End Wait.li Script
-{% endcomment %}
