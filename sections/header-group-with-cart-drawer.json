@@ -53,7 +53,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "header_type": "sticky_hide",
+        "header_type": "static",
         "enable_transparent_header": true,
         "enable_bottom_border": false,
         "enable_mega_menu_borders": false,
